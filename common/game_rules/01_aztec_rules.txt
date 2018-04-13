@@ -1,0 +1,17 @@
+aztec_interactions = {
+	name = "RULE_AZTEC_INTERACTIONS"
+	dlc = "Sunset Invasion"
+	group = "RULE_GROUP_VARIOUS"
+	group = "RULE_GROUP_RAILROADING"
+	option = {
+		name = within_range
+		text = "RULE_OPTION_WITHIN_RANGE"
+		desc = "RULE_WITHIN_RANGE_DESC"
+	}
+	option = {
+		name = all
+		achievements = no
+		text = "RULE_OPTION_ANYONE"
+		desc = "RULE_ANYONE_DESC"
+	}
+}

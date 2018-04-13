@@ -1,0 +1,43 @@
+add_very_good_aztec_artifacts = {
+	custom_tooltip = add_very_good_aztec_artifacts_tt
+	hidden_tooltip = {
+		random_list = {
+			25 = {
+				event_target:first_aztec_colonial_govenor = {
+					add_artifact = aztec_grand_headdress
+					transfer_artifact = {
+						from = PREV
+						to = ROOT
+					}
+				}
+			}
+			25 = {
+				event_target:first_aztec_colonial_govenor = {
+					add_artifact = aztec_grand_macuahuitl
+					transfer_artifact = {
+						from = PREV
+						to = ROOT
+					}
+				}
+			}
+			25 = {
+				event_target:first_aztec_colonial_govenor = {
+					add_artifact = aztec_ornate_codicies
+					transfer_artifact = {
+						from = PREV
+						to = ROOT
+					}
+				}
+			}
+			25 = {
+				event_target:first_aztec_colonial_govenor = {
+					add_artifact = aztec_great_shield
+					transfer_artifact = {
+						from = PREV
+						to = ROOT
+					}
+				}
+			}			
+		}
+	}
+}

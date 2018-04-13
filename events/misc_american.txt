@@ -1,0 +1,29 @@
+namespace = misc_american
+
+
+character_event = {
+	id = misc_american.1
+	desc = EVTDESC_MISC_AMER_001
+	
+	
+	picture = GFX_evt_bishop_aztec
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MISC_AMER_001
+		religion = aztec
+		capital_scope = aztec
+		
+		
+	}
+	
+	option = {
+		name = EVTOPTB_MISC_AMER_001
+		
+		
+		
+	}
+	
+}

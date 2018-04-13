@@ -1,0 +1,72 @@
+mesoamerican_group = {	
+	
+	has_coa_on_barony_only = yes
+	graphical_culture = mesoamericangfx
+	playable = yes
+	hostile_within_group = yes
+	
+	ai_convert_same_group = 2 # always try to convert
+	ai_convert_other_group = 2	# never try to convert
+	ai_fabricate_claims = no
+	
+	color = { 0.6 0.0 0.0 }
+	
+	
+	aztec = {
+		graphical_culture = mesoamericangfx
+		icon = 15
+		heresy_icon = 16
+		color = { 0.8 0.4 0.0 }
+		
+		#pre_reformed = yes
+		ai_convert_other_group = 2 # always try to convert
+		secondary_event_pictures = mesoamerican
+		
+		high_god_name = GOD_HUITZILOPOCHTLI
+		
+		god_names = {
+			GOD_HUITZILOPOCHTLI GOD_XIPE_TOTEC GOD_TEZCATLIPOCA GOD_QUETZALCOATL GOD_TLALOC
+		}
+		evil_god_names = {
+			TLAZOLTEOTL GOD_MICTLANTECUHTLI XOLOTL
+		}
+		
+		unit_modifier = {
+			levy_size = 0.3
+			
+			key = "OFF_RELIGION"
+		}
+		
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+		
+		
+		# According to Wiki:
+		# The Tlatoani of Tenochtitlan was the head of the cult of Huitzilopochtli and thus of the state religion of the Aztec empire.
+		# However, the Aztec religious organization was not entirely under his authority. Sahagun and Duran describe the pairs of high 
+		# priests (Quetzalcoatls) who were in charge of the major pilgrimage centres (Cholula and Tenochtitlan) as enjoying immense respect 
+		# from all levels of Aztec society – akin to archbishops – and a level of authority that partly transcended national boundaries.
+		# So, as the offmap can't be relhead, the leader of the colony can be (Delegated responsibility, I suppose.)
+		#can_excommunicate = yes #Will use scripted system
+		#can_grant_divorce = yes
+		#can_grant_invasion_cb = invasion
+		
+		
+		priests_can_marry = yes
+		peace_prestige_loss = yes # Lose Prestige while at peace
+		raised_vassal_opinion_loss = no
+		can_call_crusade = yes
+		join_crusade_if_bordering_hostile = yes
+		max_consorts = 3
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		allow_looting = yes
+		
+		aggression = 2.0 # AI aggression factor
+		
+		religious_clothing_head = 3
+		religious_clothing_priest = 3
+		
+		#dislike_tribal_organization = yes
+	}
+}
