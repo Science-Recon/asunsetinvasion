@@ -13,16 +13,77 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA_MISC_AMER_001
+		trigger = {
+			NOT = { trait = zealous }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				trait = gregarious
+			}
+			modifier = {
+				factor = 5
+				trait = trusting
+			}
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+		}	
+		if = {
+			limit = {  NOT = { religion_group = mesoamerican_group } }
+			if = {
+				limit = { religion_group = pagan_group }
+				add_trait = sympathy_pagans
+			}
+			
+			if = {
+				limit = { religion_group = zoroastrian_group }
+				add_trait = sympathy_zoroastrianism
+			}
+			
+			if = {
+				limit = { religion_group = christian }
+				add_trait = sympathy_christendom
+			}
+			
+			if = {
+				limit = { religion_group = muslim }
+				add_trait = sympathy_islam
+			}
+			
+			if = {
+				limit = { religion_group = jewish_group }
+				add_trait = sympathy_judaism
+			}
+			
+			if = {
+				limit = { religion_group = indian_group }
+				add_trait = sympathy_indian
+			}
+		}
 		religion = aztec
-		capital_scope = aztec
-		
-		
+		capital_scope = aztec		
 	}
 	
 	option = {
 		name = EVTOPTB_MISC_AMER_001
-		
-		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+		if = {
+			limit = { NOT = { trait = zealous } }
+			add_trait = zealous	
+		}
 		
 	}
 	

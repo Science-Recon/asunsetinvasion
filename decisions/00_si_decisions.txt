@@ -65,7 +65,7 @@ decisions = {
 				religion = aztec
 			}
 			any_courtier_or_vassal = {
-				
+				character_event = { id = misc_american.1 }
 			}
 			
 			hidden_tooltip = {
