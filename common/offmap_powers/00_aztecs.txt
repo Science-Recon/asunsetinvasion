@@ -50,17 +50,17 @@ offmap_aztecs = {
 	buttons = {
 		offmap_gifts = {
 			is_active_trigger = {
-				china_offmap_tribute_decisions_enabled_trigger = yes
+				aztec_offmap_tribute_decisions_enabled_trigger = yes
 			}
 		}
 		offmap_boons = {
 			is_active_trigger = {
-				china_offmap_boon_decisions_enabled_trigger = yes
+				aztec_offmap_boon_decisions_enabled_trigger = yes
 			}
 		}
 		offmap_hostility = {
 			is_active_trigger = {
-				china_offmap_hostile_decisions_enabled_trigger = yes
+				aztec_offmap_hostile_decisions_enabled_trigger = yes
 			}
 			display_trigger = {
 				NOT = { offmap_aztecs = { offmap_ruler = { dynasty = FROM } } }

@@ -93,6 +93,68 @@ decisions = {
 			}
 		}
 	}
+	
+	
+	china_sends_reinforcements = {
+		ai_check_interval = 2
+		only_independent = yes
+		potential = {
+			ai = yes
+			war = yes
+			offmap_aztecs = {
+				governor = {
+					character = ROOT
+				}
+				OR = {
+					NOT = {
+						# Only spawn reinforcements once
+						has_offmap_flag = aztecs_sent_war_reinforcements
+						# Exception: Really long wars
+					}
+					had_offmap_tmp_flag = {
+						flag = aztecs_sent_war_reinforcements
+						years = 30
+					}
+				}
+				# Don't spawn reinforcements for the following statuses in China.
+				NOR = {
+					has_status = aztec_famine
+					has_status = aztec_civil_war
+					has_status = aztec_mayan_invasion
+					has_status = aztec_incan_invasion
+					has_status = aztec_norse_invasion
+					has_status = aztec_iroquian_invasion
+					has_status = aztec_plague
+				}
+			}
+			# Only if China is losing a war by 50 war score.
+			any_war = {
+				OR = {
+					AND = {
+						attacker = {
+							character = ROOT
+						}
+						NOT = { war_score = -49 }
+					}
+					AND = {
+						defender = {
+							character = ROOT
+						}
+						war_score = 50
+					}
+				}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_variable = {
+				which = aztec_troop_number
+				value = 2 # 10k Troops, 5.5k per val.
+			}
+			spawn_aztec_reinforcement_effect = yes
+		}
+	}
 }
 
 offmap_decisions = {
@@ -175,7 +237,7 @@ offmap_decisions = {
 				who = FROM
 				tributary_type = aztec_offmap_trib
 			}
-			hidden_effect = { offmap_aztecs = { governor = { character_event = { id = JD.20027 } } } }
+			#hidden_effect = { offmap_aztecs = { governor = { character_event = { id = JD.20027 } } } } #CONVERT THIS TO A SI NARRATIVE EVENT
 			custom_tooltip = { text = aztec_respect_become_tributary_effect_TT }
 			FROM = {
 				show_scope_change = no

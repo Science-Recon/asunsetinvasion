@@ -5,6 +5,8 @@ mesoamerican_group = {
 	playable = yes
 	hostile_within_group = yes
 	
+	#interface_skin = { pagan_interface pagan_group_interface }
+	
 	ai_convert_same_group = 2 # always try to convert
 	ai_convert_other_group = 2	# never try to convert
 	ai_fabricate_claims = no
@@ -14,6 +16,9 @@ mesoamerican_group = {
 	
 	aztec = {
 		graphical_culture = mesoamericangfx
+		
+		#interface_skin = { pagan_interface pagan_group_interface }
+		
 		icon = 15
 		heresy_icon = 16
 		color = { 0.8 0.4 0.0 }

@@ -127,7 +127,7 @@ province_event = {
 	}
 }
 
-# First Landing of the Aztecs - Won't fire as triggering event is disabled
+# First Landing of the Aztecs
 narrative_event = {
 	id = SSI.4
 	title = EVTNAME_SSI_004
@@ -159,7 +159,7 @@ narrative_event = {
 		FROM = {
 			kingdom = {
 				ROOT = {
-					war = {
+					unsafe_war = {
 						casus_belli = tribal_invasion
 						target = PREVPREV # The top liege of the province owner
 						thirdparty_title = PREV # The de jure kingdom
@@ -953,6 +953,18 @@ province_event = {
 				total_years_played = 50
 			}
 		}
+		OR = {
+			#province_id = 1 # Vestisland
+			province_id = 9 # Connacht
+			province_id = 35 # Inse Gall
+			province_id = 31 # Cornwall
+			province_id = 104 # Cornouaille
+			province_id = 149 # Bordeaux
+			province_id = 156 # Coruna
+			province_id = 162 # Silves
+			#province_id = 841 # Tangier
+			#province_id = 845 # Anti-Atlas
+		}
 		NOT = { has_global_flag = aztec_arrival_2 }
 		owner = {
 			NOT = { religion = aztec }
@@ -972,7 +984,7 @@ province_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 24
+		months = 48
 	}
 	
 	option = {
@@ -998,17 +1010,29 @@ narrative_event = {
 	}
 	
 	immediate = {
-		event_target:selling_county_owner = {
+		FROM = {
 			kingdom = {
 				ROOT = {
-					war = {
+					unsafe_war = {
 						casus_belli = tribal_invasion
-						target = event_target:selling_county_owner # The top liege of the province owner
+						target = PREVPREV # The top liege of the province owner
 						thirdparty_title = PREV # The de jure kingdom
 					}
 				}
 			}
 		}
+		
+		# event_target:selling_county_owner = {
+			# kingdom = {
+				# ROOT = {
+					# war = {
+						# casus_belli = tribal_invasion
+						# target = event_target:selling_county_owner # The top liege of the province owner
+						# thirdparty_title = PREV # The de jure kingdom
+					# }
+				# }
+			# }
+		# }
 		
 		create_character = {
 			random_traits = yes
@@ -2495,7 +2519,7 @@ province_event = {
 			province_id = 104 # Cornouaille
 			province_id = 149 # Bordeaux
 			province_id = 156 # Corunna
-			province_id = 160 # 
+			province_id = 160 # Lisboa
 			#province_id = 841 # Tangier
 			#province_id = 845 # Anti-Atlas
 		}
@@ -2513,6 +2537,7 @@ province_event = {
 			set_status = aztec_golden_age
 		}
 		set_global_flag = aztec_offmap_activate
+		save_global_event_target_as = selling_county
 		activate_title = { title = e_aztec_colony status = yes }
 		
 		owner = {
@@ -2564,9 +2589,7 @@ province_event = {
 				religion = aztec
 			}
 			new_character = {
-				title_aztec_emperor = {
-					grant_title = PREV
-				}
+				give_minor_title = title_aztec_emperor
 			}
 		}
 	}
@@ -2607,6 +2630,181 @@ province_event = {
 				# }
 			# }
 		# }
+		hidden_tooltip = {
+			e_aztec_colony = {
+				holder_scope = {
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = aztec
+						culture = nahuatl
+						female = no
+						age = 25
+						attributes = {
+							martial = 12
+						}
+						trait = brilliant_strategist
+					}
+					new_character = {
+						spawn_unit = {
+							province = FROM
+							home = FROM
+							troops =
+							{
+								heavy_infantry = { 2800 2800 }
+								light_infantry = { 1400 1300 }
+								archers = { 1400 1300 }
+							}
+						}
+					}
+				}
+				# Some extra courtiers
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 16
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 18
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 18
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 20
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 25
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 26
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 28
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 16
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 17
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 18
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 16
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 16
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 17
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 18
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 18
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 20
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 16
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = yes
+					age = 16
+				}
+			}
+		}
 		event_target:first_aztec_colonial_govenor = {
 			ROOT = {
 				county = {
@@ -2624,32 +2822,82 @@ province_event = {
 				who = event_target:selling_county_owner 
 				years = 50 
 			}
+			set_truce = { who = event_target:selling_county_owner years = 5 }
 		}
 		culture = nahuatl
 		religion = aztec
-		# any_courtier_or_vassal = {
-			# opinion = { 
-				# modifier = sunset_has_given_province_to_aztecs 
-				# who = event_target:selling_county_owner  
-				# years = 50 
-			# }
-		# }
+		any_courtier_or_vassal = {
+			opinion = { 
+				modifier = sunset_has_given_province_to_aztecs 
+				who = event_target:selling_county_owner  
+				years = 50 
+			}
+		}
 		add_offmap_currency = {
 			offmap = offmap_aztecs
 			value = 500
 		}
 		event_target:selling_county_owner = {
-			add_very_good_aztec_artifacts = yes
-			wealth = 2500
 			save_global_event_target_as = seller_of_province
+			custom_tooltip = { text = add_very_good_aztec_artifacts_tt }
+			hidden_tooltip = {
+				random_list = {
+					25 = {
+						add_artifact = aztec_grand_headdress
+						event_target:first_aztec_colonial_govenor = {
+							add_artifact = aztec_grand_headdress
+							new_artifact = {
+								transfer_artifact = {
+									from = PREV
+									to = event_target:seller_of_province
+								}
+							}
+						}
+					}
+					25 = {
+						event_target:first_aztec_colonial_govenor = {
+							add_artifact = aztec_grand_macuahuitl
+							new_artifact = {
+								transfer_artifact = {
+									from = PREV
+									to = event_target:seller_of_province
+								}
+							}
+						}
+					}
+					25 = {
+						event_target:first_aztec_colonial_govenor = {
+							add_artifact = aztec_ornate_codicies
+							new_artifact = {
+								transfer_artifact = {
+									from = PREV
+									to = event_target:seller_of_province
+								}
+							}
+						}
+					}
+					25 = {
+						event_target:first_aztec_colonial_govenor = {
+							add_artifact = aztec_great_shield
+							new_artifact = {
+								transfer_artifact = {
+									from = PREV
+									to = event_target:seller_of_province
+								}
+							}
+						}
+					}			
+				}
+			}
+			wealth = 2500
 		}
 		set_global_flag = aztecs_bought_county
 	}
 	
 	option = {
 		name = EVTOPTB_SSI_001
-		wealth = -20
-		#tooltip = aztec_will_be_angry_no_gib_clay
+		#wealth = -20
+		tooltip = { text = aztec_will_be_angry_no_gib_clay }
 		event_target:first_aztec_colonial_govenor = {
 			opinion = {
 				modifier = sunset_refused_sold_us_provinces 
@@ -2665,6 +2913,6 @@ province_event = {
 			set_policy = aztec_invaders
 		}
 		set_global_flag = aztecs_refused_county
-		wealth = 20
+		#wealth = 20
 	}
 }

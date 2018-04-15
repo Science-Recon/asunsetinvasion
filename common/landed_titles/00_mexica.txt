@@ -36,6 +36,7 @@ k_aztec = {
 
 	# Always exists
 	landless = yes
+	short_name = yes
 	
 	dignity = 100 # Counted as having this many more counties than it does
 	
