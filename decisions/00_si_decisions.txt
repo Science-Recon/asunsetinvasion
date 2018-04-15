@@ -95,11 +95,11 @@ decisions = {
 	}
 	
 	
-	china_sends_reinforcements = {
+	aztec_sends_reinforcements = {
 		ai_check_interval = 2
 		only_independent = yes
 		potential = {
-			ai = yes
+			#ai = yes
 			war = yes
 			offmap_aztecs = {
 				governor = {
@@ -127,7 +127,7 @@ decisions = {
 					has_status = aztec_plague
 				}
 			}
-			# Only if China is losing a war by 50 war score.
+			# Only if Aztec Empire is losing a war by 50 war score.
 			any_war = {
 				OR = {
 					AND = {
@@ -152,7 +152,12 @@ decisions = {
 				which = aztec_troop_number
 				value = 2 # 10k Troops, 5.5k per val.
 			}
-			spawn_aztec_reinforcement_effect = yes
+			capital_scope = {
+				spawn_aztec_reinforcement_effect = yes
+			}
+			offmap_aztecs = {
+				set_offmap_flag = aztecs_sent_war_reinforcements
+			}
 		}
 	}
 }
@@ -225,7 +230,7 @@ offmap_decisions = {
 				is_inaccessible_trigger = no
 			}
 			# china_offmap_decisions_enabled_trigger = yes #leave in please, to be used if the tooltip for china_offmap_tribute_decisions_enabled_trigger changes and we need to reference things uniquely again
-			aztec_respect_tribute_decisions_enabled_trigger = yes
+			aztec_offmap_tribute_decisions_enabled_trigger = yes
 		}
 
 		effect = {
@@ -349,6 +354,142 @@ offmap_decisions = {
 			#}
 			#modifier = { realm_levy_diff = { who = FROM value = 2000 } factor = 1.5 }
 			#modifier = { realm_levy_diff = { who = FROM value = 5000 } factor = 3 }
+		}
+	}
+}
+
+
+targeted_decisions = {
+	
+	aztec_proclaim_amocuallitlacatl = { # Made up name for heretic: lit. "evil person"
+		only_playable = yes
+		#filter = close_relatives
+		#ai_target_filter = close_relatives
+		
+		only_rulers = yes
+		
+		from_potential = {
+			#ai = no
+			is_playable = yes
+			controls_religion = aztec
+			religion = aztec
+			is_adult = yes
+			
+			#has_children = yes
+			#has_polygamy = no
+		}
+		
+		potential = {
+			NOT = { trait = amocuallitlacatl }
+			religion = aztec
+		}
+		allow = {
+			FROM = {
+				NOT = { opinion = { who = ROOT value = 0 } } # Must have negative opinion of person.
+			}
+		}
+		effect = {
+			add_trait = amocuallitlacatl
+			piety = -500
+			opinion = {
+				modifier = sunset_declared_me_amocuallitlacatl
+				who = FROM
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					AND = {
+						FROM = {
+							has_trait = zealous
+						}
+						ROOT = {
+							OR = {
+								has_trait = cynical
+								has_trait = craven
+								has_trait = slothful
+								has_trait = homosexual
+								reverse_opinion = { 
+									who = FROM 
+									value = -75
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	aztec_lift_amocuallitlacatl = { # Undo it
+		only_playable = yes
+		#filter = close_relatives
+		#ai_target_filter = close_relatives
+		
+		only_rulers = yes
+		
+		from_potential = {
+			#ai = no
+			is_playable = yes
+			controls_religion = aztec
+			religion = aztec
+			is_adult = yes
+			
+			#has_children = yes
+			#has_polygamy = no
+		}
+		
+		potential = {
+			trait = amocuallitlacatl
+			religion = aztec
+		}
+		allow = {
+			FROM = {
+				opinion = { who = ROOT value = 50 } # Must have good opinion of person.
+			}
+		}
+		effect = {
+			remove_trait = amocuallitlacatl
+			piety = 500
+			remove_opinion = {
+				modifier = sunset_declared_me_amocuallitlacatl
+				who = FROM
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0 # Don't do for now
+			# modifier = {
+				# factor = 0
+				# NOT = {
+					# AND = {
+						# FROM = {
+							# has_trait = zealous
+						# }
+						# ROOT = {
+							# OR = {
+								# has_trait = cynical
+								# has_trait = craven
+								# has_trait = slothful
+								# has_trait = homosexual
+								# reverse_opinion = { 
+									# who = FROM 
+									# value = -75
+								# }
+							# }
+						# }
+					# }
+				# }
+			# }
 		}
 	}
 }

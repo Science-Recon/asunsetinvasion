@@ -20,11 +20,12 @@ GOD_TEZCATLIPOCA;Tezcatlipoca;Tezcatlipoca;Tezcatlipoca;;Tezcatlipoca;;;;;;;;;x
 GOD_QUETZALCOATL;Quetzalcoatl;Quetzalcoatl;Quetzalcoatl;;Quetzalcoatl;;;;;;;;;x
 GOD_MICTLANTECUHTLI;Mictlantecuhtli;Mictlantecuhtli;Mictlantecuhtli;;Mictlantecuhtli;;;;;;;;;x
 GOD_TLALOC;Tlaloc;Tlaloc;Tlaloc;;Tlaloc;;;;;;;;;x
-job_chancellor_aztec;Cihuacoatl;Cihuacoatl;Cihuacoatl;;Cihuacoatl;;;;;;;;;x
-job_marshal_aztec;Tlacateccatl;Tlacateccatl;Tlacateccatl;;Tlacateccatl;;;;;;;;;x
-job_treasurer_aztec;Petlacalcatl;Petlacalcatl;Petlacalcatl;;Petlacalcatl;;;;;;;;;x
-job_spymaster_aztec;Tillancalqui;Tillancalqui;Tillancalqui;;Tillancalqui;;;;;;;;;x
-job_spiritual_aztec;Sahagun;Sahagún;Sahagun;;Sahagun;;;;;;;;;x
+job_chancellor_nahuatl;Cihuacoatl;Cihuacoatl;Cihuacoatl;;Cihuacoatl;;;;;;;;;x
+job_marshal_nahuatl;Tlacateccatl;Tlacateccatl;Tlacateccatl;;Tlacateccatl;;;;;;;;;x
+job_treasurer_nahuatl;Petlacalcatl;Petlacalcatl;Petlacalcatl;;Petlacalcatl;;;;;;;;;x
+job_spymaster_nahuatl;Tillancalqui;Tillancalqui;Tillancalqui;;Tillancalqui;;;;;;;;;x
+job_spiritual_nahuatl;Tlamacazqui ;;;;;;;;;;;;;
+job_spiritual_aztec;Tlamacazqui ;Sahagún;Sahagun;;Sahagun;;;;;;;;;x
 ISNT_TRIBAL_TYPE_TITLE;Is NOT Tribal;N'est pas tribal;ist NICHT stammeszugehörig;;NO es Tribal ;;;;;;;;;x
 IS_TRIBAL_TYPE_TITLE;Is Tribal;Est tribal;ist stammeszugehörig;;Es Tribal ;;;;;;;;;x
 HAS_HORDE_CULTURE;Is of a Horde Culture;Est d'une culture de horde;gehört einer Horden-Kultur an;;Es de una Cultura Horda;;;;;;;;;x
@@ -37,7 +38,7 @@ EVTOPTA_SSI_001;Hm. I'm sure something could be arranged.;J'ai un mauvais presse
 EVTOPTB_SSI_001;Bah! Who do they think are trying to snatch my titles?;;;;;;;;;;;;;
 EVTNAME_SSI_002;Strangers from Beyond the Sea;Des étrangers d'au-delà des mers;Fremde von jenseits des Meeres;;Extranjeros que vienen de El Otro Lado del Mar ;;;;;;;;;x
 EVTDESC_SSI_002;There are rumours of exotic strangers in weird looking ships making landfall all along the Atlantic coast, speaking no known language, trying to buy land in exchange for obsidian beads, colourful feathers and gold. After refusing their offers, local rulers were apparently threatened with terrible curses and the might of a great emperor from beyond the Atlantic Ocean.;Selon des rumeurs, des étrangers exotiques auraient accostés sur toute la côte atlantique à bord de bateaux étranges. Ils parleraient une langue inconnue et essaieraient de se procurer des terres en échange de perles d'obsidienne, de plumes colorés et d'or. Après avoir refusé leurs offres, les chefs locaux ont été menacés de recevoir de terribles malédictions et de subir la puissance d'un grand empereur vivant au-delà des mers.;Es gibt Gerüchte über exotisch anmutende Fremde in seltsamen Schiffen, die an der gesamten Atlantikküste landen. Sie sprechen eine unbekannte Sprache und versuchen, Land gegen Obsidianketten, farbenfrohe Federn, Perlen und Goldschmuck zu tauschen. Lehnten die lokalen Herrscher ihre Forderungen ab, wurde ihnen anscheinend mit furchtbaren Flüchen und dem Zorn eines großen Herrschers von jenseits des atlantischen Ozeans gedroht.;;Hay rumores de que unos forasteros que navegan en extraños barcos han recalado a lo largo de la costa Atlántica. Hablan una lengua desconocida y pretenden comprar tierras a cambio de collares de obsidiana, plumas de colores y oro. Al parecer, después de rechazar su oferta, los gobernantes locales fueron amenazados con terribles maldiciones y el poder de un gran emperador del otro lado del Océano Atlántico.;;;;;;;;;x
-EVTDESC_SSI_002_accepted;There are rumours of exotic strangers in weird looking ships making landfall all along the Atlantic coast, speaking no known language, trying to buy land in exchange for obsidian beads, colourful feathers and gold. After accepting their offer, the strangers bestowed fleets of goods and gold to [From.GetTitledName]. It is also said that this sale has curried [event_target:seller_of_province.GetHerHim] favour with a great emperor from beyond the Atlantic Ocean.;;;;;;;;;;;;;
+EVTDESC_SSI_002_accepted;There are rumours of exotic strangers in weird looking ships making landfall all along the Atlantic coast, speaking no known language, trying to buy land in exchange for obsidian beads, colourful feathers and gold. After accepting their offer, the strangers bestowed fleets of goods and gold to [event_target:seller_of_province.GetName]. It is also said that this sale has curried [event_target:seller_of_province.GetHerHim] favour with a great emperor from beyond the Atlantic Ocean.;;;;;;;;;;;;;
 EVTOPTA_SSI_002;Hah! A Fantasy Menace.;Ah! Une menace fantaisiste.;Ha! Ein Hirngespinst einer Drohung.;;¡Ajá! Una Amenanza de Fantasía.;;;;;;;;;x
 EVTOPTA_SSI_002_accepted;Hah! An elaborate hoax, no doubt.;;;;;;;;;;;;;
 EVTDESC_SSI_003;Thousands of menacing ships have arrived off the shores of [Root.GetName], spilling out numberless hordes of fierce warriors in strange garb. Their ululating battle cries can be heard for miles!;Des milliers de bateaux menaçants sont arrivés sur les côtes de [Root.GetName] et y débarquent d'innombrables hordes de guerriers redoutables vêtus de tenues étranges. On peut entendre leurs cris de guerre de si loin !;Tausende bedrohlicher Schiffe sind an der Küste von [Root.GetName] gelandet und speien zahllose Horden furchteinflößender Krieger in seltsamer Gewandung aus. Ihre heulenden Kampfschreie können meilenweit vernommen werden.;;Miles de barcos amenazantes han llegado a las costas de [Root.GetName], derramando innumerables hordas de guerreros feroces vestidos en extraños ropajes.  Sus ululantes gritos de guerra se escuchan a gran distancia!;;;;;;;;;x
@@ -91,7 +92,7 @@ AZTEC_DISEASE_INFO;This county has suffered an outbreak of Syphilis, a virulent 
 ;;;;;;;;;;;;;;
 ###Additions###;;;;;;;;;;;;;;
 e_aztec_colony;Yancuic Tenochtitlan;Yancuic Tenochtitlan;Yancuic Tenochtitlan;;;;;;;;;;;
-k_aztec;Eastern Cult of Huitzilopochtli;;;;;;;;;;;;;
+k_aztec;The Eastern Cult of Huitzilopochtli;;;;;;;;;;;;;
 title_aztec_emperor;Huehuetlatoani;Huehuetlatoani;Huehuetlatoani;;;;;;;;;;;
 aztecs_name;Aztec;Aztèque;Aztekisch;;;;;;;;;;;
 TXT_RESPECT;Respect;;;;;;;;;;;;;
@@ -107,8 +108,8 @@ aztec_traders;Trader;;;;;;;;;;;;;
 aztec_traders_desc;The Emperor seeks to enrich the Empire by means of fair trade and exchange. The Emperor is open to aquiring new subjects and allies.;;;;;;;;;;;;;
 aztec_explorers;Explorer;;;;;;;;;;;;;
 aztec_explorers_desc;The Emperor seeks to advance the frontiers of knowledge and learning. Will invest in infrastructre projects at home and in Europe, developing libraries and hospitals. Also keen to make alliances and share knowledge.;;;;;;;;;;;;;
-aztec_homefocus;Isolationist;;;;;;;;;;;;;
-aztec_homefocus_desc;The Emperor cares little for the bickering of natives and is content to hear about it from afar. All actions to gain the Emperor's Respect or request boons are invalid. New subject states will likely not be accepted.;;;;;;;;;;;;;
+aztec_isolationist;Isolationist;;;;;;;;;;;;;
+aztec_isolationist_desc;The Emperor cares little for the bickering of natives and is content to hear about it from afar. All actions to gain the Emperor's Respect or request boons are invalid. New subject states will likely not be accepted.;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_stable;Stable;;;;;;;;;;;;;
 aztec_unrest;Unrest;;;;;;;;;;;;;
@@ -128,7 +129,7 @@ sunset_refused_sold_us_provinces;Refused to Sell Us a Province;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_will_be_angry_no_gib_clay;The Aztecs will see this as a grave insult and will likely attack us to take our land.;;;;;;;;;;;;;
-add_very_good_aztec_artifacts_tt;[Root.GetTitledName] gains a valuable Aztec artifact.;;;;;;;;;;;;;
+add_very_good_aztec_artifacts_tt;Gain a valuable Aztec artifact.;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
@@ -137,3 +138,9 @@ aztec_grand_macuahuitl;Macuahuitl;;;;;;;;;;;;;
 aztec_ornate_codicies;Mexihcatl Amoxtli;;;;;;;;;;;;;
 aztec_great_shield;Cuauhchimalli;;;;;;;;;;;;;
 mesoamerican_group;Mexihcatl;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+b_cholula;Cholula;;;;;;;;;;;;;
+b_tenochtitlan_temple;Hueyi Teocalli;;;;;;;;;;;;;
+b_moyotlan;Moyotlan;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+aztec_offmap_decisions_enabled_trigger_war_tt;Is at peace with §Y[From.GetTitledFirstName]§!;;;;;;;;;;;;;

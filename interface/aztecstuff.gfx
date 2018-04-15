@@ -3,6 +3,13 @@ spriteTypes = {
 		name = "GFX_icon_altepetl_government"
 		texturefile = "gfx\\interface\\government_icon_altepetl.dds"
 	}
+	spriteType = {
+		name = "GFX_trait_amocuallitlacatl"
+		texturefile = "gfx\\traits\\amocuallitlacatl.dds"
+		noOfFrames = 1
+		norefcount = yes
+		#effectFile = "gfx\\FX\\buttonstate.lua"
+	}
 	maskedShieldType = {
 		name = "GFX_shield_big_mesoamerican"
 		textureFile1 = "gfx\\interface\\shield_big_overlay_pagan.tga"

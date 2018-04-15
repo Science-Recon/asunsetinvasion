@@ -1,0 +1,16 @@
+amocuallitlacatl = { # Ficticious word for heretic: lit. "evil person"
+	diplomacy = -5
+	same_religion_opinion = -30
+
+	religious = yes
+	customizer = no
+
+	potential = {
+		NOT = { controls_religion = yes }
+	}
+	
+	male_insult = INSULT_AMOCUALLITLACATL
+	female_insult = INSULT_AMOCUALLITLACATL
+	male_insult_adj = INSULT_AMOCUALLI
+	female_insult_adj = INSULT_AMOCUALLI
+}

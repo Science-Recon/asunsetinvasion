@@ -9,3 +9,7 @@ sunset_sold_us_provinces = {
 sunset_refused_sold_us_provinces = { 
 	opinion = -100
 }
+
+sunset_declared_me_amocuallitlacatl = {
+	opinion = -50
+}

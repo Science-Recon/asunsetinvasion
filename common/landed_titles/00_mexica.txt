@@ -47,3 +47,33 @@ k_aztec = {
 	
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 }
+	
+	
+b_cholula = {
+	holy_site = aztec
+	
+	landless = yes
+	
+	culture = nahuatl
+	religion = aztec
+}
+
+b_tenochtitlan_temple = {
+	holy_site = aztec
+	
+	landless = yes
+	
+	culture = nahuatl
+	religion = aztec
+}
+
+b_moyotlan = {
+	holy_site = aztec
+	
+	landless = yes
+	
+	culture = nahuatl
+	religion = aztec
+}
+
+

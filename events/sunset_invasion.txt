@@ -956,7 +956,7 @@ province_event = {
 		OR = {
 			#province_id = 1 # Vestisland
 			province_id = 9 # Connacht
-			province_id = 35 # Inse Gall
+			#province_id = 35 # Inse Gall
 			province_id = 31 # Cornwall
 			province_id = 104 # Cornouaille
 			province_id = 149 # Bordeaux
@@ -2514,7 +2514,7 @@ province_event = {
 		OR = {
 			#province_id = 1 # Vestisland
 			province_id = 9 # Connacht
-			province_id = 35 # Inse Gall
+			#province_id = 35 # Inse Gall
 			province_id = 31 # Cornwall
 			province_id = 104 # Cornouaille
 			province_id = 149 # Bordeaux
@@ -2539,7 +2539,6 @@ province_event = {
 		set_global_flag = aztec_offmap_activate
 		save_global_event_target_as = selling_county
 		activate_title = { title = e_aztec_colony status = yes }
-		
 		owner = {
 			save_event_target_as = selling_county_owner
 			create_random_soldier = {
@@ -2563,33 +2562,82 @@ province_event = {
 				e_aztec_colony = {
 					add_law = succ_offmap_succession
 					add_law = agnatic_succession
-					add_law = imperial_administration
 					add_law = centralization_4
 					add_law = vice_royalty_1
+					add_law = out_of_realm_inheritance_law_1
+					
 					if = {
 						limit = {
 							has_dlc = "Zeus"
 						}
 						add_law = revoke_title_law_2
+						add_law = ze_administration_laws_2
+						add_law = vassal_wars_law_1
+						add_law = tax_levy_law_feudal_8
+						add_law = tax_levy_law_iqta_8
+						add_law = tax_levy_law_republic_0
+						add_law = tax_levy_law_theocracy_4
+						add_law = tax_levy_law_tribal_6
 					}
 					if = {
 						limit = {
 							NOT = { has_dlc = "Zeus" }
 						}
 						add_law = crown_authority_1
+						add_law = imperial_administration
 					}
 				}
 				set_defacto_liege = THIS
 				narrative_event = { id = SSI.2 days = 7 }
 			}
-			create_random_soldier = {
-				dynasty = 1035000 # Acatl
-				random_traits = yes
-				culture = nahuatl
-				religion = aztec
-			}
-			new_character = {
-				give_minor_title = title_aztec_emperor
+			e_aztec_colony = {
+				create_random_steward = {
+					dynasty = 1035000 # Acatl
+					random_traits = yes
+					culture = nahuatl
+					religion = aztec
+				}
+				new_character = {
+					offmap_aztecs = {
+						set_offmap_holder = PREV
+					}
+				}
+				create_random_priest = {
+					dynasty = none
+					random_traits = yes
+					culture = nahuatl
+					religion = aztec
+				}
+				new_character = {
+					b_cholula = {
+						grant_title = PREV
+					}
+					set_government_type = theocracy_government
+				}
+				create_random_priest = {
+					dynasty = none
+					random_traits = yes
+					culture = nahuatl
+					religion = aztec
+				}
+				new_character = {
+					b_tenochtitlan_temple = {
+						grant_title = PREV
+					}
+					set_government_type = theocracy_government
+				}
+				create_random_priest = {
+					dynasty = none
+					random_traits = yes
+					culture = nahuatl
+					religion = aztec
+				}
+				new_character = {
+					b_moyotlan = {
+						grant_title = PREV
+					}
+					set_government_type = theocracy_government
+				}
 			}
 		}
 	}
@@ -2809,12 +2857,12 @@ province_event = {
 			ROOT = {
 				county = {
 					grant_title = event_target:first_aztec_colonial_govenor
-					event_target:first_aztec_colonial_govenor = {
-						gain_settlements_under_title = {
-							title = PREV
-							enemy = ROOT
-						}
-					}
+					# event_target:first_aztec_colonial_govenor = {
+						# # gain_settlements_under_title = {
+							# # title = PREV
+							# # enemy = ROOT
+						# # }
+					# }
 				}
 			}
 			opinion = { 
@@ -2822,76 +2870,29 @@ province_event = {
 				who = event_target:selling_county_owner 
 				years = 50 
 			}
-			set_truce = { who = event_target:selling_county_owner years = 5 }
 		}
 		culture = nahuatl
 		religion = aztec
-		any_courtier_or_vassal = {
-			opinion = { 
-				modifier = sunset_has_given_province_to_aztecs 
-				who = event_target:selling_county_owner  
-				years = 50 
-			}
-		}
-		add_offmap_currency = {
-			offmap = offmap_aztecs
-			value = 500
-		}
 		event_target:selling_county_owner = {
-			save_global_event_target_as = seller_of_province
-			custom_tooltip = { text = add_very_good_aztec_artifacts_tt }
-			hidden_tooltip = {
-				random_list = {
-					25 = {
-						add_artifact = aztec_grand_headdress
-						event_target:first_aztec_colonial_govenor = {
-							add_artifact = aztec_grand_headdress
-							new_artifact = {
-								transfer_artifact = {
-									from = PREV
-									to = event_target:seller_of_province
-								}
-							}
-						}
-					}
-					25 = {
-						event_target:first_aztec_colonial_govenor = {
-							add_artifact = aztec_grand_macuahuitl
-							new_artifact = {
-								transfer_artifact = {
-									from = PREV
-									to = event_target:seller_of_province
-								}
-							}
-						}
-					}
-					25 = {
-						event_target:first_aztec_colonial_govenor = {
-							add_artifact = aztec_ornate_codicies
-							new_artifact = {
-								transfer_artifact = {
-									from = PREV
-									to = event_target:seller_of_province
-								}
-							}
-						}
-					}
-					25 = {
-						event_target:first_aztec_colonial_govenor = {
-							add_artifact = aztec_great_shield
-							new_artifact = {
-								transfer_artifact = {
-									from = PREV
-									to = event_target:seller_of_province
-								}
-							}
-						}
-					}			
+			any_courtier_or_vassal = {
+				opinion = { 
+					modifier = sunset_has_given_province_to_aztecs 
+					who = event_target:selling_county_owner  
+					years = 50 
 				}
+			}
+			save_global_event_target_as = seller_of_province
+			give_good_aztec_artifact_effect = yes
+			add_offmap_currency = {
+				offmap = offmap_aztecs
+				value = 500
 			}
 			wealth = 2500
 		}
 		set_global_flag = aztecs_bought_county
+		event_target:first_aztec_colonial_govenor = {
+			set_truce = { who = event_target:selling_county_owner years = 10 }
+		}
 	}
 	
 	option = {

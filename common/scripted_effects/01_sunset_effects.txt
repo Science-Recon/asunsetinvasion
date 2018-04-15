@@ -1,3 +1,64 @@
+give_good_aztec_artifact_effect = {
+	custom_tooltip = { text = add_very_good_aztec_artifacts_tt }
+	hidden_tooltip = {
+		random_list = {
+			25 = {
+				e_aztec_colony = {
+					holder_scope = {
+						add_artifact = aztec_grand_headdress
+						new_artifact = {
+							transfer_artifact = {
+								from = PREV
+								to = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			25 = {
+				e_aztec_colony = {
+					holder_scope = {
+						add_artifact = aztec_grand_macuahuitl
+						new_artifact = {
+							transfer_artifact = {
+								from = PREV
+								to = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			25 = {
+				e_aztec_colony = {
+					holder_scope = {
+						add_artifact = aztec_ornate_codicies
+						new_artifact = {
+							transfer_artifact = {
+								from = PREV
+								to = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			25 = {
+				e_aztec_colony = {
+					holder_scope = {
+						add_artifact = aztec_great_shield
+						new_artifact = {
+							transfer_artifact = {
+								from = PREV
+								to = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}			
+		}
+	}
+}
+
+
 spawn_aztec_reinforcement_effect = {
 	if = {
 		limit = {
@@ -31,8 +92,8 @@ spawn_aztec_reinforcement_effect = {
 			}
 			new_character = {
 				spawn_unit = {
-					province = FROM
-					home = FROM
+					province = PREV
+					home = PREV
 					troops =
 					{
 						heavy_infantry = { 2200 2200 }

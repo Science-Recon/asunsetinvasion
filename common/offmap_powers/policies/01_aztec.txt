@@ -15,7 +15,7 @@ aztec_explorers = {
 	frame = 3
 }
 
-aztec_homefocus = {
+aztec_isolationist = {
 	flags = { disallow_interactions disallow_troops }
 	frame = 4
 }
