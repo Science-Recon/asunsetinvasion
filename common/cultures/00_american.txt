@@ -1,0 +1,67 @@
+mesoamerican = {
+	northern_quechua = { #Kichwa
+		graphical_cultures = { mesoamericangfx }
+		color = { 60 10 10 }
+		
+		horde = yes
+		
+		used_for_random = no
+		
+		male_names = { 
+			Achik Amaru Atiq Inti Kunya Pacha Puma Paqar Sumaq Anku Kuntur Mallku Qhapaq Ruq'a Tupaq Ullanta Uturunku Waman
+		}
+		female_names = {
+			Inkasisa Sumaq Chimpu Killa Nina Ñust'a Palla Qispi Quyllur Uqllu Urpi Samiyuq	
+		}
+		
+		#from_dynasty_prefix = "of "
+		founder_named_dynasties = yes
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 0
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 25
+		mat_grm_name_chance = 25
+		mother_name_chance = 0
+
+		allow_looting = yes
+
+		modifier = default_culture_modifier
+	}
+	
+	southern_quechua = { #Qichwa
+		graphical_cultures = { mesoamericangfx }
+		color = { 66 7 7 }
+		
+		horde = yes
+		
+		used_for_random = no
+		
+		male_names = { 
+			Achik Amaru Atiq Inti Kunya Pacha Puma Paqar Sumaq Anku Kuntur Mallku Qhapaq Ruq'a Tupaq Ullanta Uturunku Waman
+		}
+		female_names = {
+			Inkasisa Sumaq Chimpu Killa Nina Ñust'a Palla Qispi Quyllur Uqllu Urpi Samiyuq	
+		}
+		
+		#from_dynasty_prefix = "of "
+		founder_named_dynasties = yes
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 0
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 25
+		mat_grm_name_chance = 25
+		mother_name_chance = 0
+
+		allow_looting = yes
+
+		modifier = default_culture_modifier
+	}
+}

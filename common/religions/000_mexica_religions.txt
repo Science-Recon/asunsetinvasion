@@ -74,4 +74,72 @@ mesoamerican_group = {
 		
 		#dislike_tribal_organization = yes
 	}
+	
+	#a dedicated High Priest (Villaq Umu), the most senior religious figure in the Inca world, who was aided by a team of young virgin priests, the acllas (also acyllyaconas)
+	incan = {
+		graphical_culture = mesoamericangfx
+		
+		#interface_skin = { pagan_interface pagan_group_interface }
+		
+		icon = 48 #Zun Icon for now.
+		heresy_icon = 50
+		color = { 0.8 0.9 0.0 }
+		
+		#pre_reformed = yes
+		ai_convert_other_group = 1 # convert if zealous
+		secondary_event_pictures = mesoamerican
+		
+		high_god_name = GOD_INTI
+		
+		god_names = {
+			GOD_INTI GOD_PACHAMAMA GOD_VIRACOCHA GOD_KON GOD_MAMA_QUILLA GOD_APU
+		}
+		evil_god_names = {
+			GOD_SUPAY
+		}
+		
+		unit_modifier = {
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY" #Temporary
+		}
+		
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+		
+		priests_can_marry = yes
+		peace_prestige_loss = no # Lose Prestige while at peace
+		raised_vassal_opinion_loss = yes
+		can_call_crusade = yes
+		join_crusade_if_bordering_hostile = yes
+		max_consorts = 3
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		allow_looting = yes
+		investiture = yes
+		can_have_antipopes = yes
+		can_grant_claim = yes
+		can_call_crusade = yes
+		
+		aggression = 0.5 # AI aggression factor
+		
+		religious_clothing_head = 3
+		religious_clothing_priest = 3
+	}
 }

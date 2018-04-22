@@ -1,5 +1,5 @@
 #CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
-mesoamerican;Mexihcatl;méso-américain;Mesoamerikanisch;;Mesoamericano;;;;;;;;;x
+mesoamerican;Cemanahuac;méso-américain;Mesoamerikanisch;;Mesoamericano;;;;;;;;;x
 nahuatl;Nahua;nahua;Nahua;;Nahua;;;;;;;;;x
 aztec;Aztec;aztèque;Aztekisch;;Aztec;;;;;;;;;x
 e_mexikha;Aztec Empire;Empire aztèque;Aztekenreich;;Aztec Empire;;;;;;;;;x
@@ -144,3 +144,13 @@ b_tenochtitlan_temple;Hueyi Teocalli;;;;;;;;;;;;;
 b_moyotlan;Moyotlan;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_offmap_decisions_enabled_trigger_war_tt;Is at peace with §Y[From.GetTitledFirstName]§!;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+northern_quechua;Kichwa;;;;;;;;;;;;;
+southern_quechua;Qhichwa;;;;;;;;;;;;;
+incas_name;Tawantinsuyu;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+musket_soldier;Illapaanku Infantry;;;;;;;;;;;;;
+musket_soldier_offensive;Illapaanku Infantry Offensive;;;;;;;;;;;;;
+musket_soldier_defensive;Illapaanku Infantry Defensive;;;;;;;;;;;;;
+musket_soldier_morale;Illapaanku Infantry Morale;;;;;;;;;;;;;
+musket_soldier_modifier;Combat Modifier boost to Illapaanku Infantry: $PERC$;;;;;;;;;;;;;

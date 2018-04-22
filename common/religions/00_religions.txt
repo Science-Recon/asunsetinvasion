@@ -1356,7 +1356,7 @@ pagan_group = {
 			THE_DARK_SPIRITS
 		}
 		
-		unit_modifier = {		
+		unit_modifier = {
 			garrison_size = 0.4
 			
 			key = "DEF_RELIGION"
