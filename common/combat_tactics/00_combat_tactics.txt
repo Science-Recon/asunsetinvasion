@@ -121,6 +121,7 @@ harass_tactic = {
 	camel_cavalry_offensive = 3
 	horse_archers_offensive = -1.5
 	archers_offensive = -1.5
+	musket_soldier_offensive = -1.0
 	light_cavalry_defensive = -0.4
 	camel_cavalry_defensive = -0.4
 	enemy = {
@@ -200,6 +201,7 @@ disorganised_harass_tactic = {
 	camel_cavalry_offensive = 1.0
 	horse_archers_offensive = -1.5
 	archers_offensive = -1.5
+	musket_soldier = -1.0
 	light_cavalry_defensive = -0.6
 	camel_cavalry_defensive = -0.6
 	enemy = {
@@ -276,6 +278,7 @@ volly_harass_tactic = {
 	light_cavalry_offensive = 1.0
 	camel_cavalry_offensive = 1.0
 	archers_offensive = 0.6
+	musket_soldier_offensive = 0.8
 	light_infantry_offensive = 0.8
 	horse_archers_offensive = -1.8
 	enemy = {
@@ -336,6 +339,7 @@ volley_tactic = {
 	camel_cavalry_offensive = -1.5
 	horse_archers_offensive = -1.5
 	archers_offensive = 2.0
+	musket_soldier_offensive = 2.0
 	enemy = {
 		group = harass
 		factor = 1
@@ -415,6 +419,7 @@ swarm_volley_tactic = {
 	camel_cavalry_offensive = -1.8
 	horse_archers_offensive =  0.6
 	archers_offensive = 1.2
+	musket_soldier_offensive = 1.2
 	enemy = {
 		group = harass
 		factor = 1
@@ -488,6 +493,7 @@ swarm_tactic = {
 	camel_cavalry_offensive = -1.5
 	horse_archers_offensive = 1.0	
 	archers_offensive = -1.5
+	musket_soldier = -1.0
 	enemy = {
 		group = volley
 		factor = 1
@@ -547,6 +553,7 @@ disorganised_swarm_tactic = {
 	horse_archers_offensive = 0.5
 	horse_archers_defensive = -1.0
 	archers_offensive = -1.5
+	musket_soldier_offensive = -1.0
 }
 
 harras_swarm_tactic = {
@@ -646,6 +653,7 @@ harras_swarm_tactic = {
 	camel_cavalry_offensive = 0.6
 	horse_archers_offensive = 1.2
 	archers_offensive = -1.8
+	musket_soldier_offensive = -2.0
 	enemy = {
 		group = volley
 		factor = 1
@@ -721,6 +729,7 @@ shieldwall_tactic = {
 	pikemen_defensive = 2.4
 
 	archers_offensive = 0.6
+	musket_soldier_offensive = 1.0
 
 	light_cavalry_defensive = -0.5
 	camel_cavalry_defensive = -0.5
@@ -768,6 +777,7 @@ fient_tactic = {
 	light_infantry_offensive = 1.0
 	light_infantry_defensive = 0.5
 	archers_offensive = 1.5
+	musket_soldier_offensive = 1.5
 	
 	heavy_infantry_offensive = -0.5
 	heavy_infantry_defensive = -0.5
@@ -1369,6 +1379,7 @@ barrage_tactic = {
 	}
 	
 	archers_offensive = 2.4
+	musket_soldier = 2.4
 	horse_archers_offensive = 2.4
 }
 
@@ -1587,6 +1598,7 @@ confused_orders_tactic = {
 	}
 
 	archers_offensive = -1.2
+	musket_soldier_offensive = -1.2
 	horse_archers_offensive = -1.2
 	
 	enemy = {
@@ -1679,6 +1691,8 @@ charging_own_skirmishers_tactic = {
 	
 	archers_offensive = -4.2
 	archers_defensive = -0.5
+	musket_soldier_offensive = -4.2
+	musket_soldier_defensive = -0.5
 	horse_archers_offensive = -1.2
 	horse_archers_defensive = -0.3
 }
@@ -1726,6 +1740,7 @@ inspired_defense_tactic = {
 	light_cavalry_defensive = 1.5
 	camel_cavalry_defensive = 1.5
 	archers_defensive = 1.5
+	musket_soldier_defensive = 1.5
 	horse_archers_defensive = 1.5
 	pikemen_defensive = 1.5
 	war_elephants_defensive = 1.5
@@ -1871,6 +1886,7 @@ clever_ambush_tactic = {
 	light_infantry_offensive = 1.2
 	horse_archers_offensive = 1.2
 	archers_offensive = 1.2
+	musket_soldier_offensive = 1.2
 	enemy = {
 		group = advance
 		factor = 3
@@ -1912,6 +1928,7 @@ religious_fervour_tactic = {
 	light_cavalry_offensive = 1.5
 	camel_cavalry_offensive = 1.5
 	archers_offensive = 1.5
+	musket_soldier_offensive = 1.5
 	horse_archers_offensive = 1.5
 	pikemen_offensive = 1.5
 	war_elephants_offensive = 1.5
@@ -1973,6 +1990,7 @@ retreat_and_ambush_tactic = {
 	horse_archers_offensive =  2.0
 	light_cavalry_offensive = 1.2
 	archers_offensive = 1.0
+	musket_soldier_offensive = 1.0
 }
 
 # Scandinavian
@@ -2082,6 +2100,7 @@ schiltron_formation_tactic = {
 	pikemen_defensive = 3.6
 
 	archers_offensive = 0.6
+	musket_soldier_offensive = 0.6
 	pikemen_offensive = 2.4
 
 	light_cavalry_defensive = -0.4
@@ -2209,6 +2228,74 @@ massive_longbow_volley_tactic = {
 	}
 
 	archers_offensive = 3.5
+	musket_soldier_offensive = 4
+	
+	enemy = {
+		group = harass
+		factor = 1
+	}
+	enemy = {
+		group = charge
+		factor = 1
+	}
+}
+
+massive_longbow_volley_tactic = {
+	days = 18
+	sprite = 6
+	group = volley
+
+	trigger = {
+		phase = skirmish  
+		archers = 0.01
+		flank_has_leader = yes
+		leader = {
+			OR = {
+				culture = english
+				culture = welsh
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = {
+				martial = 8
+			}
+			light_troops = { 
+				who = archers
+				value = 0.6
+			}
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = {
+				martial = 12
+			}
+			light_troops = { 
+				who = archers
+				value = 0.5
+			}
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = {
+				martial = 16
+			}
+			light_troops = { 
+				who = archers
+				value = 0.4
+			}
+		}
+	}
+
+	archers_offensive = 3.5
+	musket_soldier_offensive = 4
 	
 	enemy = {
 		group = harass
