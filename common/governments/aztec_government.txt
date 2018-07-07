@@ -4,30 +4,34 @@ feudal_governments = {
 		allowed_holdings = {
 			CASTLE
 			CITY
+			TRIBAL
 			FORT
 			HOSPITAL
 		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
+		accepts_liege_governments = { #
+			feudal_government
+			muslim_government
+			theocratic_feudal_government
 		}
-		accepts_liege_governments = { # Shouldn't have liege
-			#feudal_government
-			#muslim_government
-			#theocratic_feudal_government
+		forced_contract = {
+			tribal_government
+			republic_government
+			theocracy_government
 		}
 		free_revoke_on_tiers = {
 			duke
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
+			theocracy_government
 		}
 		frame_suffix = "_tribal"
 		title_prefix = "tribal_"
 		potential = {
-			tier = EMPEROR
+			#tier = EMPEROR
 			#primary_title = { has_title_flag = pretender_chinese_empire }
 			OR = {
 				culture_group = mesoamerican
+				religion = aztec
 				has_character_flag = aztec_government_preserve #keeps government when player is given culture change opton
 			}
 			is_patrician = no
@@ -45,12 +49,13 @@ feudal_governments = {
 		capital_move_delay = 200
 		
 		#can_usurp_kingdoms_and_empires = no
-		can_create_empires = no
+		#can_create_empires = no
 		#can_demand_religious_conversion = no
 		#gets_religion_opinion_penalties = no
 		#gives_religion_opinion_penalties = no
 		vassal_government_opinion_penalties = no
 		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		free_levies_in_offensive_war = yes
 		free_retract_vassalage = yes
 		
 		vassal_limit = 10

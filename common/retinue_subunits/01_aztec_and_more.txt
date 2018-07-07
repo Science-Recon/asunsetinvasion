@@ -1,0 +1,24 @@
+RETTYPE_CUL_MUSKETS =
+{
+	first_type = 6 #Muskets
+	first_amount = 120
+	
+	second_type = 1 #Heavy Inf
+	second_amount = 140
+
+	special_troops = musket_soldier
+
+	potential = {
+		is_nomadic = no
+		OR = {
+			culture = nahuatl
+			culture = northern_quechua
+			culture = southern_quechua
+		}
+	}
+	
+	modifier = {
+		heavy_infantry_defensive = 0.1
+		heavy_infantry_offensive = 0.1
+	}
+}

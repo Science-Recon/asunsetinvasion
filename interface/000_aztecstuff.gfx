@@ -53,7 +53,17 @@ spriteTypes = {
 		clicksound = generic_click_04
 	}
 	
+	spriteType = {
+		name = "GFX_unitpanel_specialtroops_smallstrip"
+		texturefile = "gfx\\interface\\unitpanel_specialunits_smallstrip.dds"
+		noOfFrames = 7
+	}
 	
+	spriteType = {
+		name = "GFX_unitpanel_specialtroops_bigstrip"
+		texturefile = "gfx\\interface\\unitpanel_specialunits_bigstrip.dds"
+		noOfFrames = 7
+	}
 	
 	
 }

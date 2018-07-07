@@ -1,3 +1,57 @@
+spawn_aztec_reinforcement_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_global_flag = aztecs_acclimitised_to_horses
+				has_global_flag = aztecs_employing_gunpowder
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = aztec_troop_number
+					value = 1
+				}
+			}
+			
+			capital_scope = {
+				create_random_soldier = {
+					random_traits = yes
+					dynasty = random
+					religion = aztec
+					culture = nahuatl
+					female = no
+					age = 30
+					attributes = {
+						martial = 12
+					}
+					trait = brilliant_strategist
+				}
+				new_character = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						troops =
+						{
+							heavy_infantry = { 2200 2200 }
+							light_infantry = { 1800 1800 }
+							archers = { 1500 1500 }
+						}
+						disband_on_peace = yes
+					}
+				}
+			}
+			
+			change_variable = {	
+				which = aztec_troop_number
+				value = -1
+			}
+		}
+	}
+}
+
+
+
 give_good_aztec_artifact_effect = {
 	custom_tooltip = { text = add_very_good_aztec_artifacts_tt }
 	hidden_tooltip = {
@@ -59,50 +113,3 @@ give_good_aztec_artifact_effect = {
 }
 
 
-spawn_aztec_reinforcement_effect = {
-	if = {
-		limit = {
-			NOR = {
-				has_global_flag = aztecs_acclimitised_to_horses
-				has_global_flag = aztecs_employing_gunpowder
-			}
-		}
-		while = {
-			limit = {
-				check_variable = {
-					which = aztec_troop_number
-					value = 1
-				}
-			}
-			change_variable = {	
-				which = aztec_troop_number
-				value = -1
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 30
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					troops =
-					{
-						heavy_infantry = { 2200 2200 }
-						light_infantry = { 1800 1800 }
-						archers = { 1500 1500 }
-					}
-					disband_on_peace = yes
-				}
-			}
-		}
-	}
-}

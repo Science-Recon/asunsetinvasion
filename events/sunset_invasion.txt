@@ -2699,9 +2699,9 @@ province_event = {
 							home = FROM
 							troops =
 							{
-								heavy_infantry = { 2800 2800 }
-								light_infantry = { 1400 1300 }
-								archers = { 1400 1300 }
+								heavy_infantry = { 4800 4800 }
+								light_infantry = { 2400 1300 }
+								archers = { 2400 1300 }
 							}
 						}
 					}

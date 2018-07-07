@@ -17,7 +17,7 @@ character_event = {
 			NOT = { trait = zealous }
 		}
 		ai_chance = {
-			factor = 10
+			factor = 0.5
 			modifier = {
 				factor = 5
 				trait = gregarious
@@ -26,11 +26,33 @@ character_event = {
 				factor = 5
 				trait = trusting
 			}
+			# modifier = {
+				# factor = 5
+				# liege = {
+					# reverse_opinion = { who = ROOT value = 0 }
+				# }
+			# }
 			modifier = {
 				factor = 0
 				trait = zealous
 			}
-		}	
+			modifier = {
+				factor = 0.5
+				NOT = {
+					liege = {
+						reverse_opinion = { who = ROOT value = 0 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					liege = {
+						reverse_opinion = { who = ROOT value = -50 }
+					}
+				}
+			}
+		}
 		if = {
 			limit = {  NOT = { religion_group = mesoamerican_group } }
 			if = {

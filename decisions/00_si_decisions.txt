@@ -100,7 +100,8 @@ decisions = {
 		only_independent = yes
 		potential = {
 			#ai = yes
-			war = yes
+			ai = no # Debug
+			#war = yes
 			offmap_aztecs = {
 				governor = {
 					character = ROOT
@@ -128,35 +129,33 @@ decisions = {
 				}
 			}
 			# Only if Aztec Empire is losing a war by 50 war score.
-			any_war = {
-				OR = {
-					AND = {
-						attacker = {
-							character = ROOT
-						}
-						NOT = { war_score = -49 }
-					}
-					AND = {
-						defender = {
-							character = ROOT
-						}
-						war_score = 50
-					}
-				}
-			}
+			# any_war = {
+				# OR = {
+					# AND = {
+						# attacker = {
+							# character = ROOT
+						# }
+						# NOT = { war_score = -49 }
+					# }
+					# AND = {
+						# defender = {
+							# character = ROOT
+						# }
+						# war_score = 50
+					# }
+				# }
+			# }
 		}
 		allow = {
 		}
 		effect = {
 			set_variable = {
 				which = aztec_troop_number
-				value = 2 # 10k Troops, 5.5k per val.
+				value = 4 # 20k Troops, 5.5k per val.
 			}
-			capital_scope = {
-				spawn_aztec_reinforcement_effect = yes
-			}
+			spawn_aztec_reinforcement_effect = yes
 			offmap_aztecs = {
-				set_offmap_flag = aztecs_sent_war_reinforcements
+				#set_offmap_flag = aztecs_sent_war_reinforcements
 			}
 		}
 	}
@@ -352,8 +351,489 @@ offmap_decisions = {
 			#modifier = {
 			#	factor = 0.01 # slow down
 			#}
-			#modifier = { realm_levy_diff = { who = FROM value = 2000 } factor = 1.5 }
-			#modifier = { realm_levy_diff = { who = FROM value = 5000 } factor = 3 }
+			modifier = { realm_levy_diff = { who = FROM value = 2000 } factor = 1.5 }
+			modifier = { realm_levy_diff = { who = FROM value = 5000 } factor = 3 }
+		}
+	}
+
+
+	aztec_respect_offer_gladiator = { #Sent to tenochtitlan to participate in gladiatorial combat. Will upset family. Will get more resepct for better mil stats (better spectacle.) Might implement events for how well they do, with maybe a big bonus to respect and prestige and maybe getting rid of the opinion malus. They won't come back though, because sending people offmap really just kills them and we can't reanimate the dead yet.
+		only_playable = yes
+		button_name = offmap_gifts
+		
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		third_party = FROM
+		ai_check_interval = 36
+		show_third_party_potential = yes
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+		}
+	
+		from_potential = {
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = no
+				custom_tooltip = {
+					text = aztec_tribute_send_gladiator_cooldown_tt
+					NOT = { has_character_modifier = aztec_respect_send_gladiator_timer }
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			# china_offmap_decisions_enabled_trigger = yes #leave in please, to be used if the tooltip for china_offmap_tribute_decisions_enabled_trigger changes and we need to reference things uniquely again
+			aztec_offmap_tribute_decisions_enabled_trigger = yes
+		}
+		
+		third_party_potential = {
+			show_only_failed_conditions = yes
+			FROMFROM = {
+				show_scope_change = no
+				custom_tooltip = {
+					text = is_landless_male_tt
+					NOT = { is_landed = yes }
+					NOT = { is_ruler = yes }
+					NOT = { is_female = yes }
+					NOT = { is_patrician = yes }
+				}
+				custom_tooltip = {
+					text = adult_or_close_relative_of_12_years_tt
+					OR = {
+						is_adult = yes
+						AND = {
+							is_close_relative = ROOT_FROM
+							age = 12
+						}
+					}
+				}
+				
+				NOT = { is_heir = yes }
+
+				custom_tooltip = { #can't be from Aztecs
+					text = is_not_from_china_tt
+					#NOT = {	has_character_flag = eunuch_gift }
+					courtier_from_aztecs_trigger = no
+				}
+				custom_tooltip = {
+					text = is_not_incapable_inbred_or_imbecile_tt
+					NOT = { trait = incapable }
+					NOT = { trait = inbred }
+					NOT = { trait = imbecile }
+				}
+				custom_tooltip = {
+					text = is_not_maimed_or_infirm_tt
+					NOT = { trait = maimed }
+					NOT = { trait = infirm }
+				}
+				custom_tooltip = {
+					text = is_not_wounded_severely_injured_tt
+					NOT = { trait = wounded }
+					NOT = { trait = severely_injured }
+				}
+				custom_tooltip = {
+					text = is_not_one_eyed_handed_legged_disfigured_or_mangled_tt
+					NOT = { trait = one_eyed }
+					NOT = { trait = one_handed }
+					NOT = { trait = one_legged }
+					NOT = { trait = disfigured }
+					NOT = { trait = mangled }
+				}
+				NOT = { prisoner = yes }
+
+				custom_tooltip = {
+					text = aztec_tribute_send_gladiator_stats_tt #High martial or good martial education
+					OR = {
+						martial = 20
+						trait = skilled_tactician
+						trait = brilliant_strategist
+					}
+				}
+			}
+		}
+		
+		third_party_allow = {
+			show_only_failed_conditions = yes
+			FROMFROM = {
+				is_ill = no
+				is_inaccessible_trigger = no
+			}
+		}
+		
+		third_party_score = {
+			factor = 100
+			
+			additive_modifier = {
+				value = 20
+				FROMFROM = { 
+					show_scope_change = no
+					martial = 8					
+					hidden_trigger = {
+						NOT = { martial = 12 }
+					}
+				}
+			}
+			additive_modifier = {
+				value = 40
+				FROMFROM = { 
+					show_scope_change = no
+					martial = 12					
+					hidden_trigger = {
+						NOT = { martial = 16 }
+					}
+				}
+			}
+			additive_modifier = {
+				value = 75
+				FROMFROM = { 
+					show_scope_change = no
+					martial = 16				
+					hidden_trigger = {
+						NOT = { martial = 20 }
+					}
+				}
+			}
+			additive_modifier = {
+				value = 120
+				FROMFROM = { 
+					show_scope_change = no
+					martial = 20
+				}
+			}
+			additive_modifier = {
+				value = 20
+				FROMFROM = { 
+					show_scope_change = no
+					trait = quick
+				}
+			}
+			additive_modifier = {
+				value = 40
+				FROMFROM = { 
+					show_scope_change = no
+					trait = strong
+				}
+			}
+			additive_modifier = {
+				value = 20
+				FROMFROM = {
+					show_scope_change = no
+					trait = robust
+				}
+			}
+			additive_modifier = {
+				value = 40
+				FROMFROM = { 
+					show_scope_change = no
+					trait = strategist
+				}
+			}
+			additive_modifier = {
+				value = 25
+				trait = skilled_tactician
+			}
+			additive_modifier = {
+				value = 50
+				trait = brilliant_strategist
+			}
+			additive_modifier = {
+				value = -100
+				trait = craven
+			}
+			additive_modifier = {
+				value = 100
+				trait = brave
+			}
+			additive_modifier = {
+				value = -10
+				trait = shy
+			}
+			additive_modifier = {
+				value = -10
+				trait = shy
+			}
+			additive_modifier = {
+				value = 10
+				trait = cruel
+			}
+			additive_modifier = {
+				value = 10
+				trait = impaler
+			}
+			additive_modifier = {
+				value = 30
+				trait = inspiring_leader
+			}
+			additive_modifier = {
+				value = 100
+				trait = trickster
+			}
+			additive_modifier = {
+				value = 30
+				trait = aggressive_leader
+			}
+			modifier = {
+				factor = 2.0
+				OR = {
+					offmap_aztecs = {
+						show_scope_change = no 
+						offmap_has_like = likes_gladiators
+					}
+				}
+			}
+			modifier = {
+				factor = 2.0
+				FROMFROM = {
+					show_scope_change = no 
+					liked_by_offmap = {
+			            type = offmap_aztecs
+			        }
+				}
+			}
+			modifier = {
+				factor = 0.5
+				offmap_aztecs = {
+					show_scope_change = no 
+					offmap_has_dislike = likes_gladiators
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROMFROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+				        type = offmap_aztecs
+				    }
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { 
+					show_scope_change = no
+					liked_by_offmap = {
+						type = offmap_aztecs
+					}
+				}
+			}
+			modifier = {
+				factor = 0.66
+				FROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+						type = offmap_aztecs
+					}
+				}
+			}
+		}
+	
+		effect = {
+			save_event_target_as = target_governor
+			FROM = {
+				sound_effect = aztec_respect_gain
+				save_event_target_as = target_tribute_sender
+			}
+			FROMFROM = {
+				save_event_target_as = person_sent_as_tribute
+			}
+			#if = {
+			#	limit = {
+			#		FROMFROM = { disliked_by_offmap = offmap_aztecs }
+			#	}
+			#	custom_tooltip = { text = notification_china_dislike_tt }
+			#}
+			#if = {
+			#	limit = {
+			#		NOT = { FROMFROM = { disliked_by_offmap = offmap_aztecs } }
+			#		FROMFROM = { liked_by_offmap = offmap_aztecs }
+			#	}
+			#	custom_tooltip = { text = notification_china_like_tt }
+			#}
+			FROM = {
+				show_scope_change = no
+				add_offmap_currency = {
+					offmap = offmap_aztecs
+					value = local_third_party_score
+				}
+			}
+			
+			# Like/Dislike effect description
+			#################################
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+					NOR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+				}
+				e_aztec_colony = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_tt }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+					NOR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+				}
+				e_china_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = dislikes_tt }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_aztecs
+								context = gladiator
+							}
+						}
+					}
+				}
+				e_china_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_but_dislikes_tt }
+					}
+				}
+			}
+			#################################
+			
+			FROMFROM = {
+				show_scope_change = no
+				#hidden_effect = { #May add an 'Aztec Gladiator' trait.
+				#	if = {
+				#		limit = {
+				#			NOT = {
+				#				trait = eunuch
+				#			}
+				#		}
+				#		add_trait = eunuch
+				#	}
+				#}
+				leave_court_for_aztecs_effect = yes
+			}
+			hidden_effect = {
+				FROM = {
+					add_character_modifier = {
+						modifier = aztec_respect_send_gladiator_timer
+						hidden = yes
+						years = 20
+					}
+					if = {
+						limit = { local_third_party_score_low_trigger = yes }
+						set_character_flag = sent_bad_tribute
+					}
+					if = {
+						limit = { local_third_party_score_medium_trigger = yes }
+						set_character_flag = sent_decent_tribute
+					}
+					if = {
+						limit = { local_third_party_score_great_trigger = yes }
+						set_character_flag = sent_great_tribute
+					}
+					set_character_flag = sent_eunuch_tribute
+					letter_event = { id = JD.10050 days = 5 random = 2 } #TODO: Write own event
+				}
+			}
+		}
+	
+		revoke_allowed = {
+			always = no
+		}
+	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.3 # slow down
+			}
 		}
 	}
 }
@@ -361,113 +841,219 @@ offmap_decisions = {
 
 targeted_decisions = {
 	
-	aztec_proclaim_amocuallitlacatl = { # Made up name for heretic: lit. "evil person"
+	aztec_declare_amocuallitlacatl = { # Made up name for heretic: lit. "evil person"
 		only_playable = yes
-		#filter = close_relatives
-		#ai_target_filter = close_relatives
-		
-		only_rulers = yes
-		
 		from_potential = {
-			#ai = no
-			is_playable = yes
-			controls_religion = aztec
 			religion = aztec
-			is_adult = yes
-			
-			#has_children = yes
-			#has_polygamy = no
+			controls_religion = yes
 		}
 		
 		potential = {
-			NOT = { trait = amocuallitlacatl }
 			religion = aztec
+			controls_religion = no
+			
 		}
+		
 		allow = {
+			#wealth = 50
+			NOT = { trait = amocuallitlacatl }
 			FROM = {
-				NOT = { opinion = { who = ROOT value = 0 } } # Must have negative opinion of person.
+				prestige = 500
+				piety = 600
 			}
-		}
-		effect = {
-			add_trait = amocuallitlacatl
-			piety = -500
-			opinion = {
-				modifier = sunset_declared_me_amocuallitlacatl
-				who = FROM
+			NOT = { 
+				AND = {
+					FROM = {
+						ai = no
+					}
+					piety = 750 
+				}
 			}
 		}
 		
-		revoke_allowed = {
-			always = no
+		effect = {
+			ROOT = {
+				add_trait = amocuallitlacatl
+				piety = -500
+				opinion = { modifier = sunset_declared_me_amocuallitlacatl who = ROOT }
+			}
+			FROM = {
+				prestige = -500
+			}
 		}
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 0
 				NOT = {
-					AND = {
-						FROM = {
-							has_trait = zealous
-						}
-						ROOT = {
-							OR = {
-								has_trait = cynical
-								has_trait = craven
-								has_trait = slothful
-								has_trait = homosexual
-								reverse_opinion = { 
-									who = FROM 
-									value = -75
-								}
+					ROOT = {
+						OR = { #Bad traits or upset the tlatoani
+							has_trait = cynical
+							has_trait = craven
+							has_trait = slothful
+							reverse_opinion = {
+								who = FROM 
+								value = -75
 							}
 						}
 					}
 				}
 			}
+			modifier = {
+				factor = 0.5
+				ROOT = {
+					piety = 500
+				}
+			}
+			modifier = {
+				factor = 0.5
+				ROOT = {
+					piety = 1000
+				}
+			}
+			modifier = {
+				factor = 0.1
+				ROOT = {
+					piety = 1500
+				}
+			}
+			modifier = {
+				factor = 0.5
+				ROOT = {
+					has_offmap_currency = { offmap = offmap_aztecs value > 300 }
+				}
+			}
 		}
 	}
 	
-	aztec_lift_amocuallitlacatl = { # Undo it
+	aztec_lift_amocuallitlacatl = { # Made up name for heretic: lit. "evil person"
 		only_playable = yes
-		#filter = close_relatives
-		#ai_target_filter = close_relatives
-		
-		only_rulers = yes
-		
 		from_potential = {
-			#ai = no
-			is_playable = yes
-			controls_religion = aztec
 			religion = aztec
-			is_adult = yes
-			
-			#has_children = yes
-			#has_polygamy = no
+			controls_religion = yes
 		}
 		
 		potential = {
-			trait = amocuallitlacatl
 			religion = aztec
+			controls_religion = no
+			trait = amocuallitlacatl
 		}
+		
 		allow = {
+			#wealth = 50
+			trait = amocuallitlacatl
 			FROM = {
-				opinion = { who = ROOT value = 50 } # Must have good opinion of person.
+				prestige = 1000
+				piety = 1100
 			}
+			NOT = { piety = 750 }
 		}
+		
 		effect = {
-			remove_trait = amocuallitlacatl
-			piety = 500
-			remove_opinion = {
-				modifier = sunset_declared_me_amocuallitlacatl
-				who = FROM
+			ROOT = {
+				remove_trait = amocuallitlacatl
+				piety = 250
+				remove_opinion = { modifier = sunset_declared_me_amocuallitlacatl who = ROOT }
+			}
+			FROM = {
+				prestige = -1000
+				piety = -1000
 			}
 		}
 		
-		revoke_allowed = {
-			always = no
-		}
 		ai_will_do = {
-			factor = 0 # Don't do for now
+			factor = 0.1
+			modifier = {
+				factor = 0
+				ROOT = {
+					OR = { #Bad traits or upset the tlatoani
+						has_trait = cynical
+						has_trait = craven
+						has_trait = slothful
+						reverse_opinion = {
+							who = FROM 
+							value = -75
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = {
+					piety = 500
+				}
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = {
+					piety = 1000
+				}
+			}
+			modifier = {
+				factor = 2
+				ROOT = {
+					piety = 1500
+				}
+			}
+			modifier = {
+				factor = 1.25
+				ROOT = {
+					has_offmap_currency = { offmap = offmap_aztecs value > 300 }
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	# aztec_request_amocuallitlacatl = { # Made up name for heretic: lit. "evil person"
+		# only_playable = yes
+		# filter = rel_head
+		# third_party_filter = independent_rulers
+		# #filter = close_relatives
+		# #ai_target_filter = close_relatives
+		
+		# only_rulers = yes
+		
+		# from_potential = {
+			# #ai = no
+			# is_playable = yes
+			# #controls_religion = aztec
+			# religion = aztec
+			# is_adult = yes
+			
+			# #has_children = yes
+			# #has_polygamy = no
+		# }
+		
+		# third_party_potential = {
+			# NOT = { trait = amocuallitlacatl }
+			# religion = aztec
+		# }
+		
+		# allow = {
+			# FROMFROM = {
+				# NOT = { opinion = { who = ROOT value = 0 } } # Must have negative opinion of person.
+			# }
+		# }
+		# effect = {
+			# FROMFROM = {
+				# add_trait = amocuallitlacatl
+				# piety = -500
+				# opinion = {
+					# modifier = sunset_declared_me_amocuallitlacatl
+					# who = ROOT
+				# }
+			# }
+		# }
+		
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1
 			# modifier = {
 				# factor = 0
 				# NOT = {
@@ -475,13 +1061,13 @@ targeted_decisions = {
 						# FROM = {
 							# has_trait = zealous
 						# }
-						# ROOT = {
+						# FROMFROM = {
 							# OR = {
 								# has_trait = cynical
 								# has_trait = craven
 								# has_trait = slothful
 								# has_trait = homosexual
-								# reverse_opinion = { 
+								# reverse_opinion = {
 									# who = FROM 
 									# value = -75
 								# }
@@ -490,6 +1076,72 @@ targeted_decisions = {
 					# }
 				# }
 			# }
-		}
-	}
+		# }
+	# }
+	
+	# aztec_lift_amocuallitlacatl = { # Undo it
+		# only_playable = yes
+		# #filter = close_relatives
+		# #ai_target_filter = close_relatives
+		
+		# only_rulers = yes
+		
+		# from_potential = {
+			# #ai = no
+			# is_playable = yes
+			# controls_religion = aztec
+			# religion = aztec
+			# is_adult = yes
+			
+			# #has_children = yes
+			# #has_polygamy = no
+		# }
+		
+		# potential = {
+			# trait = amocuallitlacatl
+			# religion = aztec
+		# }
+		# allow = {
+			# FROM = {
+				# opinion = { who = ROOT value = 50 } # Must have good opinion of person.
+			# }
+		# }
+		# effect = {
+			# remove_trait = amocuallitlacatl
+			# piety = 500
+			# remove_opinion = {
+				# modifier = sunset_declared_me_amocuallitlacatl
+				# who = FROM
+			# }
+		# }
+		
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 0 # Don't do for now
+			# # modifier = {
+				# # factor = 0
+				# # NOT = {
+					# # AND = {
+						# # FROM = {
+							# # has_trait = zealous
+						# # }
+						# # ROOT = {
+							# # OR = {
+								# # has_trait = cynical
+								# # has_trait = craven
+								# # has_trait = slothful
+								# # has_trait = homosexual
+								# # reverse_opinion = { 
+									# # who = FROM 
+									# # value = -75
+								# # }
+							# # }
+						# # }
+					# # }
+				# # }
+			# # }
+		# }
+	# }
 }
