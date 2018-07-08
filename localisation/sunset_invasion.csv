@@ -89,6 +89,17 @@ syphilis;Syphilis;Syphilis;Syphilis;;Sífilis;;;;;;;;;x
 has_aztec_disease;Syphilitic;Syphilitique;Syphilitisch;;Sifilítico;;;;;;;;;x
 has_aztec_disease_desc;This character suffers from Syphilis, a virulent strain of Great Pox brought from across the sea by the Aztec conquerors.;Ce personnage souffre de la syphilis, une souche virulente de la grande vérole amenée par la mer par l'envahisseur aztèque.;Dieser Charakter leidet an Syphilis, einer ansteckenden Krankheit, die von den aztekischen Eroberern eingeschleppt wurde.;;Este personaje sufre de Sífilis, una virulenta variante de la Peste traida de allende los mares por los conquistadores Aztecas.;;;;;;;;;x
 AZTEC_DISEASE_INFO;This county has suffered an outbreak of Syphilis, a virulent strain of Great Pox brought here by the Aztecs.;Ce comté a souffert d'une épidémie de syphilis, une souche virulente de la grande vérole amenée par la mer par l'envahisseur aztèque.;Dieses Land leidet unter einem Ausbruch von Syphilis, einer ansteckenden Krankheit, die von den Azteken eingeschleppt wurde.;;Este condado sufre un brote de Sífilis, una virulenta variante de la Peste traida de allende los mares por los conquistadores Aztecas.;;;;;;;;;x
+GetAztecGovernorLetterGreeting_string;The [From.GetTitle] of the [From.Offmap.Ruler.GetAztecComplimentAdjective] [From.Offmap.Ruler.GetTitledName] addresses a letter to the [Root.GetAztecComplimentAdjective] [Root.GetTitle] of the [Root.PrimaryTitle.GetFullName];;;;;;;;;;;;;
+String_strength_and_unity;May your realm be bestowed strength and unity;;;;;;;;;;;;;
+String_power_and_victory;May your armies be strong and victorious;;;;;;;;;;;;;
+String_prospering_lands;May your lands forever prosper;;;;;;;;;;;;;
+String_divine_strength;May the gods give you strength;;;;;;;;;;;;;
+String_favour_of_the_gods;May the gods look favourably upon you;;;;;;;;;;;;;
+String_good_health;May good health be with you;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+EVTDESC_SSI_300402;[Root.GetAztecGovernorLetterGreeting]. [Root.GetAztecLetterBlessing].\n\nThe Great [From.Offmap.Ruler.GetShortAztecEmperorName] wishes to build a hospital in the county of [hospital_county.GetName]. A group of fine Mexicha architects, healers and builders will be sent to the county upon the word of [hospital_county_owner.GetTitledName].;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ###Additions###;;;;;;;;;;;;;;
 e_aztec_colony;Yancuic Tenochtitlan;Yancuic Tenochtitlan;Yancuic Tenochtitlan;;;;;;;;;;;
@@ -100,18 +111,26 @@ AZTEC_COLONY_MALE;Cuauhtlatoani;;;;;;;;;;;;;
 AZTEC_COLONY_FEMALE;Cihuatlcuauhtlatoani;;;;;;;;;;;;;
 altepetl_government;Altepetl;;;;;;;;;;;;;
 altepetl_government_desc;The system of government used by the Mexica. The word 'Altepetl' comes from the Nahuatl words 'atl' meaning 'water' and 'tepetl' meaning 'hill', as these are two things they saw as essential for life. The system somewhat resembles the fuedal system of Europe, having a nobility and having delegation of land amongs them, however the liege has more power over his vassals and is allowed to own different holding types directly.;;;;;;;;;;;;;
-RULE_AZTEC_INTERACTIONS;§BSunset Invasion:§! Chinese Interactions;;;;;;;;;;;;;
+tlacohtletlacatiyan_government;Tlacohtletlacatiyan;;;;;;;;;;;;;
+tlacohtletlacatiyan_government_desc;The Aztec colony, known to them as a 'Tlacohtletlacatiyan', or slave-country, was ruled by a govenor that was usually an accomplished warrior and/or ruler from Tenochtitlan, given the title as a reward for great service. The ruler has broad authority but tend to be somewhat more tolerant of others than a typical Aztec ruler. Rulers will tend to have high martial and stewardship.;;;;;;;;;;;;;
+RULE_AZTEC_INTERACTIONS;§BSunset Invasion:§! Aztec Interactions;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_invaders;Invader;;;;;;;;;;;;;
-aztec_invaders_desc;The Emperor seeks to invade and exploit Europe and its realms. The Aztec Empire may agressively seek new subjects and land for its colonies.;;;;;;;;;;;;;
+aztec_invaders_desc;The Huehuetlatoani seeks to invade and exploit Europe and its realms. The Aztec Empire may agressively seek new subjects and land for its colonies.;;;;;;;;;;;;;
 aztec_traders;Trader;;;;;;;;;;;;;
-aztec_traders_desc;The Emperor seeks to enrich the Empire by means of fair trade and exchange. The Emperor is open to aquiring new subjects and allies.;;;;;;;;;;;;;
+aztec_traders_desc;The Huehuetlatoani seeks to enrich the Empire by means of fair trade and exchange. The Huehuetlatoani is open to aquiring new subjects and allies.;;;;;;;;;;;;;
 aztec_explorers;Explorer;;;;;;;;;;;;;
-aztec_explorers_desc;The Emperor seeks to advance the frontiers of knowledge and learning. Will invest in infrastructre projects at home and in Europe, developing libraries and hospitals. Also keen to make alliances and share knowledge.;;;;;;;;;;;;;
+aztec_explorers_desc;The Huehuetlatoani seeks to advance the frontiers of knowledge and learning. Will invest in infrastructre projects at home and in Europe, developing libraries and hospitals. Also keen to make alliances and share knowledge.;;;;;;;;;;;;;
 aztec_isolationist;Isolationist;;;;;;;;;;;;;
-aztec_isolationist_desc;The Emperor cares little for the bickering of natives and is content to hear about it from afar. All actions to gain the Emperor's Respect or request boons are invalid. New subject states will likely not be accepted.;;;;;;;;;;;;;
+aztec_isolationist_desc;The Huehuetlatoani cares little for the bickering of natives and is content to hear about it from afar. All actions to gain the Huehuetlatoani's Respect or request boons are invalid. New subject states will likely not be accepted.;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
-aztec_stable;Stable;;;;;;;;;;;;;
+DEATH_WENT_TO_AZTECS_NO_KILLER;left their old life behind to travel to the Aztec Empire;a abandonné son ancienne vie pour se rendre en Chine;ließ das alte Leben zurück und reiste ins Kaiserreich China;;dejó su vida atrás para viajar al Imperio chino;;;;;;;;;x
+DEATH_WENT_TO_AZTECS;left their old life behind to travel to the Aztec Empire, on the order of $KILLER$;a abandonné son ancienne vie pour se rendre en Chine, sur ordre de $KILLER$;ließ das alte Leben zurück und reiste ins Kaiserreich China auf Befehl von $KILLER$;;dejó su vida atrás para viajar al Imperio chino por orden de $KILLER$;;;;;;;;;x
+will_leave_for_aztecs_tt;§Y[This.GetTitledName]§! will leave [This.GetHerHis] current life behind and make a new one for [This.GetHerselfHimself] in the distant West.\n;[This.Get_Le_Title]§Y[This.GetTitledName]§! quittera sa vie actuelle pour en fonder une nouvelle dans l'Orient lointain.\n;§Y[This.GetTitledName]§! lässt [This.GetHerHis] momentanes Leben zurück und macht einen Neuanfang im entfernten Osten.\n;;§Y[This.GetTitledName]§! deja atrás su vida actual para buscarse una nueva en el lejano Oriente.\n;;;;;;;;;x
+;;;;;;;;;;;;;;
+DEATH_WENT_BACK_TO_AZTECS;was sent home to Tenochtitlan by $KILLER$;a été renvoyé[GetNoneE] en Chine par $KILLER$;wurde durch $KILLER$ zurück nach China geschickt;;$KILLER$ lo envió de vuelta a China;;;;;;;;x;
+DEATH_WENT_BACK_TO_AZTECS_NO_KILLER;returned home to Tenochtitlan;est retourné[GetNoneE] en Chine;kehrte nach China zurück;;regresó a China.;;;;;;;;x;
+;;;;;;;;;;;;;;
 aztec_unrest;Unrest;;;;;;;;;;;;;
 aztec_civil_war;Civil War;;;;;;;;;;;;;
 aztec_mayan_invasion;Mayan Invasion;;;;;;;;;;;;;
@@ -126,6 +145,7 @@ _effect_desc;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 sunset_sold_us_provinces;Sold Us a Province;;;;;;;;;;;;;
 sunset_refused_sold_us_provinces;Refused to Sell Us a Province;;;;;;;;;;;;;
+sunset_has_given_province_to_aztecs;Sold our land to the Aztecs;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_will_be_angry_no_gib_clay;The Aztecs will see this as a grave insult and will likely attack us to take our land.;;;;;;;;;;;;;
@@ -143,6 +163,7 @@ b_cholula;Cholula;;;;;;;;;;;;;
 b_tenochtitlan_temple;Hueyi Teocalli;;;;;;;;;;;;;
 b_moyotlan;Moyotlan;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
+si_selling_province_will_upset_court_and_vassals_tt;Selling a province to the aztecs will significantly upset your courtiers and vassals.;;;;;;;;;;;;;
 aztec_offmap_decisions_enabled_trigger_war_tt;Is at peace with §Y[From.GetTitledFirstName]§!;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 northern_quechua;Kichwa;;;;;;;;;;;;;
@@ -164,6 +185,8 @@ aztec_declare_amocuallitlacatl_named;Declare Amocuallitlacatl;;;;;;;;;;;;;
 aztec_declare_amocuallitlacatl_desc;Declare [Root.GetTitledFirstName] as an 'amocuallitlacatl': a stain on our church. [Root.GetSheHe] will be shunned by members of the church. This will cost you prestige and will upset [Root.GetTitledFirstName]. ;;;;;;;;;;;;;
 aztec_lift_amocuallitlacatl_named;Lift Amocuallitlacatl Status;;;;;;;;;;;;;
 aztec_lift_amocuallitlacatl_desc;Renounce the decision to declare [Root.GetTitledFirstName] as an 'amocuallitlacatl'. [Root.GetSheHe] will no longer be upset at you for the declaration but you will lose some prestige and piety.;;;;;;;;;;;;;
+sunset_declared_me_amocuallitlacatl;Declared me an Amocuallitlacatl;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 TRIBUTARY_AZTEC_NAME;Tequitlmacani State;;;;;;;;;;;;;
 TRIBUTARY_AZTEC_PLURAL;Tequitlmacani States;;;;;;;;;;;;;

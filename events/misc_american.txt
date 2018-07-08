@@ -86,7 +86,9 @@ character_event = {
 			}
 		}
 		religion = aztec
-		capital_scope = aztec		
+		capital_scope = {
+			religion = aztec
+		}		
 	}
 	
 	option = {

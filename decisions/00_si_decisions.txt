@@ -409,24 +409,13 @@ offmap_decisions = {
 					NOT = { is_female = yes }
 					NOT = { is_patrician = yes }
 				}
-				custom_tooltip = {
-					text = adult_or_close_relative_of_12_years_tt
-					OR = {
-						is_adult = yes
-						AND = {
-							is_close_relative = ROOT_FROM
-							age = 12
-						}
-					}
-				}
-				
+				is_adult = yes				
 				NOT = { is_heir = yes }
-
-				custom_tooltip = { #can't be from Aztecs
-					text = is_not_from_china_tt
-					#NOT = {	has_character_flag = eunuch_gift }
-					courtier_from_aztecs_trigger = no
-				}
+				#custom_tooltip = { #can't be from Aztecs - TODO: Fix
+				#	text = is_not_from_china_tt
+				#	#NOT = {	has_character_flag = eunuch_gift }
+				#	courtier_from_aztecs_trigger = no
+				#}
 				custom_tooltip = {
 					text = is_not_incapable_inbred_or_imbecile_tt
 					NOT = { trait = incapable }
@@ -454,9 +443,10 @@ offmap_decisions = {
 				NOT = { prisoner = yes }
 
 				custom_tooltip = {
-					text = aztec_tribute_send_gladiator_stats_tt #High martial or good martial education
+					text = aztec_tribute_send_gladiator_stats_tt #High martial or decent martial education
 					OR = {
 						martial = 20
+						trait = tough_soldier
 						trait = skilled_tactician
 						trait = brilliant_strategist
 					}

@@ -1,0 +1,233 @@
+defined_text = {
+	name = GetAztecGovernorLetterGreeting
+	text = {
+		trigger = { always = yes }
+		localisation_key = GetAztecGovernorLetterGreeting_string
+	}
+}
+
+defined_text = {
+	name = GetAztecLetterBlessing
+	text = {
+		trigger = { FROM = { has_job_title = job_chancellor } }
+		localisation_key = String_strength_and_unity
+	}
+	text = {
+		trigger = { FROM = { has_job_title = job_marshal } }
+		localisation_key = String_power_and_victory
+	}
+	text = {
+		trigger = { FROM = { has_job_title = job_treasurer } }
+		localisation_key = String_prospering_lands
+	}
+	text = {
+		trigger = { FROM = { has_job_title = job_spiritual } }
+		localisation_key = String_divine_strength
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = String_favour_of_the_gods
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = String_good_health
+	}
+}
+
+defined_text = {
+	name = GetAztecComplimentAdjective
+	text = {
+		localisation_key = String_honored
+	}
+	#text = { #Should probably be the opposite?
+	#	trigger = { 
+	#		OR = {
+	#			trait = chaste
+	#			trait = celibate
+	#			AND = {
+	#				NOT = { num_of_lovers = 1 }
+	#				is_married = no
+	#				NOR = {
+	#					trait = seducer
+	#					trait = seductress
+	#					trait = lustful
+	#					has_focus = focus_seduction
+	#				}
+	#			}
+	#		}
+	#	}
+	#	localisation_key = String_chaste
+	#}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			is_strong_trigger = yes
+	#			trait = fair
+	#		}
+	#	}
+	#	localisation_key = String_radiant
+	#}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			is_learned_trigger = yes
+	#			tier = EMPEROR
+	#		}
+	#	}
+	#	localisation_key = String_illustrious
+	#}
+	text = { #More Aztec
+		trigger = {
+			OR = {
+				trait = brave
+				trait = charitable
+				trait = honest
+				trait = diligent
+				trait = patient
+				trait = kind
+				trait = humble
+				trait = just
+			}
+			NOR = {
+				trait = drunkard
+				trait = deceitful
+				trait = cruel
+				trait = gluttonous
+				trait = slothful
+				trait = schemer
+				trait = wroth
+				is_any_kinslayer_trigger = yes
+				trait = cannibal_trait
+			}
+		}
+		localisation_key = String_honorable
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_smart_trigger = yes
+				is_learned_trigger = yes
+				learning = 15
+			}
+		}
+		localisation_key = String_wise
+	}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			is_smart_trigger = yes
+	#			is_learned_trigger = yes
+	#			learning = 15
+	#		}
+	#	}
+	#	localisation_key = String_sage
+	#}
+	text = {
+		trigger = {
+			OR = {
+				piety = 1000
+				trait = zealous
+				trait = content
+			}
+			NOT = { trait = cynical }
+		}
+		localisation_key = String_pious
+	}
+	text = {
+		trigger = {
+			OR = {
+				trait = just
+				AND = {
+					OR = {
+						trait = kind
+						trait = charitable
+					}
+					NOR = {
+						trait = arbitrary
+						trait = craven
+						trait = slothful
+						trait = content
+					}
+				}
+			}	
+		}
+		localisation_key = String_righteous
+	}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			trait = just
+	#			trait = kind
+	#			trait = charitable
+	#		}	
+	#		NOR = {
+	#			trait = wroth
+	#			trait = cruel
+	#			trait = impaler
+	#		}
+	#	}
+	#	localisation_key = String_benevolent
+	#}
+	text = {
+		trigger = { trait = brave }
+		localisation_key = String_brave
+	}
+	text = {
+		trigger = { trait = honest }
+		localisation_key = String_sincere
+	}
+	#text = {
+	#	trigger = {
+	#		is_female = yes
+	#		is_attractive_trigger = yes
+	#	}
+	#	localisation_key = String_lovely
+	#}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			trait = fair
+	#			trait = gregarious
+	#			trait = socializer
+	#		}
+	#		has_unpleasant_trait_trigger = no
+	#		NOR = {
+	#			trait = ugly
+	#			trait = drunkard
+	#			trait = hedonist
+	#			trait = lustful
+	#		}
+	#	}
+	#	localisation_key = String_graceful
+	#}
+	text = {
+		trigger = {
+			higher_tier_than = DUKE
+		}
+		localisation_key = String_great
+	}
+	#text = {
+	#	trigger = {
+	#		higher_tier_than = DUKE
+	#	}
+	#	localisation_key = String_eminent
+	#}
+	#text = {
+	#	trigger = {
+	#		tier = EMPEROR
+	#	}
+	#	localisation_key = String_exalted
+	#}
+	#text = {
+	#	trigger = {
+	#		tier = EMPEROR
+	#	}
+	#	localisation_key = String_magnificent
+	#}
+	#text = { #TODO: Replace with something more Aztec
+	#	trigger = {
+	#		is_offmap_ruler = yes
+	#	}
+	#	localisation_key = String_heavenly
+	#}
+}

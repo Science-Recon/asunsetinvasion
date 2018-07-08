@@ -113,3 +113,18 @@ give_good_aztec_artifact_effect = {
 }
 
 
+leave_court_for_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you want them to be ORDERED to go to China, a killer needs to be set (eg: "killer = ROOT")
+	custom_tooltip = {
+		text = will_leave_for_aztecs_tt
+	}
+	set_character_flag = ignore_refund
+	hidden_effect = { death = { death_reason = death_went_to_aztecs } }
+}
+
+return_to_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you want them to be ORDERED to go to China, a killer needs to be set (eg: "killer = ROOT")
+	custom_tooltip = {
+		text = will_return_to_aztecs_tt
+	}
+	set_character_flag = ignore_refund
+	hidden_effect = { death = { death_reason = death_went_back_to_aztecs } }
+}

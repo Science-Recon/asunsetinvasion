@@ -6,6 +6,7 @@
 ###################################
 
 # Written by Henrik Fåhraeus and Henrik Eklund
+# Edited by Science-Recon
 
 namespace = SSI
 
@@ -2555,7 +2556,7 @@ province_event = {
 					grant_title = PREV
 				}
 				save_global_event_target_as = first_aztec_colonial_govenor
-				set_government_type = altepetl_government
+				set_government_type = tlacohtletlacatiyan_government
 				wealth = 250000
 				piety = 1000
 				prestige = 1500
@@ -2874,11 +2875,14 @@ province_event = {
 		culture = nahuatl
 		religion = aztec
 		event_target:selling_county_owner = {
-			any_courtier_or_vassal = {
-				opinion = { 
-					modifier = sunset_has_given_province_to_aztecs 
-					who = event_target:selling_county_owner  
-					years = 50 
+			custom_tooltip = {
+				text = si_selling_province_will_upset_court_and_vassals_tt
+				any_courtier_or_vassal = {
+					opinion = { 
+						modifier = sunset_has_given_province_to_aztecs 
+						who = event_target:selling_county_owner  
+						years = 50 
+					}
 				}
 			}
 			save_global_event_target_as = seller_of_province

@@ -1,0 +1,17 @@
+death_went_to_aztecs = {
+	can_nokiller = yes
+	long_desc = "DEATH_WENT_TO_AZTECS"
+	death_date_desc = "DEATH_DATE_AZTECS"
+	icon = 3
+	killer_icon = 1
+	sound = no
+}
+
+death_went_back_to_aztecs = {
+	can_nokiller = yes
+	long_desc = "DEATH_WENT_BACK_TO_AZTECS"
+	death_date_desc = "DEATH_DATE_AZTECS_RETURN"
+	icon = 3
+	killer_icon = 1
+	sound = no
+}

@@ -1,0 +1,127 @@
+namespace = SSIOM
+
+## Explorer Aztecs - Doing nice stuff (hospitals and libraries and such.)
+province_event = { #Aztecs build a hospital in a province.
+	id = SSIOM.300400
+	desc = EVTDESC_SSI_300400
+	
+	picture = GFX_evt_aztec_arrival
+	border = GFX_event_letter_frame_diplomacy
+
+	hide_window = yes
+
+	mean_time_to_happen = {
+		months = 160
+	}
+
+	trigger = {
+		offmap_aztecs = {
+			has_policy = aztec_explorers
+		}
+		aztecs_are_fine_trigger = yes
+		NOT = {
+			has_hospital = yes
+		}
+		owner = { #Be on goodish terms with the Huehuetlatoani
+			is_within_diplo_range = offmap_aztecs
+			OR = {
+				has_offmap_currency = { offmap = offmap_aztecs value > 50 }
+				AND = {
+					has_offmap_currency = { offmap = offmap_aztecs value > 25 }
+				}
+				top_liege = {
+					has_offmap_currency = { offmap = offmap_aztecs value > 200 }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		save_event_target_as = hospital_county
+		owner = {
+			save_event_target_as = hospital_county_owner
+			character_event = { id = SSIOM.300403 }
+		}
+	}
+}
+
+character_event = {
+	id = SSIOM.300403
+	desc = EVTDESC_SSI_300403
+	
+	border = GFX_event_letter_frame_diplomacy
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		offmap_aztecs = {
+			governor = {
+				character_event = { id = SSIOM.300401 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = SSIOM.300401
+	desc = EVTDESC_SSI_300401
+	
+	picture = GFX_evt_aztec_arrival
+	border = GFX_event_letter_frame_diplomacy
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			letter_event = { id = SSIOM.300402 }
+		}
+	}
+}
+
+letter_event = {
+	id = SSIOM.300402
+	desc = EVTDESC_SSI_300402
+	
+	picture = GFX_evt_aztec_arrival
+	border = GFX_event_letter_frame_diplomacy
+
+	#hide_window = yes
+
+	is_triggered_only = yes
+
+	option = { #Sure
+		name = EVTOPTA_SSIOM_300400
+		create_hospital = event_target:hospital_county
+		event_target:hospital_county_owner = {
+			prestige = -100
+			piety = 100
+			add_offmap_currency = {
+				offmap = offmap_aztecs
+				value =  100
+			}
+		}
+	}
+
+	option = { #Nah
+		name = EVTOPTB_SSIOM_300400
+		event_target:hospital_county_owner = {
+			prestige = 100
+			piety = -100
+			add_offmap_currency = {
+				offmap = offmap_aztecs
+				value =  -100
+			}
+		}
+	}
+}
+
+
+
+### Trader Aztecs - Trade deals and trade posts &c.
+
+
+### Invader Aztecs - Doing bad stuff (war, forts, assassinations &c.)

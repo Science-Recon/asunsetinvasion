@@ -73,3 +73,33 @@ aztec_offmap_hostile_decisions_enabled_trigger = {
 
 
 ##############################
+
+
+aztecs_are_suffering_trigger = {
+	offmap_aztecs = {
+		OR = {
+			has_status = aztec_unrest
+			has_status = aztec_civil_war
+			has_status = aztec_famine
+			has_status = aztec_plague
+			has_status = aztec_mayan_invasion
+			has_status = aztec_incan_invasion
+			has_status = aztec_norse_invasion
+			has_status = aztec_iroquian_invasion
+		}
+	}
+}
+
+aztecs_are_fine_trigger = { #"fine", read like "fiii-iine", i.e. Aztecs are currently treating the world as their oyster
+	offmap_aztecs = {
+		OR = {
+			has_status = aztec_golden_age
+			has_status = aztec_stable
+		}
+		OR = {
+			has_policy = aztec_invaders
+			has_policy = aztec_traders
+			has_policy = aztec_explorers
+		}
+	}
+}
