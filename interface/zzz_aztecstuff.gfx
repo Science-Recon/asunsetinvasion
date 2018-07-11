@@ -1,0 +1,62 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_icon_altepetl_government"
+		texturefile = "gfx\\interface\\government_icon_altepetl.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_tlacohtletlacatiyan_government"
+		texturefile = "gfx\\interface\\government_icon_tlacohtletlacatiyan.dds"
+	}
+	spriteType = {
+		name = "GFX_overlay_char_dead"
+		texturefile = "gfx\\interface\\overlay_char_dead.tga"
+		transparencecheck = yes
+		norefcount = yes
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_overlay_char_dead_small"
+		texturefile = "gfx\\interface\\overlay_char_dead2.tga"
+		transparencecheck = yes
+		norefcount = yes
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_trait_amocuallitlacatl"
+		texturefile = "gfx\\traits\\amocuallitlacatl.dds"
+		noOfFrames = 1
+		norefcount = yes
+		#effectFile = "gfx\\FX\\buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_warrior_of_huitzilopochtli"
+		texturefile = "gfx\\traits\\warrior_of_huitzilopochtli.dds"
+		noOfFrames = 1
+		norefcount = yes
+		#effectFile = "gfx\\FX\\buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_convert_to_aztec_religion"
+		texturefile = "gfx\\interface\\decision_icon_convert_to_liege_religion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_unitpanel_specialtroops_smallstrip"
+		texturefile = "gfx\\interface\\unitpanel_specialunits_smallstrip.dds"
+		noOfFrames = 8
+	}
+	
+	spriteType = {
+		name = "GFX_unitpanel_specialtroops_bigstrip"
+		texturefile = "gfx\\interface\\unitpanel_specialunits_bigstrip.dds"
+		noOfFrames = 8
+	}
+	spriteType = {
+		name = "GFX_aztec_screen_button"
+		texturefile = "gfx\\interface\\offmap_screen\\aztec_screen_button.dds"
+	}
+	
+}
+
+

@@ -2552,16 +2552,16 @@ province_event = {
 				e_aztec_colony = {
 					grant_title = PREV
 				}
-				k_aztec = {
-					grant_title = PREV
-				}
+				#k_aztec = {
+				#	grant_title = PREV
+				#}
 				save_global_event_target_as = first_aztec_colonial_govenor
 				set_government_type = tlacohtletlacatiyan_government
 				wealth = 250000
 				piety = 1000
 				prestige = 1500
 				e_aztec_colony = {
-					add_law = succ_offmap_succession
+					add_law = succ_aztec_colony_succession
 					add_law = agnatic_succession
 					add_law = centralization_4
 					add_law = vice_royalty_1
@@ -2589,6 +2589,7 @@ province_event = {
 					}
 				}
 				set_defacto_liege = THIS
+				character_event = { id = SSIOM.30399 }
 				narrative_event = { id = SSI.2 days = 7 }
 			}
 			e_aztec_colony = {

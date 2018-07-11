@@ -1,6 +1,8 @@
 #CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
-mesoamerican;Cemanahuac;méso-américain;Mesoamerikanisch;;Mesoamericano;;;;;;;;;x
-nahuatl;Nahua;nahua;Nahua;;Nahua;;;;;;;;;x
+;#Naming of the cultures/groups is a bit off as I'm not entirely sure what the most correct terms would be for the group vs. the specific language/customs of the inhabitants of tenochtitlan.;;;;;;;;;;;;;
+mesoamerican;Nahuatl;méso-américain;Mesoamerikanisch;;Mesoamericano;;;;;;;;;x
+nahuatl;Mexicah;nahua;Nahua;;Nahua;;;;;;;;;x
+tlaxcalan;Tlaxcalan;;;;;;;;;;;;;
 aztec;Aztec;aztèque;Aztekisch;;Aztec;;;;;;;;;x
 e_mexikha;Aztec Empire;Empire aztèque;Aztekenreich;;Aztec Empire;;;;;;;;;x
 e_mexikha_adj;Aztec;aztèque;Aztekisch;;Aztec;;;;;;;;;x
@@ -14,6 +16,10 @@ count_nahuatl;Calpixqui;Calpixqui;Calpixqui;;Calpixqui;;;;;;;;;x
 count_female_nahuatl;Calpixqui;Calpixqui;Calpixqui;;Calpixqui;;;;;;;;;x
 baron_nahuatl;Teuctli;Teuhtli;Teuctli;;Teuctli;;;;;;;;;x
 baron_female_nahuatl;Teuctli;Teuhtli;Teuctli;;Teuctli;;;;;;;;;x
+AZTEC_COLONY_MALE;Huehuecalpixqueh;;;;;;;;;;;;;
+AZTEC_COLONY_FEMALE;Huehuecalpixqueh;;;;;;;;;;;;;
+AZTEC_COLONY_TITLE_FOA;Esteemed huehuecalpixqueh;;;;;;;;;;;;;
+TXT_tlacohtletlacatiyan;Tlacohtletlacatiyan of ;;;;;;;;;;;;;
 GOD_HUITZILOPOCHTLI;Huitzilopochtli;Huitzilopochtli;Huitzilopochtli;;Huitzilopochtli;;;;;;;;;x
 GOD_XIPE_TOTEC;Xipe-Totec;Xipe Totec;Xipe-Totec;;Xipe-Totec;;;;;;;;;x
 GOD_TEZCATLIPOCA;Tezcatlipoca;Tezcatlipoca;Tezcatlipoca;;Tezcatlipoca;;;;;;;;;x
@@ -89,7 +95,11 @@ syphilis;Syphilis;Syphilis;Syphilis;;Sífilis;;;;;;;;;x
 has_aztec_disease;Syphilitic;Syphilitique;Syphilitisch;;Sifilítico;;;;;;;;;x
 has_aztec_disease_desc;This character suffers from Syphilis, a virulent strain of Great Pox brought from across the sea by the Aztec conquerors.;Ce personnage souffre de la syphilis, une souche virulente de la grande vérole amenée par la mer par l'envahisseur aztèque.;Dieser Charakter leidet an Syphilis, einer ansteckenden Krankheit, die von den aztekischen Eroberern eingeschleppt wurde.;;Este personaje sufre de Sífilis, una virulenta variante de la Peste traida de allende los mares por los conquistadores Aztecas.;;;;;;;;;x
 AZTEC_DISEASE_INFO;This county has suffered an outbreak of Syphilis, a virulent strain of Great Pox brought here by the Aztecs.;Ce comté a souffert d'une épidémie de syphilis, une souche virulente de la grande vérole amenée par la mer par l'envahisseur aztèque.;Dieses Land leidet unter einem Ausbruch von Syphilis, einer ansteckenden Krankheit, die von den Azteken eingeschleppt wurde.;;Este condado sufre un brote de Sífilis, una virulenta variante de la Peste traida de allende los mares por los conquistadores Aztecas.;;;;;;;;;x
-GetAztecGovernorLetterGreeting_string;The [From.GetTitle] of the [From.Offmap.Ruler.GetAztecComplimentAdjective] [From.Offmap.Ruler.GetTitledName] addresses a letter to the [Root.GetAztecComplimentAdjective] [Root.GetTitle] of the [Root.PrimaryTitle.GetFullName];;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+GetAztecGovernorLetterGreeting_string;The [From.GetTitle] of the [From.Offmap.Ruler.GetAztecComplimentAdjective] [From.Offmap.Ruler.GetTitle] [From.Offmap.Ruler.GetName] addresses a letter to the [Root.GetAztecComplimentAdjective] [Root.GetTitle] of the [Root.PrimaryTitle.GetFullName];;;;;;;;;;;;;
+GetLongAztecEmperorName_string;[This.GetOnlyDynastyName] [This.GetBirthName], [This.GetTitle] [This.GetFirstName] of the [This.PrimaryTitle.GetFullName];[This.GetOnlyDynastyName] [This.GetBirthName], [This.GetTitle] [This.GetFirstName] de l'[This.PrimaryTitle.GetFullName];[This.GetOnlyDynastyName] [This.GetBirthName], [This.GetTitle] [This.GetFirstName] von [This.PrimaryTitle.GetFullName];;[This.GetOnlyDynastyName] [This.GetBirthName], [This.GetTitle] [This.GetFirstName] del [This.PrimaryTitle.GetFullName];;;;;;;;;x
+GetMediumAztecEmperorName_string;[This.GetTitle] [This.GetFirstName] of the [This.PrimaryTitle.GetFullName];[This.GetTitle] [This.GetFirstName] de l'[This.PrimaryTitle.GetFullName];[This.GetTitle] [This.GetFirstName] von [This.PrimaryTitle.GetFullName];;[This.GetTitle] [This.GetFirstName] del [This.PrimaryTitle.GetFullName];;;;;;;;;x
+GetShortAztecEmperorName_string;[This.GetTitle] of the [This.PrimaryTitle.GetFullName];[This.GetTitle] de l'[This.PrimaryTitle.GetFullName];[This.GetTitle] von [This.PrimaryTitle.GetFullName];;[This.GetTitle] del [This.PrimaryTitle.GetFullName];;;;;;;;;x
 String_strength_and_unity;May your realm be bestowed strength and unity;;;;;;;;;;;;;
 String_power_and_victory;May your armies be strong and victorious;;;;;;;;;;;;;
 String_prospering_lands;May your lands forever prosper;;;;;;;;;;;;;
@@ -98,8 +108,9 @@ String_favour_of_the_gods;May the gods look favourably upon you;;;;;;;;;;;;;
 String_good_health;May good health be with you;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
-EVTDESC_SSI_300402;[Root.GetAztecGovernorLetterGreeting]. [Root.GetAztecLetterBlessing].\n\nThe Great [From.Offmap.Ruler.GetShortAztecEmperorName] wishes to build a hospital in the county of [hospital_county.GetName]. A group of fine Mexicha architects, healers and builders will be sent to the county upon the word of [hospital_county_owner.GetTitledName].;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
+EVTDESC_SSI_30402;[Root.GetAztecGovernorLetterGreeting]. [Root.GetAztecLetterBlessing].\n\nThe great [From.Offmap.Ruler.GetShortAztecEmperorName] wishes to build a hospital in the county of [hospital_county.GetName]. A group of fine Mexicha architects, healers and builders will be sent to the county upon the word of [hospital_county_owner.GetTitledName].;;;;;;;;;;;;;
+EVTOPTA_SSIOM_30402;Of course they may come. Send word to the [From.Offmap.Ruler.GetTitle] immediately!;;;;;;;;;;;;;
+EVTOPTB_SSIOM_30402;No foreign healers or builders will build anything in my realm!;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ###Additions###;;;;;;;;;;;;;;
 e_aztec_colony;Yancuic Tenochtitlan;Yancuic Tenochtitlan;Yancuic Tenochtitlan;;;;;;;;;;;
@@ -107,8 +118,8 @@ k_aztec;The Eastern Cult of Huitzilopochtli;;;;;;;;;;;;;
 title_aztec_emperor;Huehuetlatoani;Huehuetlatoani;Huehuetlatoani;;;;;;;;;;;
 aztecs_name;Aztec;Aztèque;Aztekisch;;;;;;;;;;;
 TXT_RESPECT;Respect;;;;;;;;;;;;;
-AZTEC_COLONY_MALE;Cuauhtlatoani;;;;;;;;;;;;;
-AZTEC_COLONY_FEMALE;Cihuatlcuauhtlatoani;;;;;;;;;;;;;
+#AZTEC_COLONY_MALE;Cuauhtlatoani;;;;;;;;;;;;;
+#AZTEC_COLONY_FEMALE;Cihuatlcuauhtlatoani;;;;;;;;;;;;;
 altepetl_government;Altepetl;;;;;;;;;;;;;
 altepetl_government_desc;The system of government used by the Mexica. The word 'Altepetl' comes from the Nahuatl words 'atl' meaning 'water' and 'tepetl' meaning 'hill', as these are two things they saw as essential for life. The system somewhat resembles the fuedal system of Europe, having a nobility and having delegation of land amongs them, however the liege has more power over his vassals and is allowed to own different holding types directly.;;;;;;;;;;;;;
 tlacohtletlacatiyan_government;Tlacohtletlacatiyan;;;;;;;;;;;;;
@@ -146,7 +157,7 @@ _effect_desc;;;;;;;;;;;;;;
 sunset_sold_us_provinces;Sold Us a Province;;;;;;;;;;;;;
 sunset_refused_sold_us_provinces;Refused to Sell Us a Province;;;;;;;;;;;;;
 sunset_has_given_province_to_aztecs;Sold our land to the Aztecs;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
+sent_close_relative_to_death_by_combat;Sent a close relative to die at Tlacaxipehualiztli festival.;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 aztec_will_be_angry_no_gib_clay;The Aztecs will see this as a grave insult and will likely attack us to take our land.;;;;;;;;;;;;;
 add_very_good_aztec_artifacts_tt;Gain a valuable Aztec artifact.;;;;;;;;;;;;;
@@ -181,12 +192,18 @@ aztec_request_amocuallitlacatl_named;We can request that the Huehuetlatoani bran
 ;;;;;;;;;;;;;;
 amocuallitlacatl;Amocuallitlacatl;;;;;;;;;;;;;
 amocuallitlacatl_desc;This character is an 'amocuallitlacatl', considered by the Aztec church to be an abhorrent person worthy of damnation.;;;;;;;;;;;;;
+warrior_of_huitzilopochtli;Warrior of Huitzilopochtli;;;;;;;;;;;;;
+warrior_of_huitzilopochtli_desc;This character is an elite warrior that has dedicated their lives to fighting and sacrificing in the name of Huitzilopochtli, the Aztec god of war and patron deity of the Aztec Empire.;;;;;;;;;;;;;
 aztec_declare_amocuallitlacatl_named;Declare Amocuallitlacatl;;;;;;;;;;;;;
 aztec_declare_amocuallitlacatl_desc;Declare [Root.GetTitledFirstName] as an 'amocuallitlacatl': a stain on our church. [Root.GetSheHe] will be shunned by members of the church. This will cost you prestige and will upset [Root.GetTitledFirstName]. ;;;;;;;;;;;;;
 aztec_lift_amocuallitlacatl_named;Lift Amocuallitlacatl Status;;;;;;;;;;;;;
 aztec_lift_amocuallitlacatl_desc;Renounce the decision to declare [Root.GetTitledFirstName] as an 'amocuallitlacatl'. [Root.GetSheHe] will no longer be upset at you for the declaration but you will lose some prestige and piety.;;;;;;;;;;;;;
 sunset_declared_me_amocuallitlacatl;Declared me an Amocuallitlacatl;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+convert_to_aztec_religion;Embrace Aztec Religion;;;;;;;;;;;;;
+convert_to_aztec_religion_desc;Your liege follows the religion of the western invaders, the Aztecs. Embracing this faith would not only please your liege but give you a higher status amongst the Aztecs. You should invite your court and vassals to convert, too.;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 TRIBUTARY_AZTEC_NAME;Tequitlmacani State;;;;;;;;;;;;;
 TRIBUTARY_AZTEC_PLURAL;Tequitlmacani States;;;;;;;;;;;;;
@@ -195,6 +212,26 @@ TRIBUTARY_AZTEC_TRIBUTE;Tequitl;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 INSULT_AMOCUALLITLACATL;vile amocuallitlacatl;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
+aztec_tribute_send_gladiator_must_be_before_february;The Tlacaxipehualiztli occurs in March so gladiators need to be sent before February, to give the Aztecs time to Transport them to Tenochtitlan;;;;;;;;;;;;;
+aztec_tribute_send_gladiator_must_be_after_december;The Tlacaxipehualiztli doesn't occur until March so gladiators need to be sent after December, as the Aztecs are unwilling to provide food and shelter for Gladiators until then.;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
 aztec_respect_become_tributary;Become Tequitlmacani State;;;;;;;;;;;;;
-aztec_respect_become_tributary_desc;Pledge allegiance to ;;;;;;;;;;;;;
-aztec_respect_become_tributary_effect_TT;Become Tequitlmacani State;;;;;;;;;;;;;
+aztec_respect_become_tributary_desc;Pledge allegiance to [Root.GetTitle] [Root.GetName] as a Tequitlamacani State of [Root.Governor.GetTitledName]. You will be obliged to send a large ammount of troops and a modest amount of gold to the [Root.Governor.GetTitle]'s army. The [Root.GetTitle] will be pleased, however this subservience will lower your prestige with the rest of the world, though.;;;;;;;;;;;;;
+aztec_respect_offer_gladiator;Offer Gladiator for Tlacaxipehualiztli;;;;;;;;;;;;;
+aztec_respect_offer_gladiator_desc;Offer a gladiator to take part in a gladiatorial sacrifice in the Aztec Tlacaxipehualiztli festival in March. The contender is chained to a stone and must fight between four and seven warriors. If the contender wins, the contender is set free, if they lose they are ritualy disemboweld. Sending a gladiator to the Aztecs will upset their family, if they have one.;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+EVTDESC_SI_20022;[Root.GetGovernorLetterGreeting]. [Root.GetAztecLetterBlessing].\n\nThe great [From.Offmap.Ruler.GetLongAztecEmperorName], has generously decided to send you a skilled physician from [From.Offmap.Ruler.GetHerHis] court. [aztec_doctor.GetDynName] will serve you well.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\nLe [From.Offmap.Ruler.GetLongChineseEmperorName] céleste a généreusement décidé de vous envoyer un physicien très compétent de sa cour. [chinese_doctor.GetDynName] vous servira bien.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\n[From.Offmap.Ruler.GetDerDie] himmlische [From.Offmap.Ruler.GetLongChineseEmperorName] hat großzügigerweise entschlossen, Euch einen fähigen Arzt aus [From.Offmap.Ruler.GetHerHis]em Hof zu schicken. [chinese_doctor.GetDynName] wird Euch gut dienen.;;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\nEl celeste [From.Offmap.Ruler.GetLongChineseEmperorName], ha decidido generosamente enviaros un médico diestro de su corte. [chinese_doctor.GetDynName] os servirá bien.;;;;;;;;;x
+EVTOPTA_SI_20022;Send my most sincere thanks to the [From.Offmap.Ruler.GetTitle].;Envoyer ma plus sincère gratitude à l'[From.Offmap.Ruler.GetTitle].;Sendet [From.Offmap.Ruler.Getdemder] [From.Offmap.Ruler.GetTitle] meinen aufrichtigen Dank.;;Enviad mi más sincera gratitud al [From.Offmap.Ruler.GetTitle].;;;;;;;;;x
+EVTOPTA_SI_20022_TT;§Y[aztec_doctor.GetDynName]§! appears at your court.;§Y[chinese_doctor.GetDynName]§! apparaît à votre cour.;§Y[chinese_doctor.GetDynName]§! erscheint an Eurem Hof.;;§Y[chinese_doctor.GetDynName]§! aparece en tu corte.;;;;;;;;;x
+EVTDESC_SI_20024;[Root.GetGovernorLetterGreeting]. [Root.GetAztecLetterBlessing].\n\nThe great [From.Offmap.Ruler.GetLongAztecEmperorName], has generously decided to send you an elite warrior from the protectorate of Tlaxcala. The [From.Offmap.Ruler.GetTitle] personally garuantees that [aztec_tlaxcalan_warrior.GetDynName] will serve your armies well.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\nLe [From.Offmap.Ruler.GetLongChineseEmperorName] céleste a généreusement décidé de vous envoyer un physicien très compétent de sa cour. [chinese_doctor.GetDynName] vous servira bien.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\n[From.Offmap.Ruler.GetDerDie] himmlische [From.Offmap.Ruler.GetLongChineseEmperorName] hat großzügigerweise entschlossen, Euch einen fähigen Arzt aus [From.Offmap.Ruler.GetHerHis]em Hof zu schicken. [chinese_doctor.GetDynName] wird Euch gut dienen.;;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].\n\nEl celeste [From.Offmap.Ruler.GetLongChineseEmperorName], ha decidido generosamente enviaros un médico diestro de su corte. [chinese_doctor.GetDynName] os servirá bien.;;;;;;;;;x
+EVTOPTA_SI_20024;Send my most sincere thanks to the [From.Offmap.Ruler.GetTitle].;Envoyer ma plus sincère gratitude à l'[From.Offmap.Ruler.GetTitle].;Sendet [From.Offmap.Ruler.Getdemder] [From.Offmap.Ruler.GetTitle] meinen aufrichtigen Dank.;;Enviad mi más sincera gratitud al [From.Offmap.Ruler.GetTitle].;;;;;;;;;x
+EVTOPTA_SI_20024_TT;§Y[aztec_tlaxcalan_warrior.GetDynName]§! appears at your court.;§Y[chinese_doctor.GetDynName]§! apparaît à votre cour.;§Y[chinese_doctor.GetDynName]§! erscheint an Eurem Hof.;;§Y[chinese_doctor.GetDynName]§! aparece en tu corte.;;;;;;;;;x
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+aztec_respect_peace_deal;Request an Aztec Peace Deal.;;;;;;;;;;;;;
+aztec_respect_peace_deal_desc;Send a request to §Y[Root.Offmap.Ruler.GetTitle] [Root.Offmap.Ruler.GetName]§!, asking for peaceful relations with the §Y[Root.Offmap.GetFullName]§! and its §Y[Root.Offmap.Governor.GetTitle]§!. Having a §YPeace Deal§! ensures that the §Y[Root.Offmap.GetFullName]§! does not target your realm should they go on the warpath.;;;;;;;;;;;;;
+aztec_respect_doctor;Request an Aztec Doctor;;;;;;;;;;;;;
+aztec_respect_doctor_desc;The §Y[Root.Offmap.GetFullName]§! is famed for the literate and inteligent healers. You can request to have one of these scholars come to your court and serve as your personal physician. This character always has the §YPhysician§! trait.;;;;;;;;;;;;;
+aztec_respect_warrior;Request a Tlaxcalan Warrior;;;;;;;;;;;;;
+aztec_respect_warrior_desc;The Aztec §Yprotectorate of Tlaxcala§! is famed for the strength and courage of their warriors. You can request to have one of these warriors come to your court and serve as your commander. This character always has the §Ywarrior of Huitzilopochtli§! trait.;;;;;;;;;;;;;

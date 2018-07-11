@@ -16,3 +16,49 @@ amocuallitlacatl = { # Ficticious word for heretic: lit. "evil person"
 	# male_insult_adj = INSULT_AMOCUALLI #?
 	# female_insult_adj = INSULT_AMOCUALLI
 }
+
+warrior_of_huitzilopochtli = { #Blend of religious warrior traits.
+	potential = {
+		OR = {
+			religion = aztec
+		}
+	}
+	opposites = {
+		mujahid
+		valhalla_bound
+		crusader
+		sun_warrior
+		ukkos_shield
+		nyames_shield
+		peruns_chosen
+		romuvas_own
+		ares_own
+		tengri_warrior
+		shaddai
+		gondi_shahansha
+	}
+
+	command_modifier = {
+		religious_enemy = 0.3
+	}
+
+	martial = 3
+	combat_rating = 1
+	monthly_character_prestige = 0.3
+	same_religion_opinion = 15
+	church_opinion = 15
+	same_opinion_if_same_religion = 15
+
+
+	
+	ai_zeal = 10
+	customizer = no
+	religious = yes
+	
+	male_insult = INSULT_FANATIC
+	female_insult = INSULT_FANATIC
+	male_insult_adj = INSULT_NARROWMINDED
+	female_insult_adj = INSULT_NARROWMINDED
+	male_compliment_adj = COMPL_RIGHTEOUS
+	female_compliment_adj = COMPL_RIGHTEOUS
+}

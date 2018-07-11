@@ -128,3 +128,11 @@ return_to_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you
 	set_character_flag = ignore_refund
 	hidden_effect = { death = { death_reason = death_went_back_to_aztecs } }
 }
+
+set_aztec_boon_cd_effect = {  #added via tribute to China decisions... Always one year.
+	add_character_modifier = {
+		hidden = yes
+		name = si_aztec_boon_cd
+		days = 365 #If this is changed, edit  china_offmap_boon_decisions_enabled_trigger_cd_tt
+	}
+}

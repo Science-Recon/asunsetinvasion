@@ -3,7 +3,7 @@ aztec_offmap_boon_decisions_enabled_trigger = {
 	aztec_offmap_decisions_enabled_trigger = yes
 	custom_tooltip = {
 		text = aztec_offmap_boon_decisions_enabled_trigger_cd_tt #From is player character
-		FROM = { NOT = { has_character_modifier = jd_aztec_boon_cd } } #boon cooldown, which is set in each decision (one year!)...
+		FROM = { NOT = { has_character_modifier = si_aztec_boon_cd } } #boon cooldown, which is set in each decision (one year!)...
 	}
 }
 
@@ -33,14 +33,14 @@ aztec_offmap_decisions_enabled_trigger = {
 			}
 		}
 	}
-	hidden_trigger = { has_dlc = "Jade Dragon" }
-	conditional_tooltip = { 
-		trigger = { FROM = { primary_title = { has_title_flag = rebel_general_title } } }
-		custom_tooltip = { 
-			text = aztec_offmap_decisions_pretender_emperor_tt
-			always = no
-		}
-	}
+	hidden_trigger = { has_dlc = "Sunset Invasion" }
+	#conditional_tooltip = { 
+	#	trigger = { FROM = { primary_title = { has_title_flag = rebel_general_title } } }
+	#	custom_tooltip = { 
+	#		text = aztec_offmap_decisions_pretender_emperor_tt
+	#		always = no
+	#	}
+	#}
 	conditional_tooltip = { 
 		trigger = { FROM = { has_character_modifier = failed_invasion_of_aztec } }
 		custom_tooltip = { 
@@ -65,7 +65,7 @@ aztec_offmap_hostile_decisions_enabled_trigger = {
 			NOT = { dynasty = FROM }
 		}
 	}
-	hidden_trigger = { has_dlc = "Jade Dragon" }
+	hidden_trigger = { has_dlc = "Sunset Invasion" }
 }
 
 

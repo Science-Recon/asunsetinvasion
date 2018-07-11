@@ -7,7 +7,9 @@ e_aztec_colony = { # Yancuic Tenochtitlan
 	title_female = "AZTEC_COLONY_FEMALE"
 	title = "AZTEC_COLONY_MALE"
 	foa = "AZTEC_COLONY_TITLE_FOA"
-	short_name = yes
+	title_prefix = "TXT_tlacohtletlacatiyan"
+
+	#short_name = yes
 	#location_ruler_title = yes
 	
 	# Always exists
@@ -21,32 +23,36 @@ e_aztec_colony = { # Yancuic Tenochtitlan
 	
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 	
+	controls_religion = aztec
+
+	culture = nahuatl
+	religion = aztec
 	can_be_claimed = no
 	can_be_usurped = no
 	
 	extra_ai_eval_troops = 7500
 }
 
-k_aztec = {
-#	color={ 150 90 30 }
-	color={ 205 102 155 }
-	color2={ 220 0 0 }
-	
-	#capital = 160 # 
-
-	# Always exists
-	landless = yes
-	short_name = yes
-	
-	dignity = 100 # Counted as having this many more counties than it does
-	
-	# Controls a religion
-	controls_religion = aztec
-	
-	religion = aztec
-	
-	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
-}
+#k_aztec = {
+##	color={ 150 90 30 }
+#	color={ 205 102 155 }
+#	color2={ 220 0 0 }
+#	
+#	#capital = 160 # 
+#
+#	# Always exists
+#	landless = yes
+#	short_name = yes
+#	
+#	dignity = 10 # Counted as having this many more counties than it does
+#	
+#	# Controls a religion
+#	controls_religion = aztec
+#	
+#	religion = aztec
+#	
+#	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+#}
 	
 	
 b_cholula = {

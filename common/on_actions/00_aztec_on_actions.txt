@@ -1,0 +1,5 @@
+on_offmap_governor_changed = {
+	events = {
+		SSIOM.30399
+	}
+}

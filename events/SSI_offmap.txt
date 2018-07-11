@@ -1,9 +1,231 @@
 namespace = SSIOM
 
+
+# An offmap power changes its governor. Triggers for the new governor
+# Root = New governor
+# From = Old governor
+# FromFrom = Offmap
+character_event = { 
+	id = SSIOM.30399
+	desc = EVTDESC_SSI_30399
+
+	picture = GFX_evt_aztec_arrival
+	border = GFX_event_letter_frame_diplomacy
+
+	#hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_offmap_governor = offmap_aztecs
+	}
+
+	#immediate = {
+	option = {
+		name = debug_name
+		remove_education_effect = yes
+		random_list = {
+			50 = {
+				add_trait = skilled_tactician				
+			}
+			50 = {
+				add_trait = brilliant_strategist
+			}
+		}
+		change_diplomacy = -40 #Won't go negative, so will set all to zero to then set them myself.
+		change_martial = -40
+		change_stewardship = -40
+		change_intrigue = -40
+		change_learning = -40
+
+		change_diplomacy = 2
+		change_martial = 8
+		change_stewardship = 6
+		change_intrigue = 6
+		change_learning = 4
+
+		if = {
+			limit = {
+				has_trait = weak
+			}
+			remove_trait = weak
+		}
+		if = {
+			limit = {
+				has_trait = craven
+			}
+			remove_trait = craven
+		}
+		if = {
+			limit = {
+				FROMFROM = {
+					OR = {
+						culture = nahuatl
+						culture = tlaxcalan
+					}
+				}
+			}
+			random = {
+				chance = 5
+				culture = tlaxcalan
+				change_martial = 2
+			}
+		}
+		random = {
+			chance = 10
+			add_trait = warrior_of_huitzilopochtli
+		}
+		random = {
+			chance = 5
+			add_trait = eagle_warrior
+		}
+		random_list = {
+			10 = {
+				give_nickname = nick_the_usurper
+				change_martial = 2
+				set_character_flag = debug_flag_1
+			}
+			10 = {
+				give_nickname = nick_the_conqueror
+				change_martial = 1
+				change_stewardship = 1
+				add_trait = aggressive_leader
+				random = {
+					chance = 10
+					add_trait = scarred
+				}
+				set_character_flag = debug_flag_2
+			}
+			10 = {
+				give_nickname = nick_the_victorious
+				prestige = 1600
+				add_trait = inspiring_leader
+				random = {
+					chance = 10
+					add_trait = scarred
+				}
+				set_character_flag = debug_flag_3
+			}
+			10 = {
+				give_nickname = nick_the_avenger #Avenging probably involves some sneakyness
+				change_martial = 1
+				change_intrigue = 4
+				add_trait = schemer
+				random = { #Was naughty
+					chance = 5
+					add_trait = paranoid
+					add_trait = kinslayer
+				}
+				set_character_flag = debug_flag_4
+			}
+			10 = {
+				give_nickname = nick_the_brave
+				add_trait = inspiring_leader
+				add_trait = brave
+				random = {
+					chance = 10
+					add_trait = scarred
+				}
+				set_character_flag = debug_flag_5
+			}
+			10 = {
+				give_nickname = nick_the_glorious
+				prestige = 1800
+				add_trait = inspiring_leader
+				random = {
+					chance = 10
+					add_trait = scarred
+				}
+				set_character_flag = debug_flag_6
+			}
+			10 = {
+				give_nickname = nick_the_culture
+				set_character_flag = debug_flag_7
+			}
+			10 = {
+				give_nickname = nick_the_destroyer
+				add_trait = siege_leader #Of walls
+				set_character_flag = debug_flag_8
+			}
+			10 = {
+				give_nickname = nick_the_shadow
+				change_martial = 1
+				change_intrigue = 6
+				add_trait = schemer
+				add_trait = trickster
+				set_character_flag = debug_flag_9
+			}
+			10 = {
+				give_nickname = nick_the_ruthless
+				change_martial = 2
+				add_trait = cruel
+				add_trait = arbitrary
+				add_trait = aggressive_leader
+				random = {
+					chance = 20
+					add_trait = scarred
+				}
+				set_character_flag = debug_flag_10
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_any_lifestyle_trait = yes
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = hedonist
+					set_character_flag = debug_flag_1_2
+				}
+				10 = {
+					add_trait = scholar
+					set_character_flag = debug_flag_2_2
+				}
+				10 = {
+					add_trait = impaler
+					set_character_flag = debug_flag_3_2
+				}
+				10 = {
+					add_trait = duelist
+					set_character_flag = debug_flag_4_2
+				}
+				10 = {
+					add_trait = hunter
+					set_character_flag = debug_flag_5_2
+				}
+				10 = {
+					add_trait = administrator
+					set_character_flag = debug_flag_6_2
+				}
+				10 = {
+					add_trait = architect
+					set_character_flag = debug_flag_7_2
+				}
+				10 = {
+					add_trait = strategist
+					set_character_flag = debug_flag_8_2
+				}
+				10 = {
+					add_trait = schemer
+					set_character_flag = debug_flag_9_2
+				}
+				10 = {
+					add_trait = gamer
+					set_character_flag = debug_flag_10_2					
+				}
+			}
+		}
+		prestige = 1325
+
+	}
+}
+
 ## Explorer Aztecs - Doing nice stuff (hospitals and libraries and such.)
 province_event = { #Aztecs build a hospital in a province.
-	id = SSIOM.300400
-	desc = EVTDESC_SSI_300400
+	id = SSIOM.30400
+	desc = EVTDESC_SSI_30400
 	
 	picture = GFX_evt_aztec_arrival
 	border = GFX_event_letter_frame_diplomacy
@@ -40,14 +262,14 @@ province_event = { #Aztecs build a hospital in a province.
 		save_event_target_as = hospital_county
 		owner = {
 			save_event_target_as = hospital_county_owner
-			character_event = { id = SSIOM.300403 }
+			character_event = { id = SSIOM.30403 }
 		}
 	}
 }
 
 character_event = {
-	id = SSIOM.300403
-	desc = EVTDESC_SSI_300403
+	id = SSIOM.30403
+	desc = EVTDESC_SSI_30403
 	
 	border = GFX_event_letter_frame_diplomacy
 
@@ -58,15 +280,15 @@ character_event = {
 	immediate = {
 		offmap_aztecs = {
 			governor = {
-				character_event = { id = SSIOM.300401 }
+				character_event = { id = SSIOM.30401 }
 			}
 		}
 	}
 }
 
 character_event = {
-	id = SSIOM.300401
-	desc = EVTDESC_SSI_300401
+	id = SSIOM.30401
+	desc = EVTDESC_SSI_30401
 	
 	picture = GFX_evt_aztec_arrival
 	border = GFX_event_letter_frame_diplomacy
@@ -77,14 +299,14 @@ character_event = {
 
 	immediate = {
 		FROM = {
-			letter_event = { id = SSIOM.300402 }
+			letter_event = { id = SSIOM.30402 }
 		}
 	}
 }
 
 letter_event = {
-	id = SSIOM.300402
-	desc = EVTDESC_SSI_300402
+	id = SSIOM.30402
+	desc = EVTDESC_SSI_30402
 	
 	picture = GFX_evt_aztec_arrival
 	border = GFX_event_letter_frame_diplomacy
@@ -94,8 +316,7 @@ letter_event = {
 	is_triggered_only = yes
 
 	option = { #Sure
-		name = EVTOPTA_SSIOM_300400
-		create_hospital = event_target:hospital_county
+		name = EVTOPTA_SSIOM_30402
 		event_target:hospital_county_owner = {
 			prestige = -100
 			piety = 100
@@ -104,10 +325,11 @@ letter_event = {
 				value =  100
 			}
 		}
+		create_hospital = event_target:hospital_county
 	}
 
 	option = { #Nah
-		name = EVTOPTB_SSIOM_300400
+		name = EVTOPTB_SSIOM_30402
 		event_target:hospital_county_owner = {
 			prestige = 100
 			piety = -100

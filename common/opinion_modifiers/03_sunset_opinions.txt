@@ -13,3 +13,7 @@ sunset_refused_sold_us_provinces = {
 sunset_declared_me_amocuallitlacatl = {
 	opinion = -50
 }
+
+sent_close_relative_to_death_by_combat = {
+	opinion = -75
+}

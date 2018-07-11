@@ -23600,6 +23600,8 @@ e_spain = {
 	capital = 197 # Toledo
 	
 	culture = castillan
+	nahuatl = "Ixperoyotlan"
+	tlaxcalan = "Ixperoyotlan"
 	
 	k_leon = {
 		color = { 253 158 51 }
@@ -23639,6 +23641,9 @@ e_spain = {
 		
 		culture = castillan
 		
+		nahuatl = "Caxtillan"
+		tlaxcalan = "Caxtillan"
+
 		# Creation/usurpation trigger
 		allow = {
 			hidden_tooltip = {
@@ -23657,10 +23662,16 @@ e_spain = {
 			color2={ 255 255 255 }
 			
 			capital = 199 # Burgos
+
+			nahuatl = "Caxtillan"
+			tlaxcalan = "Caxtillan"
 			
 			c_burgos = {
 				color = { 246 200 16 }
 				color2={ 255 255 255 }
+
+				nahuatl = "Huecoyotl"
+				tlaxcalan = "Huecoyotl"
 				
 				b_aguilardecampo = {
 				}
@@ -23683,6 +23694,9 @@ e_spain = {
 				color = { 248 202 18 }
 				color2={ 255 255 255 }
 				
+				nahuatl = "Xayotolitl"
+				tlaxcalan = "Xayotolitl"
+
 				b_valladolid = {
 				}
 				b_tordesillas = {
@@ -23703,6 +23717,9 @@ e_spain = {
 			c_soria = {
 				color = { 250 204 20 }
 				color2={ 255 255 255 }
+
+				nahuatl = "Cohueatl"
+				tlaxcalan = "Cohueatl"				
 				
 				b_soria = {
 				}
@@ -24520,6 +24537,8 @@ e_spain = {
 		capital = 160 # Lisboa
 		
 		culture = portuguese
+		nahuatl = "Huetocalli"
+		tlaxcalan = "Huetocalli"		
 		
 		catholic = 250 # Crusade target weight
 		muslim = 25
@@ -24542,10 +24561,15 @@ e_spain = {
 			capital = 158 # porto
 			
 			culture = portuguese
-			
+			nahuatl = "Hueto"
+			tlaxcalan = "Hueto"
+
 			c_porto = {
 				color = { 182 88 5 }
 				color2={ 255 255 255 }
+
+				nahuatl = "Hueto"
+				tlaxcalan = "Hueto"
 				
 				b_braga = {
 				}
@@ -24615,6 +24639,8 @@ e_spain = {
 				levantine_arabic = "Qulumriyah"
 				egyptian_arabic = "Qulumriyah"
 				andalusian_arabic = "Qulumriyah"
+				nahuatl = "Collihuatli"
+				tlaxcalan = "Collihuatli"				
 				
 				b_coimbra = {
 					bedouin_arabic = "Qulumriyah"
@@ -24658,6 +24684,7 @@ e_spain = {
 				egyptian_arabic = "Lishbuna"
 				andalusian_arabic = "Lishbuna"
 				nahuatl = "Lixpoyatlan"
+				tlaxcalan = "Lixpoyatlan"
 				
 				b_lisboa = {
 					bedouin_arabic = "Lishbuna"
@@ -24666,6 +24693,7 @@ e_spain = {
 					egyptian_arabic = "Lishbuna"
 					andalusian_arabic = "Lishbuna"
 					nahuatl = "Lixpoyatlan"
+					tlaxcalan = "Lixpoyatlan"
 				}
 				b_alcobaca = {
 				}
@@ -24685,6 +24713,9 @@ e_spain = {
 			c_evora = {
 				color = { 182 68 5 }
 				color2={ 255 255 255 }
+
+				nahuatl = "Huetzora"
+				tlaxcalan = "Huetzora"
 				
 				b_avis = {
 				} 
