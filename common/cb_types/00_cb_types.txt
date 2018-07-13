@@ -3153,6 +3153,11 @@ tribal_invasion = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+
+		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
 		}
 		
@@ -3760,6 +3765,10 @@ religious = {
 				NOT = { religion = buddhist }
 				piety = 250
 			}
+			NOT = { government = tlacohtletlacatiyan_government }
+		}
+		FROM = {
+			NOT = { government = tlacohtletlacatiyan_government }
 		}
 	}
 	
@@ -3785,6 +3794,7 @@ religious = {
 		ROOT = {
 			is_nomadic = no
 			NOT = { religion_group = pagan_group }
+			NOT = { government = tlacohtletlacatiyan_government }
 			NOT = { pacifist = yes }
 			NOT = { religion = taoist }
 			OR = {
@@ -4212,6 +4222,12 @@ religious = {
 	
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		# Try to guide the Hordes in the right direction
 		modifier = {
@@ -6871,6 +6887,12 @@ muslim_invasion = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
+		
+		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
 		}
 	}
@@ -7483,6 +7505,12 @@ embargo_cb = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		modifier = {
 			factor = 0
 			ROOT = {
@@ -7660,6 +7688,12 @@ seize_trade_post = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		modifier = {
 			factor = 0.25
 			ROOT = {
@@ -8083,6 +8117,12 @@ pagan_subjugation = {
 	
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 	}
 }
 
@@ -9393,6 +9433,12 @@ pagan_holy_war = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
+		
+		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
 		}
 		
@@ -9599,6 +9645,12 @@ caliphal_subjugation = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
+		
+		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
 		}
 	}
@@ -9792,6 +9844,12 @@ muslim_county_conquest = {
 	
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
@@ -10058,6 +10116,12 @@ pagan_county_conquest = {
 	
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		modifier = {
 			factor = 4.0
@@ -10426,6 +10490,12 @@ dejure_county_claim = {
 	
 	ai_will_do = { 
 		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		modifier = {
 			factor = 0 # AIs will not take the last counties off their liege's direct vassals
@@ -12196,6 +12266,12 @@ indian_subjugation = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
+		
+		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
 		}
 		modifier = {
@@ -12450,7 +12526,12 @@ manifest_destiny_invasion = {
 	}
 	
 	ai_will_do = { 
-		factor = 10
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
 	}
 }
 
@@ -13479,6 +13560,12 @@ free_tributary_cb = {
 		factor = 1
 		
 		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
+		
+		modifier = {
 			factor = 1.5
 		}
 
@@ -14464,7 +14551,13 @@ nomad_subjugation = {
 	}
 	
 	ai_will_do = { 
-		factor = 10
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		0
 		modifier = {
 			factor = 0
 			ROOT = {
@@ -14736,6 +14829,12 @@ nomad_invasion = {
 	
 	ai_will_do = { 
 		factor = 8
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
@@ -15055,6 +15154,12 @@ nomad_expansion = {
 	
 	ai_will_do = { 
 		factor = 2
+		
+		modifier = {
+			factor = 0
+			government = tlacohtletlacatiyan_government
+		}
+		
 		
 		# Try to guide the Hordes in the right direction
 		modifier = {

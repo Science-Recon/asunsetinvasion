@@ -1,4 +1,4 @@
-spawn_aztec_reinforcement_effect = {
+aztec_war_spawn_troops_effect = {
 	if = {
 		limit = {
 			NOR = {
@@ -6,44 +6,119 @@ spawn_aztec_reinforcement_effect = {
 				has_global_flag = aztecs_employing_gunpowder
 			}
 		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			religion = aztec
+			culture = nahuatl
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			save_event_target_as = aztec_new_troop_commander
+		}
 		while = {
 			limit = {
 				check_variable = {
-					which = aztec_troop_number
+					which = aztec_troop_quantity
 					value = 1
 				}
 			}
 			
 			capital_scope = {
-				create_random_soldier = {
-					random_traits = yes
-					dynasty = random
-					religion = aztec
-					culture = nahuatl
-					female = no
-					age = 30
-					attributes = {
-						martial = 12
-					}
-					trait = brilliant_strategist
-				}
-				new_character = {
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						troops =
-						{
-							heavy_infantry = { 2200 2200 }
-							light_infantry = { 1800 1800 }
-							archers = { 1500 1500 }
+				event_target:aztec_new_troop_commander = {
+					random_list = {
+						10 = {
+							trigger = {
+								check_variable = {
+									which = aztec_troop_quality
+									value = 1
+								}
+								NOT = {
+									check_variable = {
+										which = aztec_troop_quality
+										value = 2
+									}
+								}
+							}
+							spawn_unit = {
+								province = event_target:spawn_province
+								home = event_target:spawn_province
+								troops =
+								{
+									archers = { 168 168 }
+									light_infantry = { 284 284 }
+									heavy_infantry = { 0 0 }
+									pikemen = { 0 0 }
+								}
+								disband_on_peace = yes
+								merge = yes
+							}
 						}
-						disband_on_peace = yes
+						10 = {
+							trigger = {
+								check_variable = {
+									which = aztec_troop_quality
+									value = 2
+								}
+								NOT = {
+									check_variable = {
+										which = aztec_troop_quality
+										value = 3
+									}
+								}
+							}
+							spawn_unit = {
+								province = event_target:spawn_province
+								home = event_target:spawn_province
+								troops =
+								{
+									archers = { 168 168 }
+									light_infantry = { 192 192 }
+									heavy_infantry = { 140 140 }
+									pikemen = { 20 20 }
+								}
+								disband_on_peace = yes
+								merge = yes
+							}
+						}
+						10 = {
+							trigger = {
+								check_variable = {
+									which = aztec_troop_quality
+									value = 3
+								}
+								#NOT = {
+								#	check_variable = {
+								#		which = aztec_troop_quality
+								#		value = 4
+								#	}
+								#}
+							}
+							spawn_unit = {
+								province = event_target:spawn_province
+								home = event_target:spawn_province
+								troops =
+								{
+									archers = { 168 168 }
+									light_infantry = { 192 192 }
+									heavy_infantry = { 160 160 }
+									pikemen = { 140 140 }
+								}
+								disband_on_peace = yes
+								merge = yes
+							}
+						}
 					}
 				}
 			}
 			
 			change_variable = {	
-				which = aztec_troop_number
+				which = aztec_troop_quantity
 				value = -1
 			}
 		}
@@ -111,6 +186,173 @@ give_good_aztec_artifact_effect = {
 		}
 	}
 }
+
+
+aztec_war_modify_variables_by_status_effect = {
+	# variable: aztec_war_troop_quality
+	# variable: aztec_war_troop_quantity
+	# variable: aztec_war_minimum_commander_martial
+	# variable: aztec_war_target_match_mult
+	
+	random_list = {
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_stable }
+			}
+			change_variable = { which = aztec_war_troop_quality value = 1 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = 3 }
+		}
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_unrest }
+			}
+			change_variable = { which = aztec_war_troop_quantity value = -6 }
+			change_variable = { which = aztec_war_target_match_mult value = -0.15 }
+		}
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_civil_war }
+			}
+			change_variable = { which = aztec_war_troop_quantity value = -6 }
+			change_variable = { which = aztec_war_target_match_mult value = -0.25 }
+			change_variable = { which = aztec_war_troop_quality value = -1 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = -6 }
+		}
+		1 = {
+			trigger = {
+				OR = {
+					offmap_china = { has_status = aztec_mayan_invasion }
+					offmap_china = { has_status = aztec_incan_invasion }
+					offmap_china = { has_status = aztec_norse_invasion }
+					offmap_china = { has_status = aztec_iroquian_invasion }
+				}
+			}
+			change_variable = { which = aztec_war_troop_quantity value = -7 }
+			change_variable = { which = aztec_war_target_match_mult value = -0.4 }
+			change_variable = { which = aztec_war_troop_quality value = -1 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = -2 }
+		}
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_famine }
+			}
+			change_variable = { which = aztec_war_troop_quantity value = -4 }
+			change_variable = { which = aztec_war_target_match_mult value = -0.30 }
+			change_variable = { which = aztec_war_troop_quality value = -2 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = -2 }
+		}
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_plague }
+			}
+			change_variable = { which = aztec_war_troop_quantity value = -6 }
+			change_variable = { which = aztec_war_target_match_mult value = -0.35 }
+			change_variable = { which = aztec_war_troop_quality value = -1 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = -4 }
+		}
+		1 = {
+			trigger = {
+				offmap_china = { has_status = aztec_golden_age }
+			}
+			change_variable = { which = aztec_war_target_match_mult value = 0.65 }
+			change_variable = { which = aztec_war_troop_quality value = 2 }
+			change_variable = { which = aztec_war_minimum_commander_martial value = 5 }
+		}
+	}
+}
+
+
+
+china_war_modify_variables_by_century_effect = {
+	random_list = {
+		10 = {
+			trigger = {
+				year = 700
+				NOT = { year = 800 }
+			}
+		}
+		10 = {
+			trigger = {
+				year = 800
+				NOT = { year = 900 }
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 2
+			}
+		}
+		10 = {
+			trigger = {
+				year = 900
+				NOT = { year = 1000 }
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 3
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1000
+				NOT = { year = 1100 }
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 4
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1100
+				NOT = { year = 1200 }
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 5
+			}
+			change_variable = {
+				which = aztec_war_target_match_mult
+				value = 0.05
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1200
+				NOT = { year = 1300 }
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 7
+			}
+			change_variable = {
+				which = aztec_war_target_match_mult
+				value = 0.05
+			}
+			change_variable = {
+				which = aztec_war_troop_quality
+				value = 1
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1300
+			}
+			change_variable = {
+				which = aztec_war_troop_quantity
+				value = 8
+			}
+			change_variable = {
+				which = aztec_war_target_match_mult
+				value = 0.05
+			}
+			change_variable = {
+				which = aztec_war_troop_quality
+				value = 1
+			}
+		}
+	}
+}
+
 
 
 leave_court_for_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you want them to be ORDERED to go to China, a killer needs to be set (eg: "killer = ROOT")

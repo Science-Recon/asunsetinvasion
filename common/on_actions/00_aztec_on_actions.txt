@@ -3,3 +3,30 @@ on_offmap_governor_changed = {
 		SSIOM.30399
 	}
 }
+
+# Happens once a year during a random monthly update. Triggers for the governor (once for each offmap governor, if there's more than one)
+# Root = Governor
+# From = Offmap
+on_offmap_yearly_pulse = {
+	events = {
+		SSIOM.10100 # Aztec Invasion tombola
+		#SSIOM.30500 # Aztec logging variable increment
+		SSIOM.10200 # Aztec Invasion clean-up event - REGULAR (tributary invasion + other flags)
+		SSIOM.10201 # Aztec Invasion clean-up event - MAJOR Invasion (rare)
+	}
+	
+	#random_events = {
+	#	10000 = 0
+	#	300 = JD.50100 # Status returns to 'Stable'
+	#	150 = JD.50120 # Status changes to 'Unrest'
+	#	50 = JD.50140 # Status changes to 'Mongol Invasion'
+	#	450 = JD.50160 # 'Mongol Invasion' Resolution
+	#	50 = JD.50180 # Status changes to 'Jurchen Invasion'
+	#	450 = JD.50200 # 'Jurchen Invasion' Resolution
+	#	100 = JD.50220 # Status changes to 'Great Famine'
+	#	100 = JD.50240 # Status changes to 'Devastating Plague'
+	#	100 = JD.50260 # Status changes to 'Golden Age'
+	#	350 = JD.50280 # Status changes to 'Civil War'
+	#	400 = JD.50300 # 'Civil War' Resolution
+	#}
+}

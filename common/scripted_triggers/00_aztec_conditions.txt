@@ -69,6 +69,49 @@ aztec_offmap_hostile_decisions_enabled_trigger = {
 }
 
 
+#Used in the invasion script...
+valid_offmap_aztecs_target = {
+	NOT = { character = ROOT }
+	NOT = { has_character_modifier = peace_deal_with_aztecs }
+	NOT = { reverse_has_truce = ROOT }
+	NOT = { has_character_flag = defeated_aztecs }
+	NOT = {	is_tributary = { suzerain = ROOT } }
+	in_revolt = no
+	is_within_diplo_range = ROOT
+	is_landed = yes
+	higher_tier_than = BARON
+	NOT = { offmap_aztecs = { offmap_ruler = { dynasty = PREVPREV } } }
+}
+
+valid_offmap_aztecs_target_location = {
+	OR = {
+		any_realm_province = { region = custom_aztec_invasion_target_region }
+		any_neighbor_independent_ruler = {
+			has_landed_title = e_aztec_colony
+		}
+	}
+}
+
+valid_offmap_aztecs_target_location_tributary_chain = {
+	OR = {
+		#any_realm_province = { region = custom_chinese_invasion_target_region }
+		any_neighbor_independent_ruler = {
+			has_landed_title = e_aztec_colony
+		}
+		any_neighbor_independent_ruler = {
+			is_tributary = yes
+			suzerain = {
+				has_landed_title = e_aztec_colony
+			}
+		}
+	}
+}
+
+aztec_events_enabled_trigger = {
+	has_global_flag = aztec_offmap_activate
+}
+
+
 
 
 
@@ -87,6 +130,40 @@ aztecs_are_suffering_trigger = {
 			has_status = aztec_norse_invasion
 			has_status = aztec_iroquian_invasion
 		}
+	}
+}
+
+
+aztecs_are_stable_open_trigger = {
+	offmap_china = {
+		has_status = aztec_stable
+		OR = {
+			has_policy = aztec_traders
+			has_policy = aztec_explorers
+		}
+		
+	}
+}
+aztecs_are_stable_expansionist_trigger = {
+	offmap_china = {
+		has_status = aztec_stable
+		has_policy = aztec_invaders
+	}
+}
+aztecs_are_golden_age_open_trigger = {
+	offmap_china = {
+		has_status = aztec_golden_age
+		OR = {
+			has_policy = aztec_traders
+			has_policy = aztec_explorers
+		}
+		
+	}
+}
+aztecs_are_golden_age_expansionist_trigger = {
+	offmap_china = {
+		has_status = aztec_golden_age
+		has_policy = aztec_invaders
 	}
 }
 

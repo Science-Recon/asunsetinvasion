@@ -89,10 +89,10 @@ decisions = {
 				factor = 0.05
 				has_trait = zealous
 			}
-			modifier = {
-				factor = 2
-				NOT = { higher_real_tier_than = 3 }
-			}
+			#modifier = {
+			#	factor = 4
+			#	NOT = { has_trait = zealous }
+			#}
 		}
 	}
 	
@@ -152,12 +152,16 @@ decisions = {
 		}
 		effect = {
 			set_variable = {
-				which = aztec_troop_number
-				value = 4 # 20k Troops, 5.5k per val.
+				which = aztec_troop_quantity
+				value = 40 #~20K, I think
 			}
-			spawn_aztec_reinforcement_effect = yes
+			set_variable = {
+				which = aztec_troop_quality
+				value = 6
+			}
+			aztec_war_spawn_troops_effect = yes
 			offmap_aztecs = {
-				#set_offmap_flag = aztecs_sent_war_reinforcements
+				set_offmap_flag = aztecs_sent_war_reinforcements
 			}
 		}
 	}

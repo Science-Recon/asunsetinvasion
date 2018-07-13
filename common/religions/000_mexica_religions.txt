@@ -5,10 +5,10 @@ mesoamerican_group = {
 	playable = yes
 	hostile_within_group = yes
 	
-	#interface_skin = { pagan_interface pagan_group_interface }
+	interface_skin = { pagan_interface pagan_group_interface }
 	
 	ai_convert_same_group = 2 # always try to convert
-	ai_convert_other_group = 2	# never try to convert
+	ai_convert_other_group = 2	# always try to convert
 	ai_fabricate_claims = no
 	
 	color = { 0.6 0.0 0.0 }
@@ -37,9 +37,10 @@ mesoamerican_group = {
 		}
 		
 		unit_modifier = {
-			levy_size = 0.3
-			
-			key = "OFF_RELIGION"
+			retinuesize_perc = 0.3
+			land_morale = 0.5
+
+			key = "WARRIOR_RELIGION"
 		}
 		
 		crusade_name = GREAT_HOLY_WAR

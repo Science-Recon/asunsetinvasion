@@ -4,7 +4,7 @@ feudal_governments = {
 		allowed_holdings = {
 			CASTLE
 			CITY
-			TRIBAL
+			#TRIBAL
 			FORT
 			HOSPITAL
 		}
@@ -24,7 +24,6 @@ feudal_governments = {
 			theocracy_government
 		}
 		frame_suffix = "_tribal"
-		title_prefix = "tribal_"
 		potential = {
 			#tier = EMPEROR
 			#primary_title = { has_title_flag = pretender_chinese_empire }
@@ -40,7 +39,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 
-		#can_build_tribal = no
+		can_build_tribal = no
 		
 		#ignore_in_vassal_limit_calculation = {
 		#	tribal_government
@@ -97,7 +96,8 @@ republic_governments = {
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
-		frame_suffix = "_aztec"
+		frame_suffix = "_tribal"
+		title_prefix = "colonial_"
 		potential = {
 			is_offmap_tag = offmap_aztecs
 		}
@@ -110,7 +110,6 @@ republic_governments = {
 		can_build_tribal = no
 		
 		capital_move_delay = 600
-		
 		aggression = 0 # AI only attacks by script
 		can_create_kingdoms = no
 		can_create_empires = no

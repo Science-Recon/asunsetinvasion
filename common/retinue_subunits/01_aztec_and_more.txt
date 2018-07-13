@@ -10,6 +10,7 @@ RETTYPE_CUL_MUSKETS =
 
 	potential = {
 		is_nomadic = no
+		has_global_flag = gunpowder_units_invented
 		OR = {
 			culture = nahuatl
 			culture = northern_quechua
