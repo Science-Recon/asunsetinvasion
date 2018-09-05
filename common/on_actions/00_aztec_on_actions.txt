@@ -4,6 +4,12 @@ on_offmap_governor_changed = {
 	}
 }
 
+on_war_ended_victory = {
+	events = {
+		SSIOM.30202
+	}
+}
+
 # Happens once a year during a random monthly update. Triggers for the governor (once for each offmap governor, if there's more than one)
 # Root = Governor
 # From = Offmap
@@ -13,6 +19,7 @@ on_offmap_yearly_pulse = {
 		#SSIOM.30500 # Aztec logging variable increment
 		SSIOM.10200 # Aztec Invasion clean-up event - REGULAR (tributary invasion + other flags)
 		SSIOM.10201 # Aztec Invasion clean-up event - MAJOR Invasion (rare)
+		SSIOM.30201 # Boost Aztec Tech Level
 	}
 	
 	#random_events = {

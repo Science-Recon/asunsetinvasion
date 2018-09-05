@@ -19414,7 +19414,7 @@ e_persia = {
 				b_halaward = {}
 				b_washjird = {}
 				b_vakash = {}
-				b_qobadhiyan {}
+				b_qobadhiyan = {}
 				b_rasht = {}
 				b_munk = {}
 				#b_munjan = {}

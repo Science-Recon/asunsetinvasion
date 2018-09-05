@@ -231,3 +231,21 @@ defined_text = {
 	#	localisation_key = String_heavenly
 	#}
 }
+
+defined_text = {
+	name = GetRaidCD
+	
+	text = {
+		trigger = {
+			has_character_modifier = china_raid_grace_cd
+		}
+		localisation_key = string_raid_cd
+	}
+
+	text = {
+		trigger = {
+			has_character_modifier = aztecs_raid_respect_cd
+		}
+		localisation_key = string_raid_cd_aztec
+	}
+}

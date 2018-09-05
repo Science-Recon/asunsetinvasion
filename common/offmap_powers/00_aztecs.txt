@@ -1,6 +1,6 @@
 offmap_aztecs = {
 	name = aztecs_name
-	window_name = domestic_offmaps_window
+	window_name = domestic_offmaps_aztec_window
 	button_name = icon_aztec_offmap_entry
 	currency_name = TXT_RESPECT
 	currency_gain = monthly_respect
@@ -687,7 +687,7 @@ offmap_aztecs = {
 					FROMFROM = { is_female = yes }
 				}
 			}
-			likes_eunuchs = {
+			likes_gladiators = {
 				value = 100
 			}
 			likes_tributaries = {

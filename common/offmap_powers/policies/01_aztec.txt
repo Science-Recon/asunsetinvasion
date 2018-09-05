@@ -4,7 +4,7 @@
 
 
 aztec_invaders = {
-	frame = 1
+	frame = 3
 }
 
 aztec_traders = {
@@ -12,10 +12,10 @@ aztec_traders = {
 }
 
 aztec_explorers = {
-	frame = 3
+	frame = 4
 }
 
 aztec_isolationist = {
 	flags = { disallow_interactions disallow_troops }
-	frame = 4
+	frame = 2
 }

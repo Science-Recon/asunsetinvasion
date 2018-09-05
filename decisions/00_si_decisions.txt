@@ -75,10 +75,6 @@ decisions = {
 			}
 		}
 		
-		revoke_allowed = {
-			always = no
-		}
-		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -87,11 +83,11 @@ decisions = {
 			}
 			modifier = {
 				factor = 0.05
-				has_trait = zealous
+				trait = zealous
 			}
 			#modifier = {
 			#	factor = 4
-			#	NOT = { has_trait = zealous }
+			#	NOT = { trait = zealous }
 			#}
 		}
 	}
@@ -151,15 +147,20 @@ decisions = {
 		allow = {
 		}
 		effect = {
-			set_variable = {
-				which = aztec_troop_quantity
-				value = 40 #~20K, I think
+			capital_scope = {
+				save_event_target_as = spawn_province
+				set_variable = {
+					which = aztec_troop_quantity
+					value = 60
+				}
+				set_variable = {
+					which = aztec_troop_quality
+					value = 6
+				}
+				aztec_war_modify_variables_by_status_effect = yes
+				aztec_war_modify_variables_by_century_effect = yes
+				aztec_war_spawn_troops_effect = yes
 			}
-			set_variable = {
-				which = aztec_troop_quality
-				value = 6
-			}
-			aztec_war_spawn_troops_effect = yes
 			offmap_aztecs = {
 				set_offmap_flag = aztecs_sent_war_reinforcements
 			}
@@ -183,7 +184,7 @@ offmap_decisions = {
 	
 		from_potential = {
 			independent = yes
-			#has_dlc = "Jade Dragon"
+			#has_dlc = "Sunset Invasion"
 			mercenary = no
 			holy_order = no
 			is_landed = yes
@@ -212,7 +213,7 @@ offmap_decisions = {
 					# custom_tooltip = { #Borders the eastern edge of the map
 						# text = aztec_respect_become_tributary_allow_chinese_influence_tt
 						# any_realm_province = {
-							# region = custom_chinese_invasion_target_region
+							# region = custom_aztec_invasion_target_region
 						# }
 					# }
 					custom_tooltip = { #Within diplo range of China and has a port in India
@@ -231,8 +232,8 @@ offmap_decisions = {
 				}
 				NOT = { tier = emperor }
 				custom_tooltip = {
-					text = aztec_respect_become_tributary_cooldown_tt
-					NOT = { has_character_modifier = aztec_respect_tributary_timer }
+					text = aztecs_respect_become_tributary_cooldown_tt
+					NOT = { has_character_modifier = aztecs_respect_tributary_timer }
 				}
 				prisoner = no
 				NOT = { trait = incapable }
@@ -252,7 +253,7 @@ offmap_decisions = {
 				tributary_type = aztec_offmap_trib
 			}
 			#hidden_effect = { offmap_aztecs = { governor = { character_event = { id = JD.20027 } } } } #CONVERT THIS TO A SI NARRATIVE EVENT
-			custom_tooltip = { text = aztec_respect_become_tributary_effect_TT }
+			custom_tooltip = { text = aztec_respect_become_tributary_effect_tt }
 			FROM = {
 				show_scope_change = no
 				sound_effect = aztec_respect_gain
@@ -350,10 +351,6 @@ offmap_decisions = {
 					}
 				}
 			}
-		}
-
-		revoke_allowed = {
-			always = no
 		}
 
 		ai_will_do = {
@@ -567,10 +564,6 @@ offmap_decisions = {
 			additive_modifier = {
 				value = 100
 				trait = brave
-			}
-			additive_modifier = {
-				value = -10
-				trait = shy
 			}
 			additive_modifier = {
 				value = -10
@@ -848,10 +841,6 @@ offmap_decisions = {
 			}
 		}
 	
-		revoke_allowed = {
-			always = no
-		}
-	
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -914,10 +903,6 @@ offmap_decisions = {
 			custom_tooltip = { text = aztec_respect_peace_deal_effect_tt }
 			hidden_effect = { offmap_aztecs = { governor = { character_event = { id = JD.20025 } } } }
 			hidden_effect = { FROM = { set_aztec_boon_cd_effect = yes } }
-		}
-
-		revoke_allowed = {
-			always = no
 		}
 
 		ai_will_do = {
@@ -1011,10 +996,6 @@ offmap_decisions = {
 			hidden_effect = { FROM = { set_aztec_boon_cd_effect = yes } }
 		}
 
-		revoke_allowed = {
-			always = no
-		}
-
 		ai_will_do = {
 			factor = 0
 			#factor = 1
@@ -1090,10 +1071,6 @@ offmap_decisions = {
 			}
 			hidden_effect = { offmap_aztecs = { governor = { character_event = { id = SI.20023 } } } } 
 			hidden_effect = { FROM = { set_aztec_boon_cd_effect = yes } }
-		}
-
-		revoke_allowed = {
-			always = no
 		}
 
 		ai_will_do = {
@@ -1179,9 +1156,9 @@ targeted_decisions = {
 				NOT = {
 					ROOT = {
 						OR = { #Bad traits or upset the tlatoani
-							has_trait = cynical
-							has_trait = craven
-							has_trait = slothful
+							trait = cynical
+							trait = craven
+							trait = slothful
 							reverse_opinion = {
 								who = FROM 
 								value = -75
@@ -1258,9 +1235,9 @@ targeted_decisions = {
 				factor = 0
 				ROOT = {
 					OR = { #Bad traits or upset the tlatoani
-						has_trait = cynical
-						has_trait = craven
-						has_trait = slothful
+						trait = cynical
+						trait = craven
+						trait = slothful
 						reverse_opinion = {
 							who = FROM 
 							value = -75
@@ -1349,14 +1326,14 @@ targeted_decisions = {
 				# NOT = {
 					# AND = {
 						# FROM = {
-							# has_trait = zealous
+							# trait = zealous
 						# }
 						# FROMFROM = {
 							# OR = {
-								# has_trait = cynical
-								# has_trait = craven
-								# has_trait = slothful
-								# has_trait = homosexual
+								# trait = cynical
+								# trait = craven
+								# trait = slothful
+								# trait = homosexual
 								# reverse_opinion = {
 									# who = FROM 
 									# value = -75
@@ -1415,14 +1392,14 @@ targeted_decisions = {
 				# # NOT = {
 					# # AND = {
 						# # FROM = {
-							# # has_trait = zealous
+							# # trait = zealous
 						# # }
 						# # ROOT = {
 							# # OR = {
-								# # has_trait = cynical
-								# # has_trait = craven
-								# # has_trait = slothful
-								# # has_trait = homosexual
+								# # trait = cynical
+								# # trait = craven
+								# # trait = slothful
+								# # trait = homosexual
 								# # reverse_opinion = { 
 									# # who = FROM 
 									# # value = -75
@@ -1434,4 +1411,546 @@ targeted_decisions = {
 			# # }
 		# }
 	# }
+}
+
+offmap_decisions = {
+	
+	aztecs_raid = {
+		only_playable = yes
+		button_name = offmap_hostility
+		ai_check_interval = 36
+	
+		from_potential = {
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+			NOT = {
+				has_character_modifier = aztecs_raid_active
+			}
+		}
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = no
+				independent = yes
+				is_allowed_to_loot = yes
+				NOT = {
+					is_tributary = {
+						type = offmap
+						suzerain = ROOT
+					}
+				}
+				NOT = { has_character_modifier = peace_deal_with_aztecs }
+				custom_tooltip = {
+					text = aztecs_respect_supply_horses_not_already_supplying_tt
+					NOT = {
+						has_character_modifier = aztecs_supply_horses
+					}
+				}
+				custom_tooltip = { #Borders the eastern edge of the map
+					text = chinese_grace_become_tributary_allow_chinese_influence_tt
+					any_realm_province = {
+						region = custom_aztec_invasion_target_region
+					}
+				}
+				custom_tooltip = {
+					text = aztecs_offmap_boon_decisions_enabled_trigger_raiding_tt
+					NOT = {
+						has_character_modifier = aztecs_raid_respect_cd
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			aztec_offmap_hostile_decisions_enabled_trigger = yes
+		}
+
+		effect = {
+			save_event_target_as = target_governor
+			FROM = {
+				show_scope_change = no
+				sound_effect = aztecs_angered_emperor
+				add_offmap_currency = {
+					offmap = offmap_aztecs
+					value = -500
+				}
+				hidden_effect = {
+					add_character_modifier = {
+						inherit = yes
+						name = aztecs_raid_active
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = { offmap_aztecs = { governor = { character_event = { id = JD.3050 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				FROM = {
+					has_respect_medium_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						trait = shy
+						trait = content
+						trait = craven
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				offmap_aztecs = { offmap_ruler = { dynasty = FROM } }
+			}
+		}
+	}
+	
+	aztecs_stop_raid = {
+		only_playable = yes
+		button_name = offmap_hostility
+		ai_check_interval = 36
+	
+		from_potential = {
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+			has_character_modifier = aztecs_raid_active
+		}
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				has_character_modifier = aztecs_raid_active
+			}
+		}
+
+		effect = {
+			save_event_target_as = target_governor
+			FROM = {
+				show_scope_change = no
+				sound_effect = aztecs_grace_gain
+				remove_character_modifier = aztecs_raid_active
+				hidden_effect = {
+					add_character_modifier = {
+						name = aztecs_raid_respect_cd
+						hidden = yes
+						years = 5
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				offmap_aztecs = { offmap_ruler = { dynasty = FROM } }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					FROM = {
+						NOR = {
+							trait = shy
+							trait = content
+							trait = craven
+						}
+					}
+					NOT = {
+						offmap_aztecs = { offmap_ruler = { dynasty = FROM } }
+					}
+				}
+			}
+		}
+	}
+
+	aztecs_force_to_open = {
+		only_playable = yes
+		button_name = offmap_hostility
+	
+		from_potential = {
+			ai = no
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+			#offmap_aztecs = { has_policy = aztec_isolationist }
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = no
+				independent = yes
+				NOT = {
+					is_tributary = {
+						type = offmap
+						suzerain = ROOT
+					}
+				}
+				custom_tooltip = {
+					text = force_aztecs_open_cooldown_tt
+					NOT = { has_character_modifier = aztecs_force_open_cooldown }
+				}
+				OR = {
+					custom_tooltip = { #Borders the Western Governate
+						text = chinese_grace_become_tributary_allow_governor_neighbor_tt
+						any_neighbor_independent_ruler = {
+							has_landed_title = e_aztec_colony
+						}
+					}
+					custom_tooltip = { #Borders a Chinese tributary
+						text = chinese_grace_become_tributary_allow_tributary_neighbor_tt
+						any_neighbor_independent_ruler = {
+							suzerain = {
+								has_landed_title = e_aztec_colony
+							}
+						}
+					}
+					custom_tooltip = { #Borders the eastern edge of the map
+						text = chinese_grace_become_tributary_allow_chinese_influence_tt
+						any_realm_province = {
+							region = custom_aztec_invasion_target_region
+						}
+					}
+					custom_tooltip = { #Within diplo range of aztecs and has a port in India
+						text = chinese_grace_become_tributary_allow_india_tt
+						any_realm_province = { 
+							port = yes 
+							region = world_india
+						}
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			offmap_aztecs = {
+				has_policy = aztec_isolationist
+			}
+			offmap_aztecs = {
+				custom_tooltip = {
+					text = already_at_war_tt
+					hidden_tooltip = {
+						governor = {
+							NOT = {
+								any_war = {
+									using_cb = force_open_aztecs_cb
+								}
+							}
+						}
+					}
+				}
+			}
+			aztec_offmap_hostile_decisions_enabled_trigger = yes
+		}
+
+		effect = {
+			save_event_target_as = target_governor
+			hidden_effect = { offmap_aztecs = { set_offmap_tmp_flag = aztecs_force_open_in_progress } }
+			FROM = { 
+				sound_effect = aztecs_angered_emperor
+				hidden_effect = { 
+					add_character_modifier = { 
+						name = aztecs_force_open_cooldown
+						years = 15
+						hidden = yes
+					}
+				}
+				ROOT = {
+					show_scope_change = no
+					character_event = { id = JD.60300 tooltip = force_open_aztecs_start_tt }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	aztecs_tributary_break_free = {
+		only_playable = yes
+		button_name = offmap_hostility
+	
+		from_potential = {
+			ai = no
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+			FROM = {
+				is_tributary = {
+					type = offmap
+					suzerain = ROOT
+				}
+			}
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = yes
+				is_tributary = {
+					type = offmap
+					suzerain = ROOT
+				}
+				can_use_cb = {
+					target = ROOT
+					casus_belli = free_tributary_cb
+				}
+				#NOT = { is_decision_allowed = tributary_independence_aztecs }
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			aztec_offmap_hostile_decisions_enabled_trigger = yes
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = aztecs_angered_emperor
+				war = {
+					target = ROOT
+					casus_belli = free_tributary_cb
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	aztecs_invade_teocallicpalli = {
+		only_playable = yes
+		button_name = offmap_hostility
+		
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		third_party = FROM
+		show_third_party_potential = yes
+	
+		from_potential = {
+			ai = no
+			has_dlc = "Sunset Invasion"
+			mercenary = no
+			holy_order = no
+		}
+
+		potential = {
+			is_offmap_tag = offmap_aztecs
+			NOT = { 
+				offmap_aztecs = {
+					offmap_ruler = { dynasty = FROM } 
+				}
+			}
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = no
+				independent = yes
+				in_revolt = no
+				NOT = {
+					is_tributary = {
+						type = offmap
+						suzerain = ROOT
+					}
+				}
+				#OR = {
+				custom_tooltip = { #Borders the Western Governate
+					text = aztec_respect_become_tributary_allow_governor_neighbor_tt
+					any_neighbor_independent_ruler = {
+						has_landed_title = e_aztec_colony
+					}
+				}
+				#	custom_tooltip = { #Borders the eastern edge of the map #TODO Make this evaluate Navay size (Need to get there to do stuff)
+				#		text = aztecs_invade_teocallicpalli_eastern_edge_tt
+				#		any_realm_province = {
+				#			region = custom_eastern_edge_of_map
+				#		}
+				#	}
+				#}
+				custom_tooltip = {
+					text = aztecs_invade_teocallicpalli_failed_tt
+					NOT = { has_character_modifier = failed_invasion_of_aztecs }
+				}
+				can_use_cb = {
+					target = ROOT
+					casus_belli = invasion_of_aztecs_cb
+					only_check_triggers = yes
+				}
+				NOT = { has_raised_levies = THIS }
+				custom_tooltip = {
+					text = aztecs_invade_teocallicpalli_levies_tt
+					NOT = { any_vassal = { ROOT_FROM = { has_raised_levies = PREV } } }
+				}
+				NOT = { has_truce = ROOT }
+				tier = EMPEROR
+				conditional_tooltip = {
+					trigger = { is_nomadic = no }
+					realm_size = 300
+				}
+				conditional_tooltip = {
+					trigger = { is_nomadic = yes }
+					num_of_count_titles_in_realm = 50
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			aztec_offmap_hostile_decisions_enabled_trigger = yes
+			offmap_aztecs = {
+				OR = {
+					has_status = aztec_stable
+					has_status = aztec_golden_age
+				}
+				ROOT = {
+					show_scope_change = no
+					custom_tooltip = {
+						text = aztecs_invade_teocallicpalli_war_tt #teocalli-chair, as Motezuma II's throne was designed to look like a teocalli
+						NOT = { any_war = { using_cb = invasion_of_aztecs_cb } }
+					}
+				}
+			}
+		}
+
+		third_party_potential = {
+			show_only_failed_conditions = yes
+			FROMFROM = {
+				show_scope_change = no
+				dynasty = ROOT_FROM
+				is_adult = yes
+				NOR = {
+					courtier_from_aztecs_trigger = yes
+					is_landed = yes
+					is_incapable = yes
+					trait = inbred
+					trait = imbecile
+					trait = celibate
+					is_ascetic_trigger = yes
+					prisoner = yes
+				}
+				is_primary_heir = no
+			}
+		}
+		
+		third_party_allow = {
+			show_only_failed_conditions = yes		
+			FROMFROM = {
+				is_ill = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				FROMFROM = { #Stop them from moving, marrying or being diplomatically dealt with
+					set_character_flag = invasion_aztecs_claimant
+					set_character_flag = no_court_invites
+					add_trait = cannot_marry
+					diplomatic_immunity = yes
+					save_global_event_target_as = invasion_of_aztecs_claimant
+				}
+				ROOT = { #Set amount of troops
+					set_offmap_tmp_flag = aztecs_war_variables_set
+					set_variable = {
+						which = aztecs_war_troop_quantity
+						value = 15
+						# 15 regiments of ~500 units
+					}
+					set_variable = {
+						which = aztecs_war_target_match_mult
+						value = 2
+					}
+					set_variable = {
+						which = aztecs_war_troop_quality
+						value = 6
+						# Value between 1-7
+					}
+					set_variable = {
+						which = aztecs_war_minimum_commander_martial
+						value = 16
+					}
+					set_variable = { #Minimum 80k
+						which = aztecs_war_troop_quantity_override
+						value = 160
+					}
+					save_event_target_as = invasion_of_aztecs_govenor
+				}
+			}
+			FROM = {
+				show_scope_change = no
+				sound_effect = aztecs_angered_emperor
+				save_event_target_as = invasion_of_aztecs_attacker
+				custom_tooltip = {
+					text = aztecs_invade_teocallicpalli_modifiers_tt
+					hidden_effect = {
+						set_offmap_currency = { offmap = offmap_aztecs value = 0 }
+						remove_character_modifier = peace_deal_with_aztecs
+						remove_character_modifier = chinese_grace_send_gift_timer
+						remove_character_modifier = chinese_grace_send_eunuch_timer
+						remove_character_modifier = chinese_grace_send_concubine_timer
+						remove_character_modifier = chinese_grace_tributary_timer
+						remove_character_modifier = si_aztecs_boon_cd
+						remove_character_modifier = aztecs_force_open_cooldown
+						remove_character_modifier = angered_aztecs_modifier
+						remove_character_modifier = chinese_imperial_trade_contract
+					}
+				}
+				hidden_effect = {
+					add_character_modifier = {
+						name = war_with_aztecs_modifier
+						inherit = yes
+						duration = -1
+					}
+					war = {
+						target = ROOT
+						casus_belli = invasion_of_aztecs_cb
+					}
+				}
+			}
+			hidden_effect = {
+				any_player = {
+					limit = {
+						has_offmap_news_enabled = offmap_aztecs
+						is_within_diplo_range = ROOT
+					}
+					narrative_event = { id = JD.60400 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }

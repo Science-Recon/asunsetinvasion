@@ -706,10 +706,10 @@ outside_capital_empire = {
 # #Sunset Invasion Modifiers                                            # #
 ###########################################################################
 
-tlaxcalan_culture_modifier = {
-	martial = 2
-	combat_rating = 1
-	#liege_prestige = 0.1
-	#ai_honor = 10
-	#ai_ambition = 10
-}
+#tlaxcalan_culture_modifier = {
+#	martial = 2
+#	combat_rating = 1
+#	#liege_prestige = 0.1
+#	#ai_honor = 10
+#	#ai_ambition = 10
+#}

@@ -3,7 +3,7 @@ aztec_offmap_boon_decisions_enabled_trigger = {
 	aztec_offmap_decisions_enabled_trigger = yes
 	custom_tooltip = {
 		text = aztec_offmap_boon_decisions_enabled_trigger_cd_tt #From is player character
-		FROM = { NOT = { has_character_modifier = si_aztec_boon_cd } } #boon cooldown, which is set in each decision (one year!)...
+		FROM = { NOT = { has_character_modifier = si_aztecs_boon_cd } } #boon cooldown, which is set in each decision (one year!)...
 	}
 }
 
@@ -25,11 +25,11 @@ aztec_offmap_decisions_enabled_trigger = {
 		}
 	}
 	custom_tooltip = {
-		text = aztec_offmap_boon_decisions_enabled_trigger_raiding_tt
+		text = aztecs_offmap_boon_decisions_enabled_trigger_raiding_tt
 		FROM = {
 			NOR = {
-				has_character_modifier = aztec_raid_active
-				has_character_modifier = aztec_raid_grace_cd
+				has_character_modifier = aztecs_raid_active
+				has_character_modifier = aztecs_raid_respect_cd
 			}
 		}
 	}
@@ -42,7 +42,7 @@ aztec_offmap_decisions_enabled_trigger = {
 	#	}
 	#}
 	conditional_tooltip = { 
-		trigger = { FROM = { has_character_modifier = failed_invasion_of_aztec } }
+		trigger = { FROM = { has_character_modifier = failed_invasion_of_aztecs } }
 		custom_tooltip = { 
 			text = aztec_offmap_decisions_failed_invasion_tt
 			always = no
@@ -135,7 +135,7 @@ aztecs_are_suffering_trigger = {
 
 
 aztecs_are_stable_open_trigger = {
-	offmap_china = {
+	offmap_aztecs = {
 		has_status = aztec_stable
 		OR = {
 			has_policy = aztec_traders
@@ -145,13 +145,13 @@ aztecs_are_stable_open_trigger = {
 	}
 }
 aztecs_are_stable_expansionist_trigger = {
-	offmap_china = {
+	offmap_aztecs = {
 		has_status = aztec_stable
 		has_policy = aztec_invaders
 	}
 }
 aztecs_are_golden_age_open_trigger = {
-	offmap_china = {
+	offmap_aztecs = {
 		has_status = aztec_golden_age
 		OR = {
 			has_policy = aztec_traders
@@ -161,7 +161,7 @@ aztecs_are_golden_age_open_trigger = {
 	}
 }
 aztecs_are_golden_age_expansionist_trigger = {
-	offmap_china = {
+	offmap_aztecs = {
 		has_status = aztec_golden_age
 		has_policy = aztec_invaders
 	}
@@ -179,4 +179,28 @@ aztecs_are_fine_trigger = { #"fine", read like "fiii-iine", i.e. Aztecs are curr
 			has_policy = aztec_explorers
 		}
 	}
+}
+
+courtier_from_aztecs_trigger = {
+	custom_tooltip = {
+		text = courtier_from_aztecs_trigger_tt
+		has_character_flag = originated_from_aztec_court
+	}
+}
+
+#Respect triggers
+has_respect_trivial_trigger = {
+	has_offmap_currency = { offmap = offmap_aztecs value = 10 }
+}
+has_respect_minor_trigger = {
+	has_offmap_currency = { offmap = offmap_aztecs value = 50 }
+}
+has_respect_medium_trigger = {
+	has_offmap_currency = { offmap = offmap_aztecs value = 150 }
+}
+has_respect_major_trigger = {
+	has_offmap_currency = { offmap = offmap_aztecs value = 500 }
+}
+has_respect_massive_trigger = { 
+	has_offmap_currency = { offmap = offmap_aztecs value = 1000 }
 }

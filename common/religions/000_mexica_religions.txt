@@ -5,7 +5,7 @@ mesoamerican_group = {
 	playable = yes
 	hostile_within_group = yes
 	
-	interface_skin = { pagan_interface pagan_group_interface }
+	#interface_skins = { pagan_interface pagan_group_interface }
 	
 	ai_convert_same_group = 2 # always try to convert
 	ai_convert_other_group = 2	# always try to convert
@@ -17,7 +17,7 @@ mesoamerican_group = {
 	aztec = {
 		graphical_culture = mesoamericangfx
 		
-		#interface_skin = { pagan_interface pagan_group_interface }
+		#interface_skins = { pagan_interface pagan_group_interface }
 		
 		icon = 15
 		heresy_icon = 16
@@ -80,7 +80,7 @@ mesoamerican_group = {
 	incan = {
 		graphical_culture = mesoamericangfx
 		
-		#interface_skin = { pagan_interface pagan_group_interface }
+		#interface_skins = { pagan_interface pagan_group_interface }
 		
 		icon = 48 #Zun Icon for now.
 		heresy_icon = 50

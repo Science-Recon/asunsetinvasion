@@ -95,9 +95,9 @@ province_event = {
 				e_aztec_colony = {
 					grant_title = PREV
 				}
-				#k_aztec = {
-				#	grant_title = PREV
-				#}
+#				k_aztec = {
+#					grant_title = PREV
+#				}
 				save_global_event_target_as = first_aztec_colonial_govenor
 				set_government_type = tlacohtletlacatiyan_government
 				wealth = 250000
@@ -441,6 +441,7 @@ province_event = {
 		set_global_flag = aztec_arrival
 		event_target:first_aztec_colonial_govenor = {
 			set_truce = { who = event_target:selling_county_owner years = 10 }
+			character_event = { id = SSIOM.30201 days = 5 }
 		}
 	}
 	
@@ -622,8 +623,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 			
 		}
@@ -649,8 +650,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -675,8 +676,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		
@@ -702,8 +703,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -728,8 +729,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -754,8 +755,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		
@@ -781,8 +782,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -807,8 +808,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -833,8 +834,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		
@@ -860,8 +861,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -886,8 +887,8 @@ narrative_event = {
 					light_infantry = { 1400 1300 }
 					pikemen = { 3000 3000 }
 					archers = { 1400 1300 }
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 		}
 		create_character = {
@@ -939,8 +940,8 @@ narrative_event = {
 						light_infantry = { 1400 1300 }
 						archers = { 1400 1300 }
 					}
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 			create_character = {
 				random_traits = yes
@@ -964,8 +965,8 @@ narrative_event = {
 						light_infantry = { 1400 1300 }
 						archers = { 1400 1300 }
 					}
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 			create_character = {
 				random_traits = yes
@@ -989,85 +990,7 @@ narrative_event = {
 						light_infantry = { 1400 1300 }
 						archers = { 1400 1300 }
 					}
-				}
-				disband_on_peace = yes
-			}
-		}
-		
-		random = {
-			chance = 50
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 30
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
-				}
-				disband_on_peace = yes
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 25
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
-				}
-				disband_on_peace = yes
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 22
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
+					disband_on_peace = yes
 				}
 			}
 		}
@@ -1096,8 +1019,8 @@ narrative_event = {
 						light_infantry = { 1400 1300 }
 						archers = { 1400 1300 }
 					}
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
 			}
 			create_character = {
 				random_traits = yes
@@ -1121,8 +1044,86 @@ narrative_event = {
 						light_infantry = { 1400 1300 }
 						archers = { 1400 1300 }
 					}
+					disband_on_peace = yes
 				}
-				disband_on_peace = yes
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+					disband_on_peace = yes
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+					disband_on_peace = yes
+				}
 			}
 			create_character = {
 				random_traits = yes

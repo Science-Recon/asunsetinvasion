@@ -14,12 +14,18 @@ aztec_war_spawn_troops_effect = {
 			female = no
 			age = 30
 			attributes = {
-				martial = 12
+				martial = 18
 			}
 			trait = brilliant_strategist
+			trait = inspiring_leader
+			trait = strong
 		}
 		new_character = {
 			save_event_target_as = aztec_new_troop_commander
+			random = {
+				chance = 5
+				culture = tlaxcalan # Small chance of being tlaxcalan
+			}
 		}
 		while = {
 			limit = {
@@ -29,7 +35,7 @@ aztec_war_spawn_troops_effect = {
 				}
 			}
 			
-			capital_scope = {
+			event_target:spawn_province = {
 				event_target:aztec_new_troop_commander = {
 					random_list = {
 						10 = {
@@ -116,8 +122,7 @@ aztec_war_spawn_troops_effect = {
 					}
 				}
 			}
-			
-			change_variable = {	
+			change_variable = {
 				which = aztec_troop_quantity
 				value = -1
 			}
@@ -197,21 +202,21 @@ aztec_war_modify_variables_by_status_effect = {
 	random_list = {
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_stable }
+				offmap_aztecs = { has_status = aztec_stable }
 			}
 			change_variable = { which = aztec_war_troop_quality value = 1 }
 			change_variable = { which = aztec_war_minimum_commander_martial value = 3 }
 		}
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_unrest }
+				offmap_aztecs = { has_status = aztec_unrest }
 			}
 			change_variable = { which = aztec_war_troop_quantity value = -6 }
 			change_variable = { which = aztec_war_target_match_mult value = -0.15 }
 		}
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_civil_war }
+				offmap_aztecs = { has_status = aztec_civil_war }
 			}
 			change_variable = { which = aztec_war_troop_quantity value = -6 }
 			change_variable = { which = aztec_war_target_match_mult value = -0.25 }
@@ -221,10 +226,10 @@ aztec_war_modify_variables_by_status_effect = {
 		1 = {
 			trigger = {
 				OR = {
-					offmap_china = { has_status = aztec_mayan_invasion }
-					offmap_china = { has_status = aztec_incan_invasion }
-					offmap_china = { has_status = aztec_norse_invasion }
-					offmap_china = { has_status = aztec_iroquian_invasion }
+					offmap_aztecs = { has_status = aztec_mayan_invasion }
+					offmap_aztecs = { has_status = aztec_incan_invasion }
+					offmap_aztecs = { has_status = aztec_norse_invasion }
+					offmap_aztecs = { has_status = aztec_iroquian_invasion }
 				}
 			}
 			change_variable = { which = aztec_war_troop_quantity value = -7 }
@@ -234,7 +239,7 @@ aztec_war_modify_variables_by_status_effect = {
 		}
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_famine }
+				offmap_aztecs = { has_status = aztec_famine }
 			}
 			change_variable = { which = aztec_war_troop_quantity value = -4 }
 			change_variable = { which = aztec_war_target_match_mult value = -0.30 }
@@ -243,7 +248,7 @@ aztec_war_modify_variables_by_status_effect = {
 		}
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_plague }
+				offmap_aztecs = { has_status = aztec_plague }
 			}
 			change_variable = { which = aztec_war_troop_quantity value = -6 }
 			change_variable = { which = aztec_war_target_match_mult value = -0.35 }
@@ -252,7 +257,7 @@ aztec_war_modify_variables_by_status_effect = {
 		}
 		1 = {
 			trigger = {
-				offmap_china = { has_status = aztec_golden_age }
+				offmap_aztecs = { has_status = aztec_golden_age }
 			}
 			change_variable = { which = aztec_war_target_match_mult value = 0.65 }
 			change_variable = { which = aztec_war_troop_quality value = 2 }
@@ -263,7 +268,7 @@ aztec_war_modify_variables_by_status_effect = {
 
 
 
-china_war_modify_variables_by_century_effect = {
+aztec_war_modify_variables_by_century_effect = {
 	random_list = {
 		10 = {
 			trigger = {
@@ -354,6 +359,121 @@ china_war_modify_variables_by_century_effect = {
 }
 
 
+aztec_set_high_tech_level_effect = { #Should set them two techs ahead of the old world.
+	random_list = {
+		10 = {
+			trigger = {
+				year = 700 #Base 0 + 2
+				NOT = { year = 800 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 2
+			}
+		}
+		10 = {
+			trigger = {
+				year = 800 #Base 1 + 2
+				NOT = { year = 900 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 3
+			}
+		}
+		10 = {
+			trigger = {
+				year = 900 #Base 2 + 2
+				NOT = { year = 1000 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 4
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1000 #Base 3 + 2
+				NOT = { year = 1100 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 5
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1100 #Base 4 + 2
+				NOT = { year = 1200 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 6
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1200 #Base 5 + 2
+				NOT = { year = 1300 }
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 7
+			}
+		}
+		10 = {
+			trigger = {
+				year = 1300 #Base 6 + 2
+			}
+			set_variable = {
+				which = aztec_tech_level
+				value = 8
+			}
+		}
+	}
+	set_aztec_tech_with_variable_effect = yes
+}
+
+set_aztec_tech_with_variable_effect = { #Since the effect adds instead of setting and there's no way to check the techlevel of a province, this will probably be a bit off.
+#	change_variable = { #This puts it about 2 ahead, due to only being able to add.
+#		which = aztec_tech_level
+#		value = -1
+#	}
+	while = {
+		limit = {
+			check_variable = {
+				which = aztec_tech_level
+				value = 1
+			}
+		}
+		###Militaries###
+		change_tech = { technology = TECH_LIGHT_INFANTRY value = 1}
+		change_tech = { technology = TECH_HEAVY_INFANTRY value = 1}
+		change_tech = { technology = TECH_CAVALRY value = 1}
+		change_tech = { technology = TECH_SIEGE_EQUIPMENT value = 1}
+		change_tech = { technology = TECH_NAVAL value = 1}
+		change_tech = { technology = TECH_RECRUITMENT value = 1}
+		###Economic###
+		change_tech = { technology = TECH_CASTLE_CONSTRUCTION value = 1}
+		change_tech = { technology = TECH_CITY_CONSTRUCTION value = 1}
+		change_tech = { technology = TECH_TEMPLE_CONSTRUCTION value = 1}
+		change_tech = { technology = TECH_FORTIFICATIONS_CONSTRUCTION value = 1}
+		change_tech = { technology = TECH_TRADE_PRACTICES value = 1}
+		change_tech = { technology = TECH_CONSTRUCTION value = 1}
+		###Religious###
+		change_tech = { technology = TECH_NOBLE_CUSTOMS value = 1}
+		change_tech = { technology = TECH_POPULAR_CUSTOMS value = 1}
+		change_tech = { technology = TECH_RELIGIOUS_CUSTOMS value = 1}
+		change_tech = { technology = TECH_MAJESTY value = 1}
+		change_tech = { technology = TECH_CULTURE_FLEX value = 1}
+		change_tech = { technology = TECH_LEGALISM value = 1}
+		change_variable = {
+			which = aztec_tech_level
+			value = -1
+		}
+	}
+}
+
 
 leave_court_for_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you want them to be ORDERED to go to China, a killer needs to be set (eg: "killer = ROOT")
 	custom_tooltip = {
@@ -374,7 +494,93 @@ return_to_aztecs_effect = { # NOTE: this does not set a "killer", meaning if you
 set_aztec_boon_cd_effect = {  #added via tribute to China decisions... Always one year.
 	add_character_modifier = {
 		hidden = yes
-		name = si_aztec_boon_cd
+		name = si_aztecs_boon_cd
 		days = 365 #If this is changed, edit  china_offmap_boon_decisions_enabled_trigger_cd_tt
+	}
+}
+
+
+#Respect effects
+add_respect_trivial_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 100
+	}
+}
+
+add_respect_minor_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 200
+	}
+}
+
+add_respect_medium_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 300
+	}	
+}
+
+add_respect_major_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 500
+	}
+}
+
+add_respect_massive_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 1000
+	}
+}
+
+add_respect_super_huge_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = 2000
+	}
+}
+
+detract_respect_trivial_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -100
+	}
+}
+
+detract_respect_minor_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -200
+	}
+}
+
+detract_respect_medium_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -300
+	}
+}
+
+detract_respect_major_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -500
+	}
+}
+
+detract_respect_massive_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -1000
+	}
+}
+
+detract_respect_super_huge_effect = {
+	add_offmap_currency = {
+		offmap = offmap_aztecs
+		value = -2000
 	}
 }

@@ -987,7 +987,6 @@ gender_laws = {
 					AND = {
 						NOT = { religion_group = muslim }
 						NOT = { religion = aztec }
-						NOT = { religion = aztec_reformed }
 						has_horde_culture = no
 						#is_tribal = no
 						is_nomadic = no
@@ -1110,7 +1109,6 @@ gender_laws = {
 						AND = {
 							NOT = { religion_group = muslim }
 							NOT = { religion = aztec }
-							NOT = { religion = aztec_reformed }
 							has_horde_culture = no
 							#is_tribal = no
 							is_nomadic = no

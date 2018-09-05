@@ -35,6 +35,13 @@ spriteTypes = {
 		norefcount = yes
 		#effectFile = "gfx\\FX\\buttonstate.lua"
 	}
+	spriteType = {
+		name = "GFX_trait_sympathy_americans"
+		texturefile = "gfx\\traits\\sympathy_americans.dds"
+		noOfFrames = 1
+		norefcount = yes
+		#effectFile = "gfx\\FX\\buttonstate.lua"
+	}
 	
 	spriteType = {
 		name = "GFX_convert_to_aztec_religion"
@@ -55,6 +62,24 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_aztec_screen_button"
 		texturefile = "gfx\\interface\\offmap_screen\\aztec_screen_button.dds"
+	}
+	spriteType = {
+		name = "GFX_offmap_symbol_aztecs"
+		texturefile = "gfx\\interface\\offmap_screen\\aztec_symbol_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_offmap_symbol_aztecs"
+		texturefile = "gfx\\interface\\offmap_screen\\aztec_symbol_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_offmap_policy_aztecs"
+		texturefile = "gfx\\interface\\offmap_screen\\aztec_policy_placeholder.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_offmap_status_aztecs"
+		texturefile = "gfx\\interface\\offmap_screen\\aztec_status_placeholder.dds"
+		noOfFrames = 4
 	}
 	
 }
