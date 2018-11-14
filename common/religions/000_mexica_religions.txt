@@ -1,4 +1,4 @@
-mesoamerican_group = {	
+mesoamerican_group = {
 	
 	has_coa_on_barony_only = yes
 	graphical_culture = mesoamericangfx
@@ -67,6 +67,8 @@ mesoamerican_group = {
 		max_consorts = 3
 		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
 		allow_looting = yes
+		allow_rivermovement = yes
+		seafarer = yes
 		
 		aggression = 2.0 # AI aggression factor
 		

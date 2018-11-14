@@ -24,6 +24,26 @@ RETTYPE_CUL_MUSKETS =
 	}
 }
 
+RETTYPE_CUL_NAHUA = 
+{
+	first_type = 2 #Pikes
+	first_amount = 375
+	second_type = 1 #Heavy inf.
+	second_amount = 125
+	
+	potential = {
+		is_nomadic = no
+		culture = nahuatl
+	}
+	
+	modifier = {
+		pikemen_defensive = 0.4
+		pikemen_morale = 0.2
+		heavy_infantry_offensive = 0.33
+		heavy_infantry_morale = 0.2
+	}
+}
+
 RETTYPE_CUL_AZTEC_HORSES = {
 	first_type = 3 #Light Cav
 	first_amount = 120

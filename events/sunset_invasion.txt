@@ -246,6 +246,7 @@ province_event = {
 							{
 								heavy_infantry = { 4800 4800 }
 								light_infantry = { 2400 1300 }
+								pikemen = { 3000 3000 }
 								archers = { 2400 1300 }
 							}
 						}

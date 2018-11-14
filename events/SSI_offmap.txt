@@ -10,11 +10,17 @@ province_event = {
 	border = GFX_event_normal_frame_religion
 
 	mean_time_to_happen = {
-		months = 24
+		months = 2400
 		modifier = {
-			factor = 0.6
+			factor = 0.3
 			offmap_aztecs = {
 				has_policy = aztec_invaders
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				independent = yes
 			}
 		}
 	}
@@ -22,7 +28,10 @@ province_event = {
 	trigger = {
 		aztecs_are_fine_trigger = yes
 		NAND = {
-			culture = nahuatl
+			OR = {
+				culture_group = mesoamerican
+				culture = caxtillah
+			}
 			religion = aztec
 		}
 		owner = {
@@ -33,7 +42,7 @@ province_event = {
 			}
 		}
 		OR = {
-			port = yes 
+			port = yes
 			any_neighbor_province = {
 				AND = {
 					religion = aztec

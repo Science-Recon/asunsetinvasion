@@ -88,7 +88,7 @@ mesoamerican = { #Renamed to aztec to add individual aztec cultures.
 }
 
 andean = {
-		northern_quechua = { #Kichwa
+	northern_quechua = { #Kichwa
 		graphical_cultures = { mesoamericangfx }
 		color = { 60 10 10 }
 		

@@ -204,3 +204,23 @@ has_respect_major_trigger = {
 has_respect_massive_trigger = { 
 	has_offmap_currency = { offmap = offmap_aztecs value = 1000 }
 }
+
+
+proseltytise_aztecs_convert_independent_trigger = {
+	FROM = {
+		religion_group = mesoamerican_group
+	}
+	NOR = {
+		religion_group = mesoamerican
+		owner = {
+			OR = {
+				controls_religion = yes
+				NOT = {
+					has_opinion_modifier = { who = FROM modifier = opinion_sent_preacher }
+				}
+			}
+		}
+	}
+	
+
+}
