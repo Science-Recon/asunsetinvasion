@@ -87,4 +87,21 @@ b_moyotlan = {
 	religion = aztec
 }
 
+b_azt_holy_1 = {
+	holy_site = aztec
+	
+	landless = yes
+	
+	culture = nahuatl
+	religion = aztec
+}
+b_azt_holy_2 = {
+	holy_site = aztec
+	
+	landless = yes
+	
+	culture = nahuatl
+	religion = aztec
+}
+
 

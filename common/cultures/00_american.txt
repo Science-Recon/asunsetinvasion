@@ -83,7 +83,7 @@ mesoamerican = { #Renamed to aztec to add individual aztec cultures.
 
 		allow_looting = yes
 
-		modifier = default_culture_modifier
+		modifier = default_culture_modifier 
 	}
 }
 

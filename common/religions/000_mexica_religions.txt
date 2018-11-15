@@ -5,7 +5,7 @@ mesoamerican_group = {
 	playable = yes
 	hostile_within_group = yes
 	
-	#interface_skins = { pagan_interface pagan_group_interface }
+	interface_skin = { pagan_interface }
 	
 	ai_convert_same_group = 2 # always try to convert
 	ai_convert_other_group = 2	# always try to convert
@@ -17,7 +17,7 @@ mesoamerican_group = {
 	aztec = {
 		graphical_culture = mesoamericangfx
 		
-		#interface_skins = { pagan_interface pagan_group_interface }
+		interface_skin = { pagan_interface }
 		
 		icon = 15
 		heresy_icon = 16
@@ -54,7 +54,7 @@ mesoamerican_group = {
 		# priests (Quetzalcoatls) who were in charge of the major pilgrimage centres (Cholula and Tenochtitlan) as enjoying immense respect 
 		# from all levels of Aztec society – akin to archbishops – and a level of authority that partly transcended national boundaries.
 		# So, as the offmap can't be relhead, the leader of the colony can be (Delegated responsibility, I suppose.)
-		#can_excommunicate = yes #Will use scripted system
+		#can_excommunicate = yes #Will use scripted system #No longer necessary - vanilla exported to script.
 		#can_grant_divorce = yes
 		#can_grant_invasion_cb = invasion
 		
@@ -69,6 +69,7 @@ mesoamerican_group = {
 		allow_looting = yes
 		allow_rivermovement = yes
 		seafarer = yes
+		ignores_defensive_attrition = yes
 		
 		aggression = 2.0 # AI aggression factor
 		
@@ -82,7 +83,7 @@ mesoamerican_group = {
 	incan = {
 		graphical_culture = mesoamericangfx
 		
-		#interface_skins = { pagan_interface pagan_group_interface }
+		interface_skin = { pagan_interface }
 		
 		icon = 48 #Zun Icon for now.
 		heresy_icon = 50
